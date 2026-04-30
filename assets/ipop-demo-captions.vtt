@@ -11,9 +11,3 @@ ipop.ai routes the request to a local action or an AI agent.
 
 00:13.000 --> 00:18.000
 The result appears in the app you asked for.
-
-00:18.000 --> 00:24.000
-For bigger work, one prompt can launch multiple background sessions.
-
-00:24.000 --> 00:30.000
-You can inspect the sessions while your Mac keeps moving.

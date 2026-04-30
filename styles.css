@@ -24,6 +24,16 @@ html {
   overflow-x: hidden;
 }
 
+#demo,
+#proof,
+#agents,
+#data-flow,
+#pricing,
+#faq,
+#download {
+  scroll-margin-top: 84px;
+}
+
 body {
   min-width: 320px;
   margin: 0;
@@ -405,6 +415,74 @@ h3 {
   text-underline-offset: 4px;
 }
 
+.moment-section {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(360px, 1.1fr);
+  gap: 18px;
+  align-items: stretch;
+}
+
+.moment-copy {
+  min-height: 430px;
+  display: grid;
+  align-content: end;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: clamp(24px, 4vw, 42px);
+  background:
+    linear-gradient(145deg, rgba(157, 255, 122, 0.12), rgba(140, 184, 255, 0.06) 42%, rgba(255, 255, 255, 0.03)),
+    var(--panel-solid);
+  box-shadow: 0 30px 80px var(--shadow);
+}
+
+.moment-copy p:not(.eyebrow) {
+  max-width: 620px;
+  color: var(--muted);
+  font-size: 18px;
+}
+
+.moment-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.moment-grid article {
+  min-height: 132px;
+  display: grid;
+  grid-template-columns: 58px 1fr;
+  gap: 16px;
+  align-content: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.moment-grid span {
+  width: 46px;
+  height: 46px;
+  grid-row: 1 / span 2;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(157, 255, 122, 0.46);
+  border-radius: 50%;
+  color: var(--green);
+  font-family: "SF Mono", "IBM Plex Mono", ui-monospace, Menlo, Monaco, monospace;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.moment-grid h3,
+.moment-grid p {
+  grid-column: 2;
+}
+
+.moment-grid p {
+  margin: 6px 0 0;
+  color: var(--muted);
+}
+
+.moment-section,
 .proof-section,
 .agents-section,
 .section,
@@ -417,6 +495,7 @@ h3 {
   margin: 0 auto;
 }
 
+.moment-section,
 .proof-section,
 .agents-section,
 .section,
@@ -441,8 +520,7 @@ h3 {
 
 .demo-theater {
   display: grid;
-  grid-template-columns: minmax(0, 1.3fr) minmax(300px, 0.7fr);
-  gap: 18px;
+  gap: 14px;
   align-items: stretch;
 }
 
@@ -462,8 +540,28 @@ h3 {
 }
 
 .video-shell {
+  position: relative;
   overflow: hidden;
   background: #050605;
+  border-color: rgba(157, 255, 122, 0.32);
+  box-shadow: 0 34px 110px rgba(0, 0, 0, 0.72);
+}
+
+.video-badge {
+  position: absolute;
+  z-index: 2;
+  top: 14px;
+  left: 14px;
+  border: 1px solid rgba(157, 255, 122, 0.5);
+  border-radius: 999px;
+  padding: 8px 11px;
+  background: rgba(0, 0, 0, 0.66);
+  color: var(--green);
+  font-family: "SF Mono", "IBM Plex Mono", ui-monospace, Menlo, Monaco, monospace;
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+  backdrop-filter: blur(14px);
 }
 
 .video-shell video {
@@ -475,13 +573,14 @@ h3 {
 
 .demo-script {
   display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 10px;
 }
 
 .demo-script div {
-  min-height: 96px;
+  min-height: 132px;
   display: grid;
-  grid-template-columns: 44px 1fr;
+  grid-template-columns: 36px 1fr;
   gap: 12px;
   align-items: start;
   padding: 16px;
@@ -816,10 +915,19 @@ h3 {
     margin-top: auto;
   }
 
+  .moment-section,
   .demo-theater,
   .agent-stage,
   .machine-section {
     grid-template-columns: 1fr;
+  }
+
+  .moment-copy {
+    min-height: auto;
+  }
+
+  .demo-script {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .agent-command {
@@ -868,17 +976,23 @@ h3 {
   }
 
   h1 {
-    font-size: clamp(46px, 13vw, 60px);
-    line-height: 0.98;
+    font-size: clamp(40px, 10.8vw, 52px);
+    line-height: 1;
   }
 
   h2 {
-    font-size: clamp(34px, 11vw, 48px);
+    font-size: clamp(32px, 9.4vw, 42px);
     line-height: 1.02;
   }
 
+  .hero-content,
+  .cta-row {
+    max-width: 100%;
+  }
+
   .hero-copy {
-    font-size: 18px;
+    max-width: 100%;
+    font-size: 16px;
   }
 
   .download-button,
@@ -900,11 +1014,29 @@ h3 {
     margin-top: 22px;
   }
 
+  .hero-footer-note span {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
   .machine-table div,
+  .moment-grid article,
+  .demo-script,
   .pricing-grid {
     grid-template-columns: 1fr;
   }
 
+  .moment-grid span,
+  .moment-grid h3,
+  .moment-grid p {
+    grid-column: auto;
+  }
+
+  .moment-grid span {
+    grid-row: auto;
+  }
+
+  .moment-section,
   .proof-section,
   .agents-section,
   .section,
