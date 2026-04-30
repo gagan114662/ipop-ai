@@ -186,16 +186,12 @@ h3 {
 }
 
 h1 {
-  max-width: 900px;
+  max-width: 1040px;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(58px, 9vw, 142px);
+  font-size: clamp(58px, 8vw, 118px);
   font-weight: 520;
-  line-height: 0.88;
+  line-height: 0.92;
   text-shadow: 0 26px 80px rgba(0, 0, 0, 0.9);
-}
-
-h1 span {
-  display: block;
 }
 
 h2 {
@@ -872,8 +868,8 @@ h3 {
   }
 
   h1 {
-    font-size: clamp(48px, 15vw, 66px);
-    line-height: 0.94;
+    font-size: clamp(46px, 13vw, 60px);
+    line-height: 0.98;
   }
 
   h2 {
