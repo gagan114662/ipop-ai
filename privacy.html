@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta
       name="description"
-      content="ipop.ai privacy approach for early access users."
+      content="Privacy policy for ipop.ai, a beta AI voice assistant for macOS."
     >
     <title>Privacy - ipop.ai</title>
     <link rel="canonical" href="https://ipop.ai/privacy.html">
@@ -19,39 +19,81 @@
         <span>ipop.ai</span>
       </a>
       <nav class="nav-links" aria-label="Page sections">
-        <a href="index.html#agents">agents</a>
-        <a href="index.html#examples">examples</a>
+        <a href="index.html#demo">demo</a>
+        <a href="index.html#data-flow">data</a>
+        <a href="index.html#pricing">pricing</a>
         <a href="index.html#download">download</a>
       </nav>
     </header>
 
     <main class="legal-page">
-      <p class="eyebrow">privacy</p>
-      <h1>Privacy should be obvious.</h1>
+      <p class="eyebrow">Privacy</p>
+      <h1>Privacy policy</h1>
       <p>
-        ipop.ai is an early Mac app that helps you talk to AI, understand what is
-        on your screen, and start useful agents. This page is a plain-English
-        placeholder for launch day and should be replaced with counsel-reviewed
-        legal terms before a broader release.
+        ipop.ai is a beta Mac app that lets you use voice, approved screen context,
+        and AI providers to control your Mac and run background agent sessions.
+        This policy explains the practical data flow for the launch beta.
       </p>
 
-      <h2>What ipop.ai may use</h2>
+      <h2>Information the app may process</h2>
       <p>
-        When you choose to use ipop.ai, the app may process your voice input,
-        visible screen context, app names, prompts, agent output, and basic
-        diagnostics needed to operate the product.
+        Depending on the task you ask for, ipop.ai may process your spoken request,
+        the resulting transcript, visible screen context, app names, action results,
+        agent output, local settings, diagnostics, and crash or error logs.
       </p>
 
-      <h2>Control</h2>
+      <h2>Voice and transcription</h2>
       <p>
-        Screen and microphone access should be permissioned by macOS and visible
-        to you. ipop.ai should only use context needed to answer or act on the
-        request you make.
+        Dictation uses the speech provider configured in the app. The beta prefers
+        AssemblyAI when configured and can fall back to Apple Speech. Those providers
+        may receive audio or transcript data needed to perform speech recognition.
+      </p>
+
+      <h2>Screen context</h2>
+      <p>
+        macOS controls Screen Recording permission. When you make a screen-aware
+        request, the app may send screenshots or extracted visible text to the AI
+        provider selected on your Mac so it can answer or choose the right action.
+      </p>
+
+      <h2>AI providers and agent sessions</h2>
+      <p>
+        Early beta builds use providers you configure locally, such as CLI sessions
+        or API keys. Prompts, transcripts, screen context, and agent outputs may be
+        sent to those providers according to their own terms and privacy policies.
+      </p>
+
+      <h2>Mac control</h2>
+      <p>
+        App launches, typing, key presses, clicks, and scrolling are executed locally
+        through macOS Accessibility permissions. ipop.ai does not give a remote
+        server direct control of your desktop.
+      </p>
+
+      <h2>Website</h2>
+      <p>
+        The launch website offers a direct GitHub download and does not collect an
+        email address through the download button. If you contact hello@ipop.ai, we
+        use your message to reply and support the beta.
+      </p>
+
+      <h2>Retention</h2>
+      <p>
+        The app may store local settings, memory, logs, and session history on your
+        Mac so the beta can function and be debugged. You can request deletion help
+        by emailing hello@ipop.ai.
+      </p>
+
+      <h2>Your control</h2>
+      <p>
+        You can revoke microphone, Accessibility, and Screen Recording permissions in
+        macOS System Settings. You can also remove local provider keys and uninstall
+        the app at any time.
       </p>
 
       <h2>Contact</h2>
       <p>
-        Questions or deletion requests can be sent to
+        Questions, security reports, or deletion requests can be sent to
         <a href="mailto:hello@ipop.ai">hello@ipop.ai</a>.
       </p>
     </main>
@@ -60,6 +102,7 @@
       <span>ipop.ai</span>
       <span class="footer-links">
         <a href="index.html">home</a>
+        <a href="terms.html">terms</a>
         <a href="mailto:hello@ipop.ai">hello@ipop.ai</a>
       </span>
     </footer>

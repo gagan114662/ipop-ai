@@ -5,27 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta
       name="description"
-      content="ipop.ai is a voice-first Mac agent that sees your screen, controls apps, and spins up background coding and research sessions."
+      content="ipop.ai is an AI voice assistant for macOS that can understand permitted screen context, control apps, and launch background agent sessions."
     >
-    <meta property="og:title" content="ipop.ai - voice agents for your Mac">
+    <meta property="og:title" content="ipop.ai - AI voice assistant for macOS">
     <meta
       property="og:description"
-      content="Hold the shortcut, say the task, and watch ipop.ai act on your Mac or launch parallel agents."
+      content="Hold Control + Option, say a task, and ipop.ai can act on your Mac or start parallel agent sessions."
     >
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ipop.ai/">
     <meta property="og:image" content="https://ipop.ai/assets/ipop-demo-poster.png">
+    <meta property="og:image:width" content="1280">
+    <meta property="og:image:height" content="720">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="ipop.ai - voice agents for your Mac">
+    <meta name="twitter:title" content="ipop.ai - AI voice assistant for macOS">
     <meta
       name="twitter:description"
-      content="A voice-first Mac agent that controls apps and launches parallel Codex sessions."
+      content="A beta Mac app for voice control, screen-aware help, and parallel AI agent sessions."
     >
     <meta name="twitter:image" content="https://ipop.ai/assets/ipop-demo-poster.png">
     <link rel="canonical" href="https://ipop.ai/">
     <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
-    <title>ipop.ai - voice agents for your Mac</title>
+    <title>ipop.ai - AI voice assistant for macOS</title>
     <link rel="stylesheet" href="styles.css">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "ipop.ai",
+        "applicationCategory": "ProductivityApplication",
+        "operatingSystem": "macOS",
+        "description": "AI voice assistant for macOS that can control apps, use permitted screen context, and launch background agent sessions.",
+        "url": "https://ipop.ai/",
+        "downloadUrl": "https://github.com/gagan114662/ipop-ai/releases/latest/download/ipop-ai-beta.dmg",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "creator": {
+          "@type": "Person",
+          "name": "Gagan Arora",
+          "url": "https://github.com/gagan114662"
+        }
+      }
+    </script>
   </head>
   <body>
     <header class="site-header" aria-label="Primary navigation">
@@ -35,8 +59,10 @@
       </a>
       <nav class="nav-links" aria-label="Page sections">
         <a href="#demo">demo</a>
+        <a href="#data-flow">data</a>
         <a href="#agents">agents</a>
         <a href="#pricing">pricing</a>
+        <a href="#faq">FAQ</a>
         <a href="#download">download</a>
       </nav>
     </header>
@@ -44,104 +70,174 @@
     <main id="top">
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-copy-panel">
-          <p class="eyebrow">Human voice. Mac actions.</p>
-          <h1 id="hero-title">Talk to your Mac like it can finally hear you.</h1>
+          <p class="eyebrow">Beta Mac app</p>
+          <h1 id="hero-title">
+            <span>AI voice</span>
+            <span>assistant for</span>
+            <span>your Mac.</span>
+          </h1>
           <p class="hero-copy">
-            ipop.ai listens to one sentence, understands the screen you allow, and either does the thing
-            now or launches parallel agents in the background.
+            Hold Control + Option, speak a task, and ipop.ai can open apps, type,
+            press keys, use approved screen context, or launch background AI agents.
           </p>
 
-          <form class="download-form" method="post" aria-label="Download ipop.ai">
-            <label class="sr-only" for="email">Email address</label>
-            <input id="email" name="email" type="email" placeholder="email optional" autocomplete="email">
-            <button type="submit">Download DMG</button>
-          </form>
+          <div class="cta-row">
+            <a
+              class="download-button"
+              href="https://github.com/gagan114662/ipop-ai/releases/latest/download/ipop-ai-beta.dmg"
+              data-download-link
+            >Download beta DMG</a>
+            <a class="secondary-link" href="#data-flow">Read the privacy model</a>
+          </div>
           <p class="download-hint">
-            Direct Mac download. No inbox loop. No waitlist wall.
+            Free beta. Direct GitHub download. Requires macOS permissions for microphone,
+            accessibility, and screen recording.
           </p>
         </div>
 
-        <div class="hero-console" aria-label="Product workflow preview">
+        <div class="hero-console" aria-label="Example product run preview">
           <div class="console-topbar">
             <span></span>
             <span></span>
             <span></span>
-            <p>ipop.ai live run</p>
+            <p>example run preview</p>
           </div>
           <div class="console-body">
             <div class="run-row">
               <span class="run-key">Hold</span>
-              <span class="run-text">control + option</span>
+              <span class="run-text">Control + Option</span>
             </div>
             <div class="run-row active">
               <span class="run-key">Say</span>
               <span class="run-text">"open Notes and write make pasta tonight"</span>
             </div>
             <div class="terminal-lines" aria-hidden="true">
-              <p><span>00.00</span> transcript received</p>
-              <p><span>00.12</span> local Mac action matched</p>
-              <p><span>00.31</span> Notes opened</p>
-              <p><span>00.46</span> note typed</p>
+              <p><span>1</span> transcript captured</p>
+              <p><span>2</span> local Mac action selected</p>
+              <p><span>3</span> Notes opened</p>
+              <p><span>4</span> note typed</p>
             </div>
             <div class="result-card">
               <p class="result-label">Visible result</p>
-              <p class="result-text">Notes now contains: make pasta tonight</p>
+              <p class="result-text">Notes contains: make pasta tonight</p>
             </div>
           </div>
         </div>
       </section>
 
       <section class="logo-strip" aria-label="Positioning">
-        <p>Built for founders, students, builders, and anyone who keeps saying "why am I still clicking this myself?"</p>
+        <p>
+          Built by <a href="https://github.com/gagan114662">Gagan Arora</a> for people
+          who want their Mac to respond to intent, not another pile of buttons.
+        </p>
       </section>
 
       <section class="demo-section" id="demo" aria-labelledby="demo-title">
         <div class="section-heading">
-          <p class="eyebrow">Idiot-proof demo</p>
+          <p class="eyebrow">30-second demo</p>
           <h2 id="demo-title">One request. One visible outcome.</h2>
-          <p>Not a feature montage. The launch video should make the product obvious in the first five seconds.</p>
+          <p>Watch the Mac hear a task, choose an action, and produce a result you can see.</p>
         </div>
 
         <div class="demo-grid">
           <div class="video-shell">
             <video autoplay muted loop playsinline poster="assets/ipop-demo-poster.png">
               <source src="assets/ipop-demo-loop.mp4" type="video/mp4">
+              <track
+                kind="captions"
+                label="English"
+                srclang="en"
+                src="assets/ipop-demo-captions.vtt"
+                default
+              >
             </video>
           </div>
           <div class="demo-script">
             <div>
               <span>01</span>
-              <p>Show the Mac. Show the shortcut. No explanation.</p>
+              <p>Press and hold Control + Option.</p>
             </div>
             <div>
               <span>02</span>
-              <p>Say one useful sentence: "make a note to call mom tonight."</p>
+              <p>Say: "make a note to call mom tonight."</p>
             </div>
             <div>
               <span>03</span>
-              <p>Notes opens and the note appears. That is the whole proof.</p>
+              <p>Notes opens and the note appears.</p>
             </div>
             <div>
               <span>04</span>
-              <p>Then show the bigger move: "launch two agents..." and two sessions appear.</p>
+              <p>For larger work, ask it to launch two background agents and inspect the sessions.</p>
             </div>
           </div>
         </div>
       </section>
 
       <section class="prompt-strip" aria-label="Example prompts">
-        <p>"make a note to call mom tonight"</p>
-        <p>"show me the Apple menu"</p>
-        <p>"launch two agents: one for prospects, one for competitors"</p>
-        <p>"explain this Xcode error"</p>
-        <p>"open Chrome and search Razorpay pricing"</p>
-        <p>"summarize what is on this page"</p>
+        <div>
+          <span>Everyday</span>
+          <p>"make a note to call mom tonight"</p>
+          <p>"open Chrome and search Razorpay pricing"</p>
+          <p>"summarize what is on this page"</p>
+        </div>
+        <div>
+          <span>Builder</span>
+          <p>"explain this Xcode error"</p>
+          <p>"launch two agents: one for prospects, one for competitors"</p>
+          <p>"open the release checklist and mark the DMG test done"</p>
+        </div>
+      </section>
+
+      <section class="section" id="data-flow" aria-labelledby="data-flow-title">
+        <div class="section-heading">
+          <p class="eyebrow">Security and privacy</p>
+          <h2 id="data-flow-title">How your data flows.</h2>
+          <p>
+            ipop.ai is powerful because it can listen, look at approved screen context,
+            and control apps. The beta is explicit about where that information goes.
+          </p>
+        </div>
+
+        <div class="feature-grid data-grid">
+          <article>
+            <span class="feature-index">Voice</span>
+            <h3>Speech becomes text</h3>
+            <p>
+              Dictation uses the configured speech provider. The app prefers AssemblyAI
+              when configured and can fall back to Apple Speech on your Mac.
+            </p>
+          </article>
+          <article>
+            <span class="feature-index">Screen</span>
+            <h3>Context is request scoped</h3>
+            <p>
+              When you ask about visible content, screenshots or screen text may be sent
+              to the selected AI provider so it can answer or choose an action.
+            </p>
+          </article>
+          <article>
+            <span class="feature-index">Actions</span>
+            <h3>Your Mac executes locally</h3>
+            <p>
+              App launches, key presses, typing, clicks, and scrolling run through macOS
+              permissions on your machine. A remote server does not control your desktop.
+            </p>
+          </article>
+          <article>
+            <span class="feature-index">Models</span>
+            <h3>Bring your provider during beta</h3>
+            <p>
+              Early builds use providers you configure, including local CLI sessions or
+              API keys. Hosted credits and billing are not live yet.
+            </p>
+          </article>
+        </div>
       </section>
 
       <section class="section" id="agents" aria-labelledby="agents-title">
         <div class="section-heading">
           <p class="eyebrow">What it does</p>
-          <h2 id="agents-title">A Mac control layer for AI-native work.</h2>
+          <h2 id="agents-title">A Mac agent that can act now or work in the background.</h2>
         </div>
 
         <div class="feature-grid">
@@ -165,35 +261,95 @@
 
       <section class="machine-section" aria-labelledby="machine-title">
         <div>
-          <p class="eyebrow">How it feels</p>
-          <h2 id="machine-title">Less chatbot. More tiny operator.</h2>
+          <p class="eyebrow">Interaction</p>
+          <h2 id="machine-title">Hold, say, release.</h2>
         </div>
         <div class="machine-table">
-          <div><span>Input</span><p>Voice, shortcut, screen context</p></div>
-          <div><span>Routing</span><p>Local action, Claude answer, or Codex agent</p></div>
-          <div><span>Output</span><p>Visible Mac action plus inspectable session logs</p></div>
+          <div><span>Shortcut</span><p>Hold Control + Option while speaking. Release to send.</p></div>
+          <div><span>Routing</span><p>ipop.ai chooses a local Mac action, an AI answer, or a background agent session.</p></div>
+          <div><span>Output</span><p>You see the Mac action, hear the reply, or inspect the spawned session.</p></div>
         </div>
       </section>
 
       <section class="pricing-section" id="pricing" aria-labelledby="pricing-title">
         <div class="section-heading">
           <p class="eyebrow">Founder beta</p>
-          <h2 id="pricing-title">Start free while the Mac build hardens.</h2>
+          <h2 id="pricing-title">Free while the Mac build hardens.</h2>
+          <p>Pricing for hosted credits and team features will come after the beta proves the core workflow.</p>
         </div>
 
         <div class="pricing-grid">
           <article class="pricing-card">
             <p class="plan-name">Free beta</p>
             <p class="plan-price">$0</p>
-            <p class="plan-copy">Try the Mac helper, local actions, and light agent runs.</p>
+            <p class="plan-copy">Try voice control, local Mac actions, screen-aware help, and light agent runs.</p>
             <a class="plan-link" href="#download">Download beta</a>
           </article>
 
           <article class="pricing-card featured">
-            <p class="plan-name">Pro target</p>
-            <p class="plan-price">$49<span>/mo</span></p>
-            <p class="plan-copy">For people who want parallel agents, more credits, and priority beta updates.</p>
-            <a class="plan-link" href="#download">Get the beta</a>
+            <p class="plan-name">Pro</p>
+            <p class="plan-price">Soon</p>
+            <p class="plan-copy">For hosted credits, heavier parallel agents, and priority support once billing is ready.</p>
+            <a class="plan-link secondary-plan" href="mailto:hello@ipop.ai?subject=ipop.ai%20Pro%20beta">Ask about Pro</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="changelog" aria-labelledby="changelog-title">
+        <div class="section-heading">
+          <p class="eyebrow">Current beta</p>
+          <h2 id="changelog-title">What is in this build.</h2>
+        </div>
+
+        <div class="feature-grid">
+          <article>
+            <span class="feature-index">v0.1</span>
+            <h3>Direct DMG release</h3>
+            <p>The website points to a real GitHub release asset named ipop-ai-beta.dmg.</p>
+          </article>
+          <article>
+            <span class="feature-index">Voice</span>
+            <h3>Push-to-talk Mac control</h3>
+            <p>Hold Control + Option, speak, then release to send the request.</p>
+          </article>
+          <article>
+            <span class="feature-index">Agents</span>
+            <h3>Parallel sessions in progress</h3>
+            <p>The beta includes background agent work, with reliability still being hardened.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section faq-section" id="faq" aria-labelledby="faq-title">
+        <div class="section-heading">
+          <p class="eyebrow">FAQ</p>
+          <h2 id="faq-title">Questions before you install.</h2>
+        </div>
+
+        <div class="faq-grid">
+          <article>
+            <h3>What does it run on?</h3>
+            <p>Current beta target: Apple Silicon Mac with macOS 14 or newer.</p>
+          </article>
+          <article>
+            <h3>What permissions are required?</h3>
+            <p>Microphone for dictation, Accessibility for Mac control, and Screen Recording for screen-aware requests.</p>
+          </article>
+          <article>
+            <h3>Do I need my own AI keys?</h3>
+            <p>For the beta, yes. Provider setup is local to your Mac. Hosted plans will come later.</p>
+          </article>
+          <article>
+            <h3>Is it signed and notarized?</h3>
+            <p>The beta may trigger a macOS Gatekeeper warning. If that happens, right-click the app and choose Open once.</p>
+          </article>
+          <article>
+            <h3>Does the website collect my email?</h3>
+            <p>No. The download button is direct. If you email hello@ipop.ai, that message is handled as support mail.</p>
+          </article>
+          <article>
+            <h3>Can it run multiple agents?</h3>
+            <p>That is part of the beta goal. Background sessions are being hardened quickly, so expect sharp edges.</p>
           </article>
         </div>
       </section>
@@ -201,12 +357,18 @@
       <section class="download-section" id="download" aria-labelledby="download-title">
         <p class="eyebrow">Download</p>
         <h2 id="download-title">Install ipop.ai on your Mac.</h2>
-        <p>The button downloads the current beta DMG directly from GitHub Releases.</p>
+        <p>
+          Downloads the current beta DMG from GitHub Releases. Opens GitHub's download flow.
+          If macOS blocks the first launch, right-click the app and choose Open.
+        </p>
         <a
           class="download-button"
           href="https://github.com/gagan114662/ipop-ai/releases/latest/download/ipop-ai-beta.dmg"
           data-download-link
-        >Download DMG</a>
+        >Download beta DMG</a>
+        <noscript>
+          <p class="noscript-note">JavaScript is not required. Use the Download beta DMG link above.</p>
+        </noscript>
       </section>
     </main>
 
@@ -214,6 +376,7 @@
       <span>ipop.ai</span>
       <span class="footer-links">
         <a href="privacy.html">privacy</a>
+        <a href="terms.html">terms</a>
         <a href="mailto:hello@ipop.ai">hello@ipop.ai</a>
       </span>
     </footer>
