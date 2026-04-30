@@ -1,9 +1,9 @@
 (() => {
-  const form = document.querySelector(".signup");
+  const downloadURL = "https://github.com/gagan114662/ipop-ai/releases/latest/download/ipop-ai-beta.dmg";
+  const form = document.querySelector(".download-form");
   const input = document.querySelector("#email");
-  const downloadButton = document.querySelector(".download-button");
-  const video = document.querySelector(".hero-video video");
-  const contactEmail = "hello@ipop.ai";
+  const downloadLinks = document.querySelectorAll("[data-download-link]");
+  const video = document.querySelector(".video-shell video");
   const analyticsEndpoint = window.IPOP_ANALYTICS_ENDPOINT || "";
 
   const track = (name, properties = {}) => {
@@ -21,7 +21,6 @@
     }
 
     const body = JSON.stringify(payload);
-
     if (navigator.sendBeacon) {
       navigator.sendBeacon(analyticsEndpoint, new Blob([body], { type: "application/json" }));
       return;
@@ -35,38 +34,22 @@
     }).catch(() => {});
   };
 
-  const buildMailto = (email = "") => {
-    const subject = encodeURIComponent("ipop.ai download request");
-    const body = encodeURIComponent(
-      [
-        "Hey ipop.ai team,",
-        "",
-        "Please send me the latest Mac download.",
-        email ? `My email is ${email}.` : "",
-      ]
-        .filter(Boolean)
-        .join("\n")
-    );
-    return `mailto:${contactEmail}?subject=${subject}&body=${body}`;
-  };
-
-  const markIntent = () => {
+  const startDownload = (email = "") => {
+    if (email) {
+      localStorage.setItem("ipop_beta_email", email);
+    }
     document.documentElement.dataset.intent = "download";
-    track("download_intent", {
-      hasEmail: Boolean(input?.value?.trim()),
-    });
+    track("download_dmg", { hasEmail: Boolean(email) });
+    window.location.href = downloadURL;
   };
 
-  track("page_view", {
-    referrer: document.referrer || "",
-  });
+  track("page_view", { referrer: document.referrer || "" });
 
   if (video && "IntersectionObserver" in window) {
     const observer = new IntersectionObserver(
       (entries) => {
-        const visible = entries.some((entry) => entry.isIntersecting);
-        if (visible) {
-          track("video_visible");
+        if (entries.some((entry) => entry.isIntersecting)) {
+          track("demo_video_visible");
           observer.disconnect();
         }
       },
@@ -77,22 +60,27 @@
 
   form?.addEventListener("submit", (event) => {
     event.preventDefault();
-    markIntent();
-    const value = input?.value?.trim();
-    if (value) {
-      form.dataset.state = "saved";
-      form.querySelector("button").textContent = "saved";
+    const email = input?.value?.trim() || "";
+    const button = form.querySelector("button");
+    if (button) {
+      button.textContent = "Downloading...";
+      button.disabled = true;
     }
-    track("email_submit", { hasEmail: Boolean(value) });
-    window.location.href = buildMailto(value);
+    startDownload(email);
+    window.setTimeout(() => {
+      if (button) {
+        button.textContent = "Download DMG";
+        button.disabled = false;
+      }
+    }, 1800);
   });
 
-  downloadButton?.addEventListener("click", (event) => {
-    event.preventDefault();
-    markIntent();
-    track("download_button_click", {
-      hasEmail: Boolean(input?.value?.trim()),
+  downloadLinks.forEach((link) => {
+    link.setAttribute("href", downloadURL);
+    link.addEventListener("click", () => {
+      track("download_link_click", {
+        hasEmail: Boolean(input?.value?.trim()),
+      });
     });
-    window.location.href = buildMailto(input?.value?.trim());
   });
 })();
