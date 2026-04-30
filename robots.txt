@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://gagan114662.github.io/ipop-ai/sitemap.xml
+Sitemap: https://ipop.ai/sitemap.xml
