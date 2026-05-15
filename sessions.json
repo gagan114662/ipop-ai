@@ -1,0 +1,767 @@
+{
+  "generated_at": "2026-05-15T20:11:57.561Z",
+  "source": "Public web requirements: GitHub issues, RemoteOK jobs, and Hacker News job listings",
+  "sessions": [
+    {
+      "id": "github-55-bawes-universe-studenthub",
+      "name": "github-1",
+      "title": "🔐 AWS S3 Security Remediation & Civil ID Upload Fix — IAM Key Rotation, Bucket Hardening & Backend Patches",
+      "status": "ready_for_worker",
+      "kind": "public_requirement_session",
+      "source": "GitHub public issue",
+      "source_url": "https://github.com/BAWES-Universe/studenthub/issues/55",
+      "contact_route": "Comment on the public issue or follow the repository's contribution instructions.",
+      "requirement": "# AWS S3 Security Remediation & Civil ID Upload Fix > **⚠️ Sensitive handling note** > This issue intentionally uses IAM user names and key suffixes only. Do **not** paste full access keys, secret keys, bearer tokens, or private candidate data into comments on",
+      "estimated_budget": "unknown",
+      "proof_milestone": "Create a sample cleaned dataset/schema and validation report using only allowed public or client-provided data.",
+      "stripe_url": "https://buy.stripe.com/eVq9AUfbN0Q72HpaF21kA07",
+      "events": [
+        {
+          "actor": "Scout",
+          "text": "Imported real public requirement from GitHub: https://github.com/BAWES-Universe/studenthub/issues/55"
+        },
+        {
+          "actor": "Planner",
+          "text": "Create a sample cleaned dataset/schema and validation report using only allowed public or client-provided data."
+        },
+        {
+          "actor": "Closer",
+          "text": "Use the $19 trial for discovery/proof unless the requirement maps cleanly to a fixed package."
+        }
+      ]
+    },
+    {
+      "id": "github-12-zwiserfit-zwiserfit-ai-store-manager",
+      "name": "github-2",
+      "title": "[Global Call] Multi-Bot Identity in WeChat Enterprise Group: Independent Agent Avatars for Shuyu & Momo",
+      "status": "ready_for_worker",
+      "kind": "public_requirement_session",
+      "source": "GitHub public issue",
+      "source_url": "https://github.com/ZWISERFIT/zwiserfit-ai-store-manager/issues/12",
+      "contact_route": "Comment on the public issue or follow the repository's contribution instructions.",
+      "requirement": "## [Global Call for Developers] WeChat Enterprise: Multi-Bot Independent Identity & Real-Time Group Interaction > **Bounty:** Architecture consulting + named credit in ZWISERFIT angel-round tech stack > **Priority:** 🔴 P0 — blocks visible AI agent interaction",
+      "estimated_budget": "unknown",
+      "proof_milestone": "Summarize requirement, define acceptance checks, produce a small proof artifact before quoting full delivery.",
+      "stripe_url": "https://buy.stripe.com/eVq9AUfbN0Q72HpaF21kA07",
+      "events": [
+        {
+          "actor": "Scout",
+          "text": "Imported real public requirement from GitHub: https://github.com/ZWISERFIT/zwiserfit-ai-store-manager/issues/12"
+        },
+        {
+          "actor": "Planner",
+          "text": "Summarize requirement, define acceptance checks, produce a small proof artifact before quoting full delivery."
+        },
+        {
+          "actor": "Closer",
+          "text": "Use the $19 trial for discovery/proof unless the requirement maps cleanly to a fixed package."
+        }
+      ]
+    },
+    {
+      "id": "github-90807-expensify-app",
+      "name": "github-3",
+      "title": "[$250] Distance - After deleting a distance rate, the error appears only when opening the expense",
+      "status": "ready_for_worker",
+      "kind": "public_requirement_session",
+      "source": "GitHub public issue",
+      "source_url": "https://github.com/Expensify/App/issues/90807",
+      "contact_route": "Comment on the public issue or follow the repository's contribution instructions.",
+      "requirement": "If you haven’t already, check out our [contributing guidelines](https://github.com/Expensify/ReactNativeChat/blob/main/contributingGuides/CONTRIBUTING.md) for onboarding and email contributors@expensify.com to request to join our Slack channel! ___ **Version N",
+      "estimated_budget": "unknown",
+      "proof_milestone": "Summarize requirement, define acceptance checks, produce a small proof artifact before quoting full delivery.",
+      "stripe_url": "https://buy.stripe.com/eVq9AUfbN0Q72HpaF21kA07",
+      "events": [
+        {
+          "actor": "Scout",
+          "text": "Imported real public requirement from GitHub: https://github.com/Expensify/App/issues/90807"
+        },
+        {
+          "actor": "Planner",
+          "text": "Summarize requirement, define acceptance checks, produce a small proof artifact before quoting full delivery."
+        },
+        {
+          "actor": "Closer",
+          "text": "Use the $19 trial for discovery/proof unless the requirement maps cleanly to a fixed package."
+        }
+      ]
+    },
+    {
+      "id": "github-34-alexhass-syr-connect",
+      "name": "github-4",
+      "title": "Safe-T: setALA reset button fails with \"No reset required\" even when alarm is active",
+      "status": "ready_for_worker",
+      "kind": "public_requirement_session",
+      "source": "GitHub public issue",
+      "source_url": "https://github.com/alexhass/syr_connect/issues/34",
+      "contact_route": "Comment on the public issue or follow the repository's contribution instructions.",
+      "requirement": "Gerät: SYR SafeTech Connect, Seriennummer A5AR0003 Verhalten: Während ein aktiver Alarm vorlag (Wasserleitung abgesperrt), wurde button.syr_connect_a5ar0003_setala gedrückt. HomeAssistant loggte No reset required for getALA on A5AR0003 – der Reset schlug fehl.",
+      "estimated_budget": "unknown",
+      "proof_milestone": "Summarize requirement, define acceptance checks, produce a small proof artifact before quoting full delivery.",
+      "stripe_url": "https://buy.stripe.com/eVq9AUfbN0Q72HpaF21kA07",
+      "events": [
+        {
+          "actor": "Scout",
+          "text": "Imported real public requirement from GitHub: https://github.com/alexhass/syr_connect/issues/34"
+        },
+        {
+          "actor": "Planner",
+          "text": "Summarize requirement, define acceptance checks, produce a small proof artifact before quoting full delivery."
+        },
+        {
+          "actor": "Closer",
+          "text": "Use the $19 trial for discovery/proof unless the requirement maps cleanly to a fixed package."
+        }
+      ]
+    },
+    {
+      "id": "github-13941-kubestellar-console",
+      "name": "github-5",
+      "title": "🐛 Frontend bare JSON.parse in remaining hooks — post-PR #13929",
+      "status": "ready_for_worker",
+      "kind": "public_requirement_session",
+      "source": "GitHub public issue",
+      "source_url": "https://github.com/kubestellar/console/issues/13941",
+      "contact_route": "Comment on the public issue or follow the repository's contribution instructions.",
+      "requirement": "## Summary PR #13929 fixed bare `JSON.parse` in three high-traffic hooks (useStellar, useTokenUsage, useStackDiscovery). However, ~100+ other `JSON.parse` calls remain unprotected in other hooks: Top affected files: - useKyverno.ts (4 instances) - useCertManag",
+      "estimated_budget": "unknown",
+      "proof_milestone": "Summarize requirement, define acceptance checks, produce a small proof artifact before quoting full delivery.",
+      "stripe_url": "https://buy.stripe.com/eVq9AUfbN0Q72HpaF21kA07",
+      "events": [
+        {
+          "actor": "Scout",
+          "text": "Imported real public requirement from GitHub: https://github.com/kubestellar/console/issues/13941"
+        },
+        {
+          "actor": "Planner",
+          "text": "Summarize requirement, define acceptance checks, produce a small proof artifact before quoting full delivery."
+        },
+        {
+          "actor": "Closer",
+          "text": "Use the $19 trial for discovery/proof unless the requirement maps cleanly to a fixed package."
+        }
+      ]
+    },
+    {
+      "id": "github-13940-kubestellar-console",
+      "name": "github-6",
+      "title": "🐛 Incomplete JSON injection fix in stellar solver — TriggerData still built with fmt.Sprintf",
+      "status": "ready_for_worker",
+      "kind": "public_requirement_session",
+      "source": "GitHub public issue",
+      "source_url": "https://github.com/kubestellar/console/issues/13940",
+      "contact_route": "Comment on the public issue or follow the repository's contribution instructions.",
+      "requirement": "## Summary PR #13938 fixed JSON injection in stellar handlers by using `json.Marshal` before storing TriggerData. However, the fix is **incomplete**: ```go // FIXED (handler side) pkg/api/handlers/stellar.go:854-859, 973-978, 3186-3191 jsonBytes, _ := json.Mar",
+      "estimated_budget": "unknown",
+      "proof_milestone": "Create a sample cleaned dataset/schema and validation report using only allowed public or client-provided data.",
+      "stripe_url": "https://buy.stripe.com/eVq9AUfbN0Q72HpaF21kA07",
+      "events": [
+        {
+          "actor": "Scout",
+          "text": "Imported real public requirement from GitHub: https://github.com/kubestellar/console/issues/13940"
+        },
+        {
+          "actor": "Planner",
+          "text": "Create a sample cleaned dataset/schema and validation report using only allowed public or client-provided data."
+        },
+        {
+          "actor": "Closer",
+          "text": "Use the $19 trial for discovery/proof unless the requirement maps cleanly to a fixed package."
+        }
+      ]
+    },
+    {
+      "id": "github-59-bawes-universe-plugn",
+      "name": "github-7",
+      "title": "Need assistance with getting project running again",
+      "status": "ready_for_worker",
+      "kind": "public_requirement_session",
+      "source": "GitHub public issue",
+      "source_url": "https://github.com/BAWES-Universe/plugn/issues/59",
+      "contact_route": "Comment on the public issue or follow the repository's contribution instructions.",
+      "requirement": "Get the servers running and optimized for scale and marketing. It had approx 10k registered stores.",
+      "estimated_budget": "unknown",
+      "proof_milestone": "Summarize requirement, define acceptance checks, produce a small proof artifact before quoting full delivery.",
+      "stripe_url": "https://buy.stripe.com/eVq9AUfbN0Q72HpaF21kA07",
+      "events": [
+        {
+          "actor": "Scout",
+          "text": "Imported real public requirement from GitHub: https://github.com/BAWES-Universe/plugn/issues/59"
+        },
+        {
+          "actor": "Planner",
+          "text": "Summarize requirement, define acceptance checks, produce a small proof artifact before quoting full delivery."
+        },
+        {
+          "actor": "Closer",
+          "text": "Use the $19 trial for discovery/proof unless the requirement maps cleanly to a fixed package."
+        }
+      ]
+    },
+    {
+      "id": "github-92-komalharshita-devpath",
+      "name": "github-8",
+      "title": "Add at least two `Advanced` level projects — no advanced projects exist in the dataset",
+      "status": "ready_for_worker",
+      "kind": "public_requirement_session",
+      "source": "GitHub public issue",
+      "source_url": "https://github.com/komalharshita/DevPath/issues/92",
+      "contact_route": "Comment on the public issue or follow the repository's contribution instructions.",
+      "requirement": "**Problem:** The experience level dropdown includes \"Advanced\" as an option, but `data/projects.json` contains zero projects with `\"level\": \"Advanced\"`. A user who selects \"Advanced\" receives beginner and intermediate projects ranked by other criteria. This mi",
+      "estimated_budget": "unknown",
+      "proof_milestone": "Create a sample cleaned dataset/schema and validation report using only allowed public or client-provided data.",
+      "stripe_url": "https://buy.stripe.com/eVq9AUfbN0Q72HpaF21kA07",
+      "events": [
+        {
+          "actor": "Scout",
+          "text": "Imported real public requirement from GitHub: https://github.com/komalharshita/DevPath/issues/92"
+        },
+        {
+          "actor": "Planner",
+          "text": "Create a sample cleaned dataset/schema and validation report using only allowed public or client-provided data."
+        },
+        {
+          "actor": "Closer",
+          "text": "Use the $19 trial for discovery/proof unless the requirement maps cleanly to a fixed package."
+        }
+      ]
+    },
+    {
+      "id": "github-25689-google-gemini-gemini-cli",
+      "name": "github-9",
+      "title": "Bug: 'text.response' in custom theme triggers validation error (unrecognized key)",
+      "status": "ready_for_worker",
+      "kind": "public_requirement_session",
+      "source": "GitHub public issue",
+      "source_url": "https://github.com/google-gemini/gemini-cli/issues/25689",
+      "contact_route": "Comment on the public issue or follow the repository's contribution instructions.",
+      "requirement": "### Description The `text.response` key in a custom theme configuration triggers a validation error: `Invalid configuration... Unrecognized key(s) in object: 'response'`. ### Expected Behavior The `response` key should be recognized as a valid property of the ",
+      "estimated_budget": "unknown",
+      "proof_milestone": "Summarize requirement, define acceptance checks, produce a small proof artifact before quoting full delivery.",
+      "stripe_url": "https://buy.stripe.com/eVq9AUfbN0Q72HpaF21kA07",
+      "events": [
+        {
+          "actor": "Scout",
+          "text": "Imported real public requirement from GitHub: https://github.com/google-gemini/gemini-cli/issues/25689"
+        },
+        {
+          "actor": "Planner",
+          "text": "Summarize requirement, define acceptance checks, produce a small proof artifact before quoting full delivery."
+        },
+        {
+          "actor": "Closer",
+          "text": "Use the $19 trial for discovery/proof unless the requirement maps cleanly to a fixed package."
+        }
+      ]
+    },
+    {
+      "id": "github-90779-expensify-app",
+      "name": "github-10",
+      "title": "[$250] Travel - Cursor position is in the end for Monthly spend limit per member field",
+      "status": "ready_for_worker",
+      "kind": "public_requirement_session",
+      "source": "GitHub public issue",
+      "source_url": "https://github.com/Expensify/App/issues/90779",
+      "contact_route": "Comment on the public issue or follow the repository's contribution instructions.",
+      "requirement": "If you haven’t already, check out our [contributing guidelines](https://github.com/Expensify/ReactNativeChat/blob/main/contributingGuides/CONTRIBUTING.md) for onboarding and email contributors@expensify.com to request to join our Slack channel! ___ **Version N",
+      "estimated_budget": "unknown",
+      "proof_milestone": "Summarize requirement, define acceptance checks, produce a small proof artifact before quoting full delivery.",
+      "stripe_url": "https://buy.stripe.com/eVq9AUfbN0Q72HpaF21kA07",
+      "events": [
+        {
+          "actor": "Scout",
+          "text": "Imported real public requirement from GitHub: https://github.com/Expensify/App/issues/90779"
+        },
+        {
+          "actor": "Planner",
+          "text": "Summarize requirement, define acceptance checks, produce a small proof artifact before quoting full delivery."
+        },
+        {
+          "actor": "Closer",
+          "text": "Use the $19 trial for discovery/proof unless the requirement maps cleanly to a fixed package."
+        }
+      ]
+    },
+    {
+      "id": "remoteok-1131596-application-support-engineer",
+      "name": "remoteok-1",
+      "title": "Application Support Engineer",
+      "status": "ready_for_worker",
+      "kind": "public_job_session",
+      "source": "RemoteOK public job",
+      "source_url": "https://remoteOK.com/remote-jobs/remote-application-support-engineer-cresta-1131596",
+      "contact_route": "Use the job listing's official apply/contact route.",
+      "requirement": "Cresta is on a mission to turn every customer conversation into a competitive advantage by unlocking the true potential of the contact center. Our platform combines the best of AI and human intelligence to help contact centers discover customer insights and behavioral best practi",
+      "estimated_budget": "unknown",
+      "proof_milestone": "Summarize requirement, define acceptance checks, produce a small proof artifact before quoting full delivery.",
+      "stripe_url": "https://buy.stripe.com/eVq9AUfbN0Q72HpaF21kA07",
+      "events": [
+        {
+          "actor": "Scout",
+          "text": "Imported real public job from RemoteOK: https://remoteOK.com/remote-jobs/remote-application-support-engineer-cresta-1131596"
+        },
+        {
+          "actor": "Planner",
+          "text": "Summarize requirement, define acceptance checks, produce a small proof artifact before quoting full delivery."
+        },
+        {
+          "actor": "Closer",
+          "text": "Do not do custom delivery before payment; sell a proof sprint or fixed package first."
+        }
+      ]
+    },
+    {
+      "id": "remoteok-1131595-software-engineer",
+      "name": "remoteok-2",
+      "title": "Software Engineer",
+      "status": "ready_for_worker",
+      "kind": "public_job_session",
+      "source": "RemoteOK public job",
+      "source_url": "https://remoteOK.com/remote-jobs/remote-software-engineer-obsidian-security-1131595",
+      "contact_route": "Use the job listing's official apply/contact route.",
+      "requirement": "Founded in 2017, Obsidian Security was created to close a critical gap: securing the SaaS applications where modern business happensâplatforms like Microsoft 365, Salesforce, and hundreds more. Backed by top investors including Greylock, Norwest Venture Partners, and IVP, weâ",
+      "estimated_budget": "unknown",
+      "proof_milestone": "Summarize requirement, define acceptance checks, produce a small proof artifact before quoting full delivery.",
+      "stripe_url": "https://buy.stripe.com/eVq9AUfbN0Q72HpaF21kA07",
+      "events": [
+        {
+          "actor": "Scout",
+          "text": "Imported real public job from RemoteOK: https://remoteOK.com/remote-jobs/remote-software-engineer-obsidian-security-1131595"
+        },
+        {
+          "actor": "Planner",
+          "text": "Summarize requirement, define acceptance checks, produce a small proof artifact before quoting full delivery."
+        },
+        {
+          "actor": "Closer",
+          "text": "Do not do custom delivery before payment; sell a proof sprint or fixed package first."
+        }
+      ]
+    },
+    {
+      "id": "remoteok-1131594-devrel-content-creator",
+      "name": "remoteok-3",
+      "title": "DevRel Content Creator",
+      "status": "ready_for_worker",
+      "kind": "public_job_session",
+      "source": "RemoteOK public job",
+      "source_url": "https://remoteOK.com/remote-jobs/remote-devrel-content-creator-superplane-1131594",
+      "contact_route": "Use the job listing's official apply/contact route.",
+      "requirement": "About SuperPlane SuperPlane is an open source control plane where AI agents and engineers run operations together. We're a team of 10, founded by the creators of Semaphore CI/CD. Our users are DevOps and platform engineers at mid-size to large engineering orgs. We have a product ",
+      "estimated_budget": "$70,000-$150,000",
+      "proof_milestone": "Summarize requirement, define acceptance checks, produce a small proof artifact before quoting full delivery.",
+      "stripe_url": "https://buy.stripe.com/eVq9AUfbN0Q72HpaF21kA07",
+      "events": [
+        {
+          "actor": "Scout",
+          "text": "Imported real public job from RemoteOK: https://remoteOK.com/remote-jobs/remote-devrel-content-creator-superplane-1131594"
+        },
+        {
+          "actor": "Planner",
+          "text": "Summarize requirement, define acceptance checks, produce a small proof artifact before quoting full delivery."
+        },
+        {
+          "actor": "Closer",
+          "text": "Do not do custom delivery before payment; sell a proof sprint or fixed package first."
+        }
+      ]
+    },
+    {
+      "id": "remoteok-1131593-senior-golang-developer",
+      "name": "remoteok-4",
+      "title": "Senior Golang Developer",
+      "status": "ready_for_worker",
+      "kind": "public_job_session",
+      "source": "RemoteOK public job",
+      "source_url": "https://remoteOK.com/remote-jobs/remote-senior-golang-developer-tre-altamira-srl-1131593",
+      "contact_route": "Use the job listing's official apply/contact route.",
+      "requirement": "Remote - About Us TRE ALTAMIRA, part of the CLS Group, is the global leader in satellite radar data processing. We are a multidisciplinary team with leading-edge knowledge of SAR and InSAR applications. Our patented radar imagery processing algorithms provide displacement mea... ",
+      "estimated_budget": "unknown",
+      "proof_milestone": "Create a sample cleaned dataset/schema and validation report using only allowed public or client-provided data.",
+      "stripe_url": "https://buy.stripe.com/eVq9AUfbN0Q72HpaF21kA07",
+      "events": [
+        {
+          "actor": "Scout",
+          "text": "Imported real public job from RemoteOK: https://remoteOK.com/remote-jobs/remote-senior-golang-developer-tre-altamira-srl-1131593"
+        },
+        {
+          "actor": "Planner",
+          "text": "Create a sample cleaned dataset/schema and validation report using only allowed public or client-provided data."
+        },
+        {
+          "actor": "Closer",
+          "text": "Do not do custom delivery before payment; sell a proof sprint or fixed package first."
+        }
+      ]
+    },
+    {
+      "id": "remoteok-1131592-software-engineer",
+      "name": "remoteok-5",
+      "title": "Software engineer",
+      "status": "ready_for_worker",
+      "kind": "public_job_session",
+      "source": "RemoteOK public job",
+      "source_url": "https://remoteOK.com/remote-jobs/remote-software-engineer-sticker-mule-1131592",
+      "contact_route": "Use the job listing's official apply/contact route.",
+      "requirement": "Sticker Mule is building the Internet's most lucrative commerce platform by combining software, manufacturing, and AI into one fully integrated stack. No print company, or pure software company for that matter, can match what we're doing. We're privately owned, profitable, and do",
+      "estimated_budget": "$150,000-$250,000",
+      "proof_milestone": "Summarize requirement, define acceptance checks, produce a small proof artifact before quoting full delivery.",
+      "stripe_url": "https://buy.stripe.com/eVq9AUfbN0Q72HpaF21kA07",
+      "events": [
+        {
+          "actor": "Scout",
+          "text": "Imported real public job from RemoteOK: https://remoteOK.com/remote-jobs/remote-software-engineer-sticker-mule-1131592"
+        },
+        {
+          "actor": "Planner",
+          "text": "Summarize requirement, define acceptance checks, produce a small proof artifact before quoting full delivery."
+        },
+        {
+          "actor": "Closer",
+          "text": "Do not do custom delivery before payment; sell a proof sprint or fixed package first."
+        }
+      ]
+    },
+    {
+      "id": "remoteok-1131591-it-support-technician",
+      "name": "remoteok-6",
+      "title": "IT Support Technician",
+      "status": "ready_for_worker",
+      "kind": "public_job_session",
+      "source": "RemoteOK public job",
+      "source_url": "https://remoteOK.com/remote-jobs/remote-it-support-technician-avalere-health-1131591",
+      "contact_route": "Use the job listing's official apply/contact route.",
+      "requirement": "About Avalere Health United by one profound purpose: to reach EVERY PATIENT POSSIBLE . At Avalere Health, we ensure every patient is identified, treated, supported, and cared for. Equally. Our Advisory, Medical, and Marketing teams come together â powerfully and intentionally â",
+      "estimated_budget": "unknown",
+      "proof_milestone": "Summarize requirement, define acceptance checks, produce a small proof artifact before quoting full delivery.",
+      "stripe_url": "https://buy.stripe.com/eVq9AUfbN0Q72HpaF21kA07",
+      "events": [
+        {
+          "actor": "Scout",
+          "text": "Imported real public job from RemoteOK: https://remoteOK.com/remote-jobs/remote-it-support-technician-avalere-health-1131591"
+        },
+        {
+          "actor": "Planner",
+          "text": "Summarize requirement, define acceptance checks, produce a small proof artifact before quoting full delivery."
+        },
+        {
+          "actor": "Closer",
+          "text": "Do not do custom delivery before payment; sell a proof sprint or fixed package first."
+        }
+      ]
+    },
+    {
+      "id": "remoteok-1131590-account-supervisor",
+      "name": "remoteok-7",
+      "title": "Account Supervisor",
+      "status": "ready_for_worker",
+      "kind": "public_job_session",
+      "source": "RemoteOK public job",
+      "source_url": "https://remoteOK.com/remote-jobs/remote-account-supervisor-avalere-health-1131590",
+      "contact_route": "Use the job listing's official apply/contact route.",
+      "requirement": "About Avalere Health United by one profound purpose: to reach EVERY PATIENT POSSIBLE . At Avalere Health, we ensure every patient is identified, treated, supported, and cared for. Equally. Our Advisory, Medical, and Marketing teams come together â powerfully and intentionally â",
+      "estimated_budget": "unknown",
+      "proof_milestone": "Summarize requirement, define acceptance checks, produce a small proof artifact before quoting full delivery.",
+      "stripe_url": "https://buy.stripe.com/eVq9AUfbN0Q72HpaF21kA07",
+      "events": [
+        {
+          "actor": "Scout",
+          "text": "Imported real public job from RemoteOK: https://remoteOK.com/remote-jobs/remote-account-supervisor-avalere-health-1131590"
+        },
+        {
+          "actor": "Planner",
+          "text": "Summarize requirement, define acceptance checks, produce a small proof artifact before quoting full delivery."
+        },
+        {
+          "actor": "Closer",
+          "text": "Do not do custom delivery before payment; sell a proof sprint or fixed package first."
+        }
+      ]
+    },
+    {
+      "id": "remoteok-1131589-product-manager",
+      "name": "remoteok-8",
+      "title": "Product Manager",
+      "status": "ready_for_worker",
+      "kind": "public_job_session",
+      "source": "RemoteOK public job",
+      "source_url": "https://remoteOK.com/remote-jobs/remote-product-manager-cosuno-1131589",
+      "contact_route": "Use the job listing's official apply/contact route.",
+      "requirement": "Your Mission With the power of AI, we're set to revolutionize the way subcontractors find, evaluate, and bid on projects. As the second PM on the subcontractor side, you'll actively shape this product vision â in a small team with big leverage and direct impact on a product use",
+      "estimated_budget": "unknown",
+      "proof_milestone": "Summarize requirement, define acceptance checks, produce a small proof artifact before quoting full delivery.",
+      "stripe_url": "https://buy.stripe.com/eVq9AUfbN0Q72HpaF21kA07",
+      "events": [
+        {
+          "actor": "Scout",
+          "text": "Imported real public job from RemoteOK: https://remoteOK.com/remote-jobs/remote-product-manager-cosuno-1131589"
+        },
+        {
+          "actor": "Planner",
+          "text": "Summarize requirement, define acceptance checks, produce a small proof artifact before quoting full delivery."
+        },
+        {
+          "actor": "Closer",
+          "text": "Do not do custom delivery before payment; sell a proof sprint or fixed package first."
+        }
+      ]
+    },
+    {
+      "id": "remoteok-1131588-staff-engineer-platform-engineering",
+      "name": "remoteok-9",
+      "title": "Staff Engineer Platform Engineering",
+      "status": "ready_for_worker",
+      "kind": "public_job_session",
+      "source": "RemoteOK public job",
+      "source_url": "https://remoteOK.com/remote-jobs/remote-staff-engineer-platform-engineering-highlevel-1131588",
+      "contact_route": "Use the job listing's official apply/contact route.",
+      "requirement": "About HighLevel: HighLevel is an AI-powered business operating system that gives agencies, entrepreneurs and SMBs the infrastructure to build, automate and scale. Today, HighLevel supports SMBs across 150+ countries, fueling community-driven growth rooted in real customer outcome",
+      "estimated_budget": "unknown",
+      "proof_milestone": "Summarize requirement, define acceptance checks, produce a small proof artifact before quoting full delivery.",
+      "stripe_url": "https://buy.stripe.com/eVq9AUfbN0Q72HpaF21kA07",
+      "events": [
+        {
+          "actor": "Scout",
+          "text": "Imported real public job from RemoteOK: https://remoteOK.com/remote-jobs/remote-staff-engineer-platform-engineering-highlevel-1131588"
+        },
+        {
+          "actor": "Planner",
+          "text": "Summarize requirement, define acceptance checks, produce a small proof artifact before quoting full delivery."
+        },
+        {
+          "actor": "Closer",
+          "text": "Do not do custom delivery before payment; sell a proof sprint or fixed package first."
+        }
+      ]
+    },
+    {
+      "id": "remoteok-1131587-business-analyst",
+      "name": "remoteok-10",
+      "title": "Business Analyst",
+      "status": "ready_for_worker",
+      "kind": "public_job_session",
+      "source": "RemoteOK public job",
+      "source_url": "https://remoteOK.com/remote-jobs/remote-business-analyst-judi-health-1131587",
+      "contact_route": "Use the job listing's official apply/contact route.",
+      "requirement": "About Judi Health Judi Health is an enterprise health technology company providing a comprehensive suite of solutions for employers and health plans, including: Capital Rx, a public benefit corporation delivering full-service pharmacy benefit management (PBM) solutions to self-in",
+      "estimated_budget": "unknown",
+      "proof_milestone": "Summarize requirement, define acceptance checks, produce a small proof artifact before quoting full delivery.",
+      "stripe_url": "https://buy.stripe.com/eVq9AUfbN0Q72HpaF21kA07",
+      "events": [
+        {
+          "actor": "Scout",
+          "text": "Imported real public job from RemoteOK: https://remoteOK.com/remote-jobs/remote-business-analyst-judi-health-1131587"
+        },
+        {
+          "actor": "Planner",
+          "text": "Summarize requirement, define acceptance checks, produce a small proof artifact before quoting full delivery."
+        },
+        {
+          "actor": "Closer",
+          "text": "Do not do custom delivery before payment; sell a proof sprint or fixed package first."
+        }
+      ]
+    }
+  ],
+  "jobs": [
+    {
+      "id": "job-github-55-bawes-universe-studenthub",
+      "title": "🔐 AWS S3 Security Remediation & Civil ID Upload Fix — IAM Key Rotation, Bucket Hardening & Backend Patches",
+      "status": "ready_for_worker",
+      "owner": "github-55-bawes-universe-studenthub",
+      "source_url": "https://github.com/BAWES-Universe/studenthub/issues/55"
+    },
+    {
+      "id": "job-github-12-zwiserfit-zwiserfit-ai-store-manager",
+      "title": "[Global Call] Multi-Bot Identity in WeChat Enterprise Group: Independent Agent Avatars for Shuyu & Momo",
+      "status": "ready_for_worker",
+      "owner": "github-12-zwiserfit-zwiserfit-ai-store-manager",
+      "source_url": "https://github.com/ZWISERFIT/zwiserfit-ai-store-manager/issues/12"
+    },
+    {
+      "id": "job-github-90807-expensify-app",
+      "title": "[$250] Distance - After deleting a distance rate, the error appears only when opening the expense",
+      "status": "ready_for_worker",
+      "owner": "github-90807-expensify-app",
+      "source_url": "https://github.com/Expensify/App/issues/90807"
+    },
+    {
+      "id": "job-github-34-alexhass-syr-connect",
+      "title": "Safe-T: setALA reset button fails with \"No reset required\" even when alarm is active",
+      "status": "ready_for_worker",
+      "owner": "github-34-alexhass-syr-connect",
+      "source_url": "https://github.com/alexhass/syr_connect/issues/34"
+    },
+    {
+      "id": "job-github-13941-kubestellar-console",
+      "title": "🐛 Frontend bare JSON.parse in remaining hooks — post-PR #13929",
+      "status": "ready_for_worker",
+      "owner": "github-13941-kubestellar-console",
+      "source_url": "https://github.com/kubestellar/console/issues/13941"
+    },
+    {
+      "id": "job-github-13940-kubestellar-console",
+      "title": "🐛 Incomplete JSON injection fix in stellar solver — TriggerData still built with fmt.Sprintf",
+      "status": "ready_for_worker",
+      "owner": "github-13940-kubestellar-console",
+      "source_url": "https://github.com/kubestellar/console/issues/13940"
+    },
+    {
+      "id": "job-github-59-bawes-universe-plugn",
+      "title": "Need assistance with getting project running again",
+      "status": "ready_for_worker",
+      "owner": "github-59-bawes-universe-plugn",
+      "source_url": "https://github.com/BAWES-Universe/plugn/issues/59"
+    },
+    {
+      "id": "job-github-92-komalharshita-devpath",
+      "title": "Add at least two `Advanced` level projects — no advanced projects exist in the dataset",
+      "status": "ready_for_worker",
+      "owner": "github-92-komalharshita-devpath",
+      "source_url": "https://github.com/komalharshita/DevPath/issues/92"
+    },
+    {
+      "id": "job-github-25689-google-gemini-gemini-cli",
+      "title": "Bug: 'text.response' in custom theme triggers validation error (unrecognized key)",
+      "status": "ready_for_worker",
+      "owner": "github-25689-google-gemini-gemini-cli",
+      "source_url": "https://github.com/google-gemini/gemini-cli/issues/25689"
+    },
+    {
+      "id": "job-github-90779-expensify-app",
+      "title": "[$250] Travel - Cursor position is in the end for Monthly spend limit per member field",
+      "status": "ready_for_worker",
+      "owner": "github-90779-expensify-app",
+      "source_url": "https://github.com/Expensify/App/issues/90779"
+    },
+    {
+      "id": "job-remoteok-1131596-application-support-engineer",
+      "title": "Application Support Engineer",
+      "status": "ready_for_worker",
+      "owner": "remoteok-1131596-application-support-engineer",
+      "source_url": "https://remoteOK.com/remote-jobs/remote-application-support-engineer-cresta-1131596"
+    },
+    {
+      "id": "job-remoteok-1131595-software-engineer",
+      "title": "Software Engineer",
+      "status": "ready_for_worker",
+      "owner": "remoteok-1131595-software-engineer",
+      "source_url": "https://remoteOK.com/remote-jobs/remote-software-engineer-obsidian-security-1131595"
+    },
+    {
+      "id": "job-remoteok-1131594-devrel-content-creator",
+      "title": "DevRel Content Creator",
+      "status": "ready_for_worker",
+      "owner": "remoteok-1131594-devrel-content-creator",
+      "source_url": "https://remoteOK.com/remote-jobs/remote-devrel-content-creator-superplane-1131594"
+    },
+    {
+      "id": "job-remoteok-1131593-senior-golang-developer",
+      "title": "Senior Golang Developer",
+      "status": "ready_for_worker",
+      "owner": "remoteok-1131593-senior-golang-developer",
+      "source_url": "https://remoteOK.com/remote-jobs/remote-senior-golang-developer-tre-altamira-srl-1131593"
+    },
+    {
+      "id": "job-remoteok-1131592-software-engineer",
+      "title": "Software engineer",
+      "status": "ready_for_worker",
+      "owner": "remoteok-1131592-software-engineer",
+      "source_url": "https://remoteOK.com/remote-jobs/remote-software-engineer-sticker-mule-1131592"
+    },
+    {
+      "id": "job-remoteok-1131591-it-support-technician",
+      "title": "IT Support Technician",
+      "status": "ready_for_worker",
+      "owner": "remoteok-1131591-it-support-technician",
+      "source_url": "https://remoteOK.com/remote-jobs/remote-it-support-technician-avalere-health-1131591"
+    },
+    {
+      "id": "job-remoteok-1131590-account-supervisor",
+      "title": "Account Supervisor",
+      "status": "ready_for_worker",
+      "owner": "remoteok-1131590-account-supervisor",
+      "source_url": "https://remoteOK.com/remote-jobs/remote-account-supervisor-avalere-health-1131590"
+    },
+    {
+      "id": "job-remoteok-1131589-product-manager",
+      "title": "Product Manager",
+      "status": "ready_for_worker",
+      "owner": "remoteok-1131589-product-manager",
+      "source_url": "https://remoteOK.com/remote-jobs/remote-product-manager-cosuno-1131589"
+    },
+    {
+      "id": "job-remoteok-1131588-staff-engineer-platform-engineering",
+      "title": "Staff Engineer Platform Engineering",
+      "status": "ready_for_worker",
+      "owner": "remoteok-1131588-staff-engineer-platform-engineering",
+      "source_url": "https://remoteOK.com/remote-jobs/remote-staff-engineer-platform-engineering-highlevel-1131588"
+    },
+    {
+      "id": "job-remoteok-1131587-business-analyst",
+      "title": "Business Analyst",
+      "status": "ready_for_worker",
+      "owner": "remoteok-1131587-business-analyst",
+      "source_url": "https://remoteOK.com/remote-jobs/remote-business-analyst-judi-health-1131587"
+    }
+  ],
+  "proofs": [
+    {
+      "id": "proof-github-55-bawes-universe-studenthub",
+      "title": "🔐 AWS S3 Security Remediation & Civil ID Upload Fix — IAM Key Rotation, Bucket Hardening & Backend Patches",
+      "status": "not_started",
+      "evidence": "Create a sample cleaned dataset/schema and validation report using only allowed public or client-provided data.",
+      "source_url": "https://github.com/BAWES-Universe/studenthub/issues/55"
+    },
+    {
+      "id": "proof-github-12-zwiserfit-zwiserfit-ai-store-manager",
+      "title": "[Global Call] Multi-Bot Identity in WeChat Enterprise Group: Independent Agent Avatars for Shuyu & Momo",
+      "status": "not_started",
+      "evidence": "Summarize requirement, define acceptance checks, produce a small proof artifact before quoting full delivery.",
+      "source_url": "https://github.com/ZWISERFIT/zwiserfit-ai-store-manager/issues/12"
+    },
+    {
+      "id": "proof-github-90807-expensify-app",
+      "title": "[$250] Distance - After deleting a distance rate, the error appears only when opening the expense",
+      "status": "not_started",
+      "evidence": "Summarize requirement, define acceptance checks, produce a small proof artifact before quoting full delivery.",
+      "source_url": "https://github.com/Expensify/App/issues/90807"
+    },
+    {
+      "id": "proof-github-34-alexhass-syr-connect",
+      "title": "Safe-T: setALA reset button fails with \"No reset required\" even when alarm is active",
+      "status": "not_started",
+      "evidence": "Summarize requirement, define acceptance checks, produce a small proof artifact before quoting full delivery.",
+      "source_url": "https://github.com/alexhass/syr_connect/issues/34"
+    },
+    {
+      "id": "proof-github-13941-kubestellar-console",
+      "title": "🐛 Frontend bare JSON.parse in remaining hooks — post-PR #13929",
+      "status": "not_started",
+      "evidence": "Summarize requirement, define acceptance checks, produce a small proof artifact before quoting full delivery.",
+      "source_url": "https://github.com/kubestellar/console/issues/13941"
+    },
+    {
+      "id": "proof-github-13940-kubestellar-console",
+      "title": "🐛 Incomplete JSON injection fix in stellar solver — TriggerData still built with fmt.Sprintf",
+      "status": "not_started",
+      "evidence": "Create a sample cleaned dataset/schema and validation report using only allowed public or client-provided data.",
+      "source_url": "https://github.com/kubestellar/console/issues/13940"
+    },
+    {
+      "id": "proof-github-59-bawes-universe-plugn",
+      "title": "Need assistance with getting project running again",
+      "status": "not_started",
+      "evidence": "Summarize requirement, define acceptance checks, produce a small proof artifact before quoting full delivery.",
+      "source_url": "https://github.com/BAWES-Universe/plugn/issues/59"
+    },
+    {
+      "id": "proof-github-92-komalharshita-devpath",
+      "title": "Add at least two `Advanced` level projects — no advanced projects exist in the dataset",
+      "status": "not_started",
+      "evidence": "Create a sample cleaned dataset/schema and validation report using only allowed public or client-provided data.",
+      "source_url": "https://github.com/komalharshita/DevPath/issues/92"
+    }
+  ],
+  "source_errors": []
+}

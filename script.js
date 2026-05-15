@@ -8,6 +8,8 @@
     jobs: [],
     proofs: [],
     source: null,
+    sourceDetail: null,
+    generatedAt: null,
     selectedId: null,
   };
 
@@ -37,6 +39,8 @@
       jobs: Array.isArray(payload.jobs) ? payload.jobs : [],
       proofs: Array.isArray(payload.proofs) ? payload.proofs : [],
       source,
+      sourceDetail: payload.source || null,
+      generatedAt: payload.generated_at || null,
     };
   };
 
@@ -82,19 +86,23 @@
       syncState.textContent = connected ? `connected: ${state.source}` : "waiting for live feed";
     }
     if (lastUpdated) {
-      lastUpdated.textContent = connected ? `updated ${formatTime(new Date().toISOString())}` : "not connected";
+      lastUpdated.textContent = connected ? `updated ${formatTime(state.generatedAt || new Date().toISOString())}` : "not connected";
     }
     if (runtimeState) {
       runtimeState.textContent = connected ? "connected" : "not connected";
     }
     if (runtimeTitle) {
+      const liveCount = state.sessions.filter((session) => {
+        const status = String(session.status || "").toLowerCase();
+        return status === "running" || status === "open";
+      }).length;
       runtimeTitle.textContent = connected
-        ? `${state.sessions.length} live Codex session${state.sessions.length === 1 ? "" : "s"} reporting`
-        : "No live Codex feed yet";
+        ? `${state.sessions.length} requirement session${state.sessions.length === 1 ? "" : "s"} loaded; ${liveCount} Codex worker${liveCount === 1 ? "" : "s"} running`
+        : "No requirement feed yet";
     }
     if (runtimeCopy) {
       runtimeCopy.textContent = connected
-        ? "This console is rendering sessions from Samantha's runtime feed, not from static page copy."
+        ? `Rendering ${state.sourceDetail || "Samantha's runtime feed"}, not static page copy.`
         : "Publish /sessions.json or set window.IPOP_SESSION_ENDPOINT to Samantha's runtime API. Until then, counts stay at zero.";
     }
   };
@@ -109,7 +117,7 @@
     if (state.sessions.length === 0) {
       const empty = document.createElement("article");
       empty.className = "empty-state";
-      empty.innerHTML = "<span>No live sessions yet</span><p>Connect Samantha's session feed and the actual Codex workers will appear here.</p>";
+      empty.innerHTML = "<span>No requirement sessions yet</span><p>Run the public requirement intake and Samantha's work sessions will appear here.</p>";
       sessionList.append(empty);
       return;
     }
@@ -123,7 +131,7 @@
       card.innerHTML = `
         <span>${session.status || session.kind || "Codex session"}</span>
         <strong>${session.title || session.name || id}</strong>
-        <p>${session.source || session.task || "Live worker reported by Samantha runtime."}</p>
+        <p>${session.source || "Public requirement"} · ${session.estimated_budget || "budget unknown"}</p>
       `;
       card.addEventListener("click", () => {
         state.selectedId = id;
@@ -158,8 +166,8 @@
           {
             actor: "System",
             text: state.source
-              ? "Runtime feed is connected. Select a session with events to inspect actual work."
-              : "No live runtime feed is connected, so no worker transcript is being displayed.",
+              ? "Requirement feed is connected. Select a session with events to inspect the source and proof plan."
+              : "No requirement feed is connected, so no worker transcript is being displayed.",
           },
           {
             actor: "Contract",
@@ -180,11 +188,39 @@
     setText("[data-active-kind]", session ? (session.kind || session.status || "live session") : "runtime required");
   };
 
+  const renderInspector = () => {
+    const session = selectedSession();
+    const sourceLink = $("[data-selected-source]");
+    const stripeLink = $("[data-selected-stripe]");
+
+    setText("[data-inspector-status]", session ? (session.status || "selected") : "truthful only");
+    setText("[data-selected-requirement]", session
+      ? (session.requirement || session.task || session.title || "Requirement text unavailable.")
+      : "Choose a session to inspect the real web-posted requirement.");
+    setText("[data-selected-contact]", session
+      ? (session.contact_route || "Use the public listing's allowed contact route only.")
+      : "Platform-safe public route only.");
+    setText("[data-selected-proof]", session
+      ? (session.proof_milestone || "Define acceptance checks before delivery.")
+      : "No proof task selected yet.");
+
+    if (sourceLink) {
+      sourceLink.href = session?.source_url || "https://ipop.ai/";
+      sourceLink.textContent = session?.source_url || "No source selected";
+    }
+
+    if (stripeLink) {
+      stripeLink.href = session?.stripe_url || "https://buy.stripe.com/eVq9AUfbN0Q72HpaF21kA07";
+      stripeLink.textContent = session?.stripe_url ? "Open matching Stripe checkout" : "$19 Agent Trial Sprint";
+    }
+  };
+
   const render = () => {
     renderStats();
     renderRuntime();
     renderSessions();
     renderRunLog();
+    renderInspector();
   };
 
   const boot = async () => {
@@ -193,6 +229,8 @@
     state.jobs = feed.jobs;
     state.proofs = feed.proofs;
     state.source = feed.source;
+    state.sourceDetail = feed.sourceDetail;
+    state.generatedAt = feed.generatedAt;
     render();
   };
 
