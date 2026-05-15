@@ -11,7 +11,13 @@
   };
 
   const $ = (selector) => document.querySelector(selector);
-  const sessionList = $("[data-session-list]");
+  const laneLists = {
+    done: $("[data-lane-list='done']"),
+    review: $("[data-lane-list='review']"),
+    progress: $("[data-lane-list='progress']"),
+    backlog: $("[data-lane-list='backlog']"),
+    canceled: $("[data-lane-list='canceled']"),
+  };
   const runLog = $("[data-run-log]");
   const lastUpdated = $("[data-last-updated]");
   const runtimeState = $("[data-runtime-state]");
@@ -20,6 +26,8 @@
   const launchWorkers = $("[data-launch-workers]");
   const refreshSessions = $("[data-refresh-sessions]");
   const buildRequirements = $("[data-build-requirements]");
+  const drawer = $("[data-drawer]");
+  const closeDrawer = $("[data-close-drawer]");
 
   const setText = (selector, value) => {
     const node = $(selector);
@@ -47,6 +55,14 @@
   };
 
   const isRunning = (session) => ["running", "open"].includes(String(session.status || "").toLowerCase());
+  const laneFor = (session) => {
+    const status = String(session.status || "").toLowerCase();
+    if (status === "completed" || status === "done") return "done";
+    if (status.includes("review")) return "review";
+    if (status === "running" || status === "open") return "progress";
+    if (status === "failed" || status === "canceled" || status === "cancelled") return "canceled";
+    return "backlog";
+  };
 
   const formatTime = (value) => {
     const date = new Date(value || Date.now());
@@ -82,20 +98,19 @@
   };
 
   const renderSessions = () => {
-    if (!sessionList) return;
-    sessionList.textContent = "";
-    if (state.sessions.length === 0) {
-      const empty = document.createElement("article");
-      empty.className = "empty-state";
-      empty.innerHTML = "<span>No sessions loaded</span><p>Import requirements, then launch workspaces.</p>";
-      sessionList.append(empty);
-      return;
-    }
+    Object.values(laneLists).forEach((lane) => {
+      if (lane) lane.textContent = "";
+    });
+    const counts = { done: 0, review: 0, progress: 0, backlog: 0, canceled: 0 };
 
     state.sessions.forEach((session, index) => {
       const id = session.id || session.name || `session-${index}`;
+      const laneName = laneFor(session);
+      counts[laneName] += 1;
+      const lane = laneLists[laneName];
+      if (!lane) return;
       const card = document.createElement("article");
-      card.className = `session-card ${state.selectedId === id || (!state.selectedId && index === 0) ? "active" : ""}`;
+      card.className = `task-card ${state.selectedId === id || (!state.selectedId && index === 0) ? "active" : ""}`;
       card.tabIndex = 0;
       card.dataset.sessionId = id;
       card.innerHTML = `
@@ -105,10 +120,13 @@
       `;
       card.addEventListener("click", () => {
         state.selectedId = id;
+        drawer?.classList.add("open");
         render();
       });
-      sessionList.append(card);
+      lane.append(card);
     });
+
+    Object.entries(counts).forEach(([name, count]) => setText(`[data-lane-count='${name}']`, String(count)));
   };
 
   const renderRunLog = () => {
@@ -186,6 +204,7 @@
     buildRequirements.textContent = "Import requirements";
   }));
   refreshSessions?.addEventListener("click", boot);
+  closeDrawer?.addEventListener("click", () => drawer?.classList.remove("open"));
 
   boot();
   window.setInterval(boot, 5000);
