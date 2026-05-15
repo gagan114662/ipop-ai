@@ -486,6 +486,7 @@ h3 {
 .proof-section,
 .agents-section,
 .section,
+.work-section,
 .pricing-section,
 .faq-section,
 .download-section,
@@ -499,8 +500,280 @@ h3 {
 .proof-section,
 .agents-section,
 .section,
+.work-section,
 .pricing-section {
   padding: 94px 0;
+}
+
+.work-section {
+  scroll-margin-top: 84px;
+}
+
+.work-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 24px;
+  align-items: end;
+  margin-bottom: 22px;
+}
+
+.work-header h2 {
+  max-width: 920px;
+}
+
+.work-header p:not(.eyebrow) {
+  max-width: 820px;
+  color: var(--muted);
+  font-size: 18px;
+}
+
+.work-primary,
+.run-button {
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(157, 255, 122, 0.78);
+  border-radius: 4px;
+  background: var(--green);
+  color: #071007;
+  font-family: "SF Mono", "IBM Plex Mono", ui-monospace, Menlo, Monaco, monospace;
+  font-size: 13px;
+  font-weight: 900;
+  text-transform: uppercase;
+  box-shadow: 0 14px 44px rgba(157, 255, 122, 0.14);
+}
+
+.work-primary {
+  min-width: 178px;
+  padding: 0 18px;
+}
+
+.factory-board {
+  min-height: 720px;
+  display: grid;
+  grid-template-columns: 170px minmax(0, 1fr);
+  overflow: hidden;
+  border: 1px solid var(--line-strong);
+  border-radius: 10px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02)),
+    #080a08;
+  box-shadow: 0 38px 120px rgba(0, 0, 0, 0.72);
+}
+
+.factory-sidebar {
+  display: grid;
+  align-content: start;
+  gap: 8px;
+  border-right: 1px solid var(--line);
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.22);
+}
+
+.sidebar-title,
+.factory-toolbar span,
+.toolbar-actions span,
+.run-status,
+.run-meta span,
+.lane-grid span,
+.proof-ledger span {
+  font-family: "SF Mono", "IBM Plex Mono", ui-monospace, Menlo, Monaco, monospace;
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.sidebar-title {
+  margin-bottom: 12px;
+  color: var(--green);
+}
+
+.factory-sidebar a {
+  min-height: 38px;
+  display: flex;
+  align-items: center;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  padding: 0 11px;
+  color: var(--muted);
+  font-family: "SF Mono", "IBM Plex Mono", ui-monospace, Menlo, Monaco, monospace;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.factory-sidebar a.active,
+.factory-sidebar a:hover,
+.factory-sidebar a:focus-visible {
+  border-color: rgba(157, 255, 122, 0.26);
+  background: rgba(157, 255, 122, 0.08);
+  color: var(--ink);
+}
+
+.factory-main {
+  min-width: 0;
+  padding: 16px;
+}
+
+.factory-toolbar {
+  min-height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.factory-toolbar span,
+.run-status,
+.lane-grid span,
+.proof-ledger span {
+  color: var(--green);
+}
+
+.factory-toolbar strong {
+  display: block;
+  margin-top: 3px;
+  font-size: 20px;
+}
+
+.toolbar-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.toolbar-actions span {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 7px 9px;
+  color: var(--soft);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.run-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.run-card {
+  min-height: 360px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.run-card.live {
+  border-color: rgba(157, 255, 122, 0.46);
+  background:
+    linear-gradient(180deg, rgba(157, 255, 122, 0.1), rgba(255, 255, 255, 0.03)),
+    rgba(255, 255, 255, 0.035);
+}
+
+.run-top {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.run-top strong {
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 24px;
+  line-height: 1;
+  text-align: right;
+}
+
+.run-card h3 {
+  margin-top: 36px;
+  font-size: 25px;
+}
+
+.run-card p {
+  color: var(--muted);
+}
+
+.run-meta {
+  display: grid;
+  gap: 7px;
+  margin: auto 0 16px;
+}
+
+.run-meta span {
+  border-top: 1px solid var(--line);
+  padding-top: 7px;
+  color: var(--soft);
+}
+
+.run-button {
+  width: 100%;
+  padding: 0 14px;
+}
+
+.run-button.secondary {
+  border-color: var(--line-strong);
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--ink);
+  box-shadow: none;
+}
+
+.lane-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.lane-grid article {
+  min-height: 158px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 16px;
+  background:
+    linear-gradient(180deg, rgba(140, 184, 255, 0.08), rgba(255, 255, 255, 0.025));
+}
+
+.lane-grid strong {
+  display: block;
+  margin-top: 24px;
+  font-size: 18px;
+}
+
+.lane-grid p {
+  margin: 8px 0 0;
+  color: var(--muted);
+}
+
+.proof-ledger {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.proof-ledger div {
+  min-height: 126px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 18px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.proof-ledger strong {
+  display: block;
+  margin-top: 18px;
+  font-size: 20px;
+  line-height: 1.15;
 }
 
 .faq-section {
@@ -918,8 +1191,30 @@ h3 {
   .moment-section,
   .demo-theater,
   .agent-stage,
-  .machine-section {
+  .machine-section,
+  .work-header,
+  .factory-board {
     grid-template-columns: 1fr;
+  }
+
+  .factory-board {
+    min-height: auto;
+  }
+
+  .factory-sidebar {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .sidebar-title {
+    margin-bottom: 0;
+  }
+
+  .run-grid,
+  .lane-grid,
+  .proof-ledger {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .moment-copy {
@@ -952,7 +1247,7 @@ h3 {
   .nav-links {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 6px 10px;
   }
 
@@ -1012,6 +1307,42 @@ h3 {
     right: auto;
     bottom: auto;
     margin-top: 22px;
+  }
+
+  .work-section {
+    padding: 58px 0;
+  }
+
+  .work-header {
+    gap: 14px;
+  }
+
+  .factory-sidebar,
+  .run-grid,
+  .lane-grid,
+  .proof-ledger {
+    grid-template-columns: 1fr;
+  }
+
+  .factory-sidebar {
+    padding: 12px;
+  }
+
+  .factory-main {
+    padding: 12px;
+  }
+
+  .factory-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .toolbar-actions {
+    justify-content: flex-start;
+  }
+
+  .run-card {
+    min-height: auto;
   }
 
   .hero-footer-note span {
