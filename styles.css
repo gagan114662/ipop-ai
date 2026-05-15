@@ -141,7 +141,7 @@ button:disabled {
 .hero {
   position: relative;
   min-height: 100svh;
-  display: grid;
+  display: none;
   align-items: center;
   overflow: hidden;
   padding: 112px clamp(18px, 5vw, 70px) 76px;
@@ -506,7 +506,9 @@ h3 {
 }
 
 .work-section {
+  min-height: calc(100svh - 72px);
   scroll-margin-top: 84px;
+  padding-top: 132px;
 }
 
 .work-header {
