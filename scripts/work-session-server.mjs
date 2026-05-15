@@ -4,13 +4,15 @@ import { createServer } from "node:http";
 import { createReadStream, existsSync } from "node:fs";
 import { mkdir, readFile, writeFile, appendFile } from "node:fs/promises";
 import { extname, join, resolve } from "node:path";
-import { spawn } from "node:child_process";
+import { execFile, spawn } from "node:child_process";
+import { promisify } from "node:util";
 
 const root = resolve(new URL("..", import.meta.url).pathname);
 const port = Number(process.env.PORT || 8788);
 const maxParallel = Number(process.env.IPOP_MAX_PARALLEL || 6);
 const sessionDir = join(root, ".ipop-work-sessions");
 const workers = new Map();
+const execFileAsync = promisify(execFile);
 
 const types = {
   ".html": "text/html; charset=utf-8",
@@ -54,19 +56,38 @@ async function apiSessions() {
       worker_started_at: worker.startedAt,
       worker_exit_code: worker.exitCode,
       worker_log_tail: await tail(worker.logFile),
+      proof_file: worker.proofFile,
       events: [
         ...(session.events || []),
         { actor: "Codex worker", text: worker.status + " pid=" + worker.pid + " log=" + worker.logFile }
       ]
     };
   }));
+  const proofs = sessions
+    .filter((session) => session.proof_file && existsSync(session.proof_file))
+    .map((session) => ({
+      id: "artifact-" + session.id,
+      title: session.title,
+      status: "exists",
+      evidence: session.proof_file,
+      source_url: session.source_url
+    }));
   return {
     ...base,
     source: "iPOP local Conductor runner: real posted requirements plus real codex exec workers",
     generated_at: new Date().toISOString(),
     sessions,
+    proofs,
     jobs: sessions.map((s) => ({ id: "job-" + s.id, title: s.title, status: s.status, owner: s.id, source_url: s.source_url, worker_pid: s.worker_pid }))
   };
+}
+
+async function buildRequirements() {
+  const { stdout, stderr } = await execFileAsync("node", ["scripts/build-work-sessions.mjs"], {
+    cwd: root,
+    maxBuffer: 1024 * 1024 * 4
+  });
+  return { stdout, stderr };
 }
 
 async function launch(session) {
@@ -82,13 +103,12 @@ async function launch(session) {
   const prompt = [
     "You are a worker inside an iPOP Conductor-style parallel revenue swarm.",
     "Do not contact anyone, submit anything, purchase anything, or scrape private contact details.",
-    "Use this real public posted requirement only and create a local proof artifact for a paid iPOP/Samantha work session.",
+    "Use this real public posted requirement only and create a local proof artifact.",
     "Title: " + (session.title || ""),
     "Source URL: " + (session.source_url || ""),
     "Allowed contact route: " + (session.contact_route || "public listing route only"),
     "Requirement: " + (session.requirement || session.task || ""),
     "Proof milestone: " + (session.proof_milestone || "define acceptance checks"),
-    "Stripe route: " + (session.stripe_url || "https://buy.stripe.com/eVq9AUfbN0Q72HpaF21kA07"),
     "Write proof output to " + proofFile
   ].join("\n");
   await writeFile(join(dir, "prompt.txt"), prompt);
@@ -135,6 +155,7 @@ createServer(async (req, res) => {
   try {
     const url = new URL(req.url, "http://127.0.0.1:" + port);
     if (url.pathname === "/api/sessions") return json(res, 200, await apiSessions());
+    if (url.pathname === "/api/build-requirements") return json(res, 200, await buildRequirements());
     if (url.pathname === "/api/launch-all") return json(res, 200, { launched: await launchAll(Math.min(Number(url.searchParams.get("limit") || 3), maxParallel)) });
     serveFile(req, res);
   } catch (error) {

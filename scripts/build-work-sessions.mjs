@@ -3,8 +3,6 @@
 import { writeFile } from "node:fs/promises";
 
 const headers = { "Accept": "application/json", "User-Agent": "ipop-conductor-replica/1.0" };
-const stripeTrial = "https://buy.stripe.com/eVq9AUfbN0Q72HpaF21kA07";
-
 async function getJson(url) {
   const response = await fetch(url, { headers });
   if (!response.ok) throw new Error(response.status + " " + response.statusText + " " + url);
@@ -24,7 +22,7 @@ function proof(text) {
   if (lower.includes("stripe") || lower.includes("checkout") || lower.includes("payment")) return "Run a payment-flow reproduction, identify the failing integration surface, and produce a replayable verification checklist.";
   if (lower.includes("automation") || lower.includes("workflow") || lower.includes("n8n")) return "Map the workflow, list credentials needed after payment, and produce a runnable proof checklist.";
   if (lower.includes("wordpress") || lower.includes("website")) return "Audit the broken page or flow, capture evidence, and produce the smallest patch plan.";
-  return "Turn the posted requirement into acceptance checks, risk notes, and a paid proof milestone.";
+  return "Turn the posted requirement into acceptance checks, risk notes, and a local proof artifact.";
 }
 
 async function githubSessions() {
@@ -45,7 +43,6 @@ async function githubSessions() {
       requirement,
       estimated_budget: title.match(/\$[0-9][0-9,]*/)?.[0] || "unknown",
       proof_milestone: proof(title + " " + requirement),
-      stripe_url: stripeTrial,
       events: [
         { "actor": "Scout", "text": "Imported real posted requirement from " + item.html_url },
         { "actor": "Planner", "text": proof(title + " " + requirement) },
@@ -73,7 +70,6 @@ async function hnSessions() {
       requirement,
       estimated_budget: "unknown",
       proof_milestone: proof(title + " " + requirement),
-      stripe_url: stripeTrial,
       events: [
         { "actor": "Scout", "text": "Imported real posted requirement from " + url },
         { "actor": "Planner", "text": proof(title + " " + requirement) },

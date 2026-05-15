@@ -1,8 +1,5 @@
 (() => {
-  const DEFAULT_ENDPOINTS = ["/api/sessions", "/sessions.json"];
-  const explicitEndpoint = window.IPOP_SESSION_ENDPOINT;
-  const endpoints = explicitEndpoint ? [explicitEndpoint] : DEFAULT_ENDPOINTS;
-
+  const endpoints = window.IPOP_SESSION_ENDPOINT ? [window.IPOP_SESSION_ENDPOINT] : ["/api/sessions", "/sessions.json"];
   const state = {
     sessions: [],
     jobs: [],
@@ -16,114 +13,81 @@
   const $ = (selector) => document.querySelector(selector);
   const sessionList = $("[data-session-list]");
   const runLog = $("[data-run-log]");
-  const syncState = $("[data-sync-state]");
   const lastUpdated = $("[data-last-updated]");
   const runtimeState = $("[data-runtime-state]");
   const runtimeTitle = $("[data-runtime-title]");
   const runtimeCopy = $("[data-runtime-copy]");
   const launchWorkers = $("[data-launch-workers]");
   const refreshSessions = $("[data-refresh-sessions]");
+  const buildRequirements = $("[data-build-requirements]");
 
   const setText = (selector, value) => {
     const node = $(selector);
-    if (node) {
-      node.textContent = value;
-    }
+    if (node) node.textContent = value;
   };
 
-  const normalizeFeed = (payload, source) => {
-    if (Array.isArray(payload)) {
-      return { sessions: payload, jobs: [], proofs: [], source };
-    }
-
-    return {
-      sessions: Array.isArray(payload.sessions) ? payload.sessions : [],
-      jobs: Array.isArray(payload.jobs) ? payload.jobs : [],
-      proofs: Array.isArray(payload.proofs) ? payload.proofs : [],
-      source,
-      sourceDetail: payload.source || null,
-      generatedAt: payload.generated_at || null,
-    };
-  };
+  const normalizeFeed = (payload, source) => ({
+    sessions: Array.isArray(payload.sessions) ? payload.sessions : [],
+    jobs: Array.isArray(payload.jobs) ? payload.jobs : [],
+    proofs: Array.isArray(payload.proofs) ? payload.proofs : [],
+    source,
+    sourceDetail: payload.source || null,
+    generatedAt: payload.generated_at || null,
+  });
 
   const fetchFeed = async () => {
     for (const endpoint of endpoints) {
       try {
         const response = await fetch(endpoint, { cache: "no-store" });
-        if (!response.ok) {
-          continue;
-        }
-        const payload = await response.json();
-        return normalizeFeed(payload, endpoint);
-      } catch (error) {
-        // Try the next endpoint. The UI reports the final disconnected state.
-      }
+        if (!response.ok) continue;
+        return normalizeFeed(await response.json(), endpoint);
+      } catch {}
     }
-
     return normalizeFeed({}, null);
   };
 
+  const isRunning = (session) => ["running", "open"].includes(String(session.status || "").toLowerCase());
+
   const formatTime = (value) => {
-    if (!value) {
-      return "unknown";
-    }
+    const date = new Date(value || Date.now());
+    return Number.isNaN(date.getTime()) ? "unknown" : date.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+  };
 
-    const date = new Date(value);
-    if (Number.isNaN(date.getTime())) {
-      return String(value);
-    }
-
-    return date.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+  const selectedSession = () => {
+    if (state.sessions.length === 0) return null;
+    return state.sessions.find((session, index) => (session.id || session.name || `session-${index}`) === state.selectedId) || state.sessions[0];
   };
 
   const renderStats = () => {
-    const liveSessions = state.sessions.filter((session) => {
-      const status = String(session.status || "").toLowerCase();
-      return status === "running" || status === "open";
-    });
     setText("[data-stat='sessions']", String(state.sessions.length));
-    setText("[data-stat='jobs']", String(state.jobs.length));
+    setText("[data-stat='running']", String(state.sessions.filter(isRunning).length));
     setText("[data-stat='proofs']", String(state.proofs.length));
   };
 
   const renderRuntime = () => {
     const connected = Boolean(state.source);
-    if (syncState) {
-      syncState.textContent = connected ? `connected: ${state.source}` : "waiting for live feed";
-    }
-    if (lastUpdated) {
-      lastUpdated.textContent = connected ? `updated ${formatTime(state.generatedAt || new Date().toISOString())}` : "not connected";
-    }
-    if (runtimeState) {
-      runtimeState.textContent = connected ? "connected" : "not connected";
-    }
+    const running = state.sessions.filter(isRunning).length;
+    if (lastUpdated) lastUpdated.textContent = connected ? `updated ${formatTime(state.generatedAt)}` : "not connected";
+    if (runtimeState) runtimeState.textContent = connected ? "connected" : "not connected";
     if (runtimeTitle) {
-      const liveCount = state.sessions.filter((session) => {
-        const status = String(session.status || "").toLowerCase();
-        return status === "running" || status === "open";
-      }).length;
       runtimeTitle.textContent = connected
-        ? `${state.sessions.length} posted requirement${state.sessions.length === 1 ? "" : "s"}; ${liveCount} Codex worker${liveCount === 1 ? "" : "s"} running`
-        : "No live Codex feed yet";
+        ? `${running} Codex worker${running === 1 ? "" : "s"} running on ${state.sessions.length} requirement${state.sessions.length === 1 ? "" : "s"}`
+        : "No runner connected";
     }
     if (runtimeCopy) {
       runtimeCopy.textContent = connected
-        ? `Rendering ${state.sourceDetail || "Samantha's runtime feed"}, not static page copy.`
-        : "Publish /sessions.json or set window.IPOP_SESSION_ENDPOINT to Samantha's runtime API. Until then, counts stay at zero.";
+        ? `Rendering ${state.sourceDetail || state.source}. Worker-only mode: requirements, PIDs, logs, artifacts.`
+        : "Run the local work-session server to stream worker PIDs, logs, and artifacts.";
     }
   };
 
   const renderSessions = () => {
-    if (!sessionList) {
-      return;
-    }
-
+    if (!sessionList) return;
     sessionList.textContent = "";
-
     if (state.sessions.length === 0) {
       const empty = document.createElement("article");
       empty.className = "empty-state";
-      empty.innerHTML = "<span>No live sessions yet</span><p>Connect Samantha's runtime feed and actual Codex workers will appear here.</p>";
+      empty.innerHTML = "<span>No sessions loaded</span><p>Import requirements, then launch workspaces.</p>";
       sessionList.append(empty);
       return;
     }
@@ -135,9 +99,9 @@
       card.tabIndex = 0;
       card.dataset.sessionId = id;
       card.innerHTML = `
-        <span>${session.status || session.kind || "Codex session"}</span>
+        <span>${session.status || session.kind || "ready"}</span>
         <strong>${session.title || session.name || id}</strong>
-        <p>${session.task || session.source || "Live worker reported by Samantha runtime."}</p>
+        <p>${session.source || "posted requirement"}${session.worker_pid ? ` · pid ${session.worker_pid}` : ""}</p>
       `;
       card.addEventListener("click", () => {
         state.selectedId = id;
@@ -147,77 +111,40 @@
     });
   };
 
-  const selectedSession = () => {
-    if (state.sessions.length === 0) {
-      return null;
-    }
-
-    return state.sessions.find((session, index) => {
-      const id = session.id || session.name || `session-${index}`;
-      return id === state.selectedId;
-    }) || state.sessions[0];
-  };
-
   const renderRunLog = () => {
-    if (!runLog) {
-      return;
-    }
-
+    if (!runLog) return;
     const session = selectedSession();
     runLog.textContent = "";
-
-    const events = session && Array.isArray(session.events) && session.events.length > 0
-      ? session.events
-      : [
-          {
-            actor: "System",
-            text: state.source
-              ? "Runtime feed is connected. Select a session with events to inspect actual worker activity."
-              : "No live runtime feed is connected, so no worker transcript is being displayed.",
-          },
-          {
-            actor: "Contract",
-            text: "The page no longer contains static fake work cards or fake hundreds-of-sessions counts.",
-          },
-          {
-            actor: "Wire",
-            text: "Feed Samantha sessions through /api/sessions or /sessions.json with sessions, jobs, proofs, and event arrays.",
-          },
-        ];
-
-    events.forEach((event) => {
+    const events = [
+      ...(Array.isArray(session?.events) ? session.events : []),
+      ...(session?.worker_log_tail ? [{ actor: "Log tail", text: session.worker_log_tail }] : []),
+    ];
+    const visibleEvents = events.length > 0 ? events : [
+      { actor: "System", text: state.source ? "Select a task or launch a workspace to inspect live worker activity." : "No runner connected." },
+    ];
+    visibleEvents.forEach((event) => {
       const item = document.createElement("div");
-      item.innerHTML = `<span>${event.actor || event.role || "Event"}</span><p>${event.text || event.message || ""}</p>`;
+      item.innerHTML = `<span>${event.actor || "Event"}</span><p>${event.text || event.message || ""}</p>`;
       runLog.append(item);
     });
-
-    setText("[data-active-kind]", session ? (session.kind || session.status || "live session") : "runtime required");
+    setText("[data-active-kind]", session ? (session.kind || session.status || "session") : "no selection");
   };
 
   const renderInspector = () => {
     const session = selectedSession();
     const sourceLink = $("[data-selected-source]");
-    const stripeLink = $("[data-selected-stripe]");
-
-    setText("[data-inspector-status]", session ? (session.status || "selected") : "truthful only");
-    setText("[data-selected-task]", session
-      ? (session.task || session.title || "Task text unavailable.")
-      : "Choose a session to inspect the live Codex task.");
+    setText("[data-inspector-status]", session ? (session.status || "selected") : "idle");
+    setText("[data-selected-task]", session ? (session.requirement || session.task || session.title || "Task text unavailable.") : "Choose a task.");
     setText("[data-selected-runtime]", session
-      ? (session.source || session.id || "Codex runtime feed")
-      : "Codex runtime feed only.");
-    setText("[data-selected-updated]", session
-      ? (session.updated_at || "unknown")
-      : "No session selected yet.");
-
+      ? (session.worker_pid ? `pid ${session.worker_pid} · ${session.status}` : "ready for workspace launch")
+      : "No worker selected.");
+    setText("[data-selected-artifact]", session
+      ? (session.proof_file || session.proofFile || session.artifact || "No artifact reported yet.")
+      : "No artifact yet.");
+    setText("[data-selected-updated]", session ? (session.worker_started_at || session.updated_at || "unknown") : "Not connected.");
     if (sourceLink) {
       sourceLink.href = session?.source_url || "https://ipop.ai/";
-      sourceLink.textContent = session?.source_url || "Runtime session";
-    }
-
-    if (stripeLink) {
-      stripeLink.href = session?.stripe_url || "https://buy.stripe.com/eVq9AUfbN0Q72HpaF21kA07";
-      stripeLink.textContent = session?.stripe_url ? "Open matching Stripe checkout" : "$19 Agent Trial Sprint";
+      sourceLink.textContent = session?.source_url || "No source selected";
     }
   };
 
@@ -240,20 +167,26 @@
     render();
   };
 
-  launchWorkers?.addEventListener("click", async () => {
-    launchWorkers.disabled = true;
-    launchWorkers.textContent = "Launching...";
+  const runAction = async (button, label, url) => {
+    if (!button) return;
+    button.disabled = true;
+    button.textContent = label;
     try {
-      await fetch("/api/launch-all?limit=3", { cache: "no-store" });
+      await fetch(url, { cache: "no-store" });
       await boot();
     } finally {
-      launchWorkers.disabled = false;
-      launchWorkers.textContent = "New workspace";
+      button.disabled = false;
     }
-  });
+  };
 
+  launchWorkers?.addEventListener("click", () => runAction(launchWorkers, "Launching...", "/api/launch-all?limit=6").finally(() => {
+    launchWorkers.textContent = "New workspace";
+  }));
+  buildRequirements?.addEventListener("click", () => runAction(buildRequirements, "Importing...", "/api/build-requirements").finally(() => {
+    buildRequirements.textContent = "Import requirements";
+  }));
   refreshSessions?.addEventListener("click", boot);
 
   boot();
-  window.setInterval(boot, 15000);
+  window.setInterval(boot, 5000);
 })();

@@ -5,220 +5,146 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta
       name="description"
-      content="ipop.ai is a Conductor-style command center for real Codex sessions doing paid agent work."
+      content="iPOP is a Conductor-style workbench where real posted requirements launch real Codex worker sessions."
     >
-    <meta property="og:title" content="ipop.ai - live Codex work sessions">
+    <meta property="og:title" content="iPOP Codex Conductor">
     <meta
       property="og:description"
-      content="A session swarm for Samantha: discover paid work, route it to Codex workers, verify proof, and collect through Stripe."
+      content="Real requirements, real Codex sessions, live logs, and proof artifacts."
     >
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ipop.ai/">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="ipop.ai - live Codex work sessions">
+    <meta name="twitter:title" content="iPOP Codex Conductor">
     <meta
       name="twitter:description"
-      content="A Conductor-like operating console for actual Codex worker sessions."
+      content="A Conductor-style workbench for parallel Codex sessions on public posted requirements."
     >
     <link rel="canonical" href="https://ipop.ai/">
     <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
-    <title>ipop.ai - live Codex work sessions</title>
-    <link rel="stylesheet" href="styles.css?v=codex-sessions-20260515-2">
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "ipop.ai",
-        "applicationCategory": "BusinessApplication",
-        "operatingSystem": "Web",
-        "description": "Conductor-style command center for live Codex sessions that discover, execute, verify, and bill agent-delivered work.",
-        "url": "https://ipop.ai/",
-        "offers": {
-          "@type": "Offer",
-          "price": "19",
-          "priceCurrency": "USD"
-        }
-      }
-    </script>
+    <title>iPOP Codex Conductor</title>
+    <link rel="stylesheet" href="styles.css?v=conductor-replica-20260515-1">
   </head>
-  <body>
-    <header class="topbar" aria-label="Primary navigation">
-      <a class="brand" href="#top" aria-label="ipop.ai home">
-        <span class="brand-mark" aria-hidden="true"></span>
-        <span>ipop.ai</span>
-      </a>
-      <nav class="topnav" aria-label="Console views">
-        <a href="#sessions">sessions</a>
-        <a href="#queue">work queue</a>
-        <a href="#proof">proof</a>
-        <a href="#billing">stripe</a>
-      </nav>
-    </header>
-
-    <main id="top" class="app-shell">
-      <aside class="left-rail" aria-label="Samantha workspace navigation">
-        <div class="rail-section">
-          <p class="rail-label">Workspace</p>
-          <a class="rail-item active" href="#sessions">
-            <span class="dot live"></span>
-            Samantha Codex
-          </a>
-          <a class="rail-item" href="#queue">Demand scouts</a>
-          <a class="rail-item" href="#proof">QA proof</a>
-          <a class="rail-item" href="#billing">Stripe billing</a>
+  <body class="conductor-body">
+    <main class="conductor-app" aria-label="iPOP Codex Conductor">
+      <aside class="conductor-sidebar" aria-label="Repositories and controls">
+        <div class="conductor-brand">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <strong>ipop.ai</strong>
         </div>
 
-        <div class="rail-section">
-          <p class="rail-label">Tasks</p>
-          <div class="conductor-actions">
-            <button type="button" data-refresh-sessions>Filter and display</button>
-            <button type="button" data-launch-workers>New workspace</button>
-          </div>
+        <div class="nav-pair" role="tablist" aria-label="View mode">
+          <button class="nav-tab" type="button">History</button>
+          <button class="nav-tab active" type="button">Tasks</button>
         </div>
 
-        <div class="rail-section">
-          <p class="rail-label">Runtime</p>
-          <div class="runtime-card" data-runtime-card>
-            <span data-runtime-state>checking</span>
-            <strong data-runtime-title>Looking for live Codex sessions</strong>
-            <p data-runtime-copy>No hardcoded session counts are shown here. The console only counts sessions reported by Samantha's runtime feed.</p>
-          </div>
+        <div class="sidebar-controls">
+          <button type="button" data-refresh-sessions>Filter and display</button>
+          <button type="button" data-build-requirements>Import requirements</button>
+          <button type="button" data-launch-workers>New workspace</button>
+        </div>
+
+        <div class="repo-list" aria-label="Workspaces">
+          <a class="repo-link active" href="#board">Samantha Codex</a>
+          <a class="repo-link" href="#board">Public requirements</a>
+          <a class="repo-link" href="#board">Worker artifacts</a>
+        </div>
+
+        <div class="runtime-box">
+          <span data-runtime-state>checking</span>
+          <strong data-runtime-title>Waiting for runner</strong>
+          <p data-runtime-copy>Start the local runner to show real Codex worker PIDs and logs.</p>
         </div>
       </aside>
 
-      <section class="console" id="sessions" aria-labelledby="console-title">
-        <div class="console-header">
+      <section class="conductor-main" id="board" aria-labelledby="board-title">
+        <header class="board-toolbar">
           <div>
-            <p class="eyebrow">Conductor-style task board</p>
-            <h1 id="console-title">Real posted requirements, real parallel workers.</h1>
-            <p class="console-copy">
-              Each row starts from a real public posted requirement. New workspace launches
-              actual Codex workers that produce proof artifacts before paid delivery.
-            </p>
+            <p class="eyebrow">Conductor replica</p>
+            <h1 id="board-title">Real requirements -> real Codex sessions.</h1>
           </div>
-          <a class="primary-action" href="https://buy.stripe.com/eVq9AUfbN0Q72HpaF21kA07">Buy $19 trial</a>
+          <div class="toolbar-metrics" aria-label="Runtime counters">
+            <div><span>Requirements</span><strong data-stat="sessions">0</strong></div>
+            <div><span>Running</span><strong data-stat="running">0</strong></div>
+            <div><span>Artifacts</span><strong data-stat="proofs">0</strong></div>
+          </div>
+        </header>
+
+        <div class="state-tabs" aria-label="Task states">
+          <button type="button" data-state-filter="completed">Done</button>
+          <button type="button" data-state-filter="review">In review</button>
+          <button class="active" type="button" data-state-filter="running">In progress</button>
+          <button type="button" data-state-filter="ready">Backlog</button>
+          <button type="button" data-state-filter="failed">Canceled</button>
         </div>
 
-        <div class="status-strip" aria-label="Live system status">
-          <article>
-            <span>Work sessions</span>
-            <strong data-stat="sessions">0</strong>
-          </article>
-          <article>
-            <span>Queued jobs</span>
-            <strong data-stat="jobs">0</strong>
-          </article>
-          <article>
-            <span>Proof checks</span>
-            <strong data-stat="proofs">0</strong>
-          </article>
-          <article>
-            <span>Stripe ready</span>
-            <strong>live</strong>
-          </article>
-        </div>
-
-        <div class="session-window">
-          <div class="window-top">
-            <div class="traffic" aria-hidden="true">
-              <span></span><span></span><span></span>
+        <div class="conductor-grid">
+          <section class="task-column" aria-labelledby="tasks-title">
+            <div class="column-head">
+              <h2 id="tasks-title">Tasks</h2>
+              <span data-last-updated>not connected</span>
             </div>
-            <div class="window-title">Samantha / Codex work control</div>
-            <div class="sync-state" data-sync-state>waiting for feed</div>
-          </div>
+            <div class="search-box">Filter task title, source, status</div>
+            <div class="session-items" data-session-list>
+              <article class="empty-state">
+                <span>No sessions loaded</span>
+                <p>Import requirements, then launch workspaces.</p>
+              </article>
+            </div>
+          </section>
 
-          <div class="task-board-tabs" aria-label="Conductor task states">
-            <span>Done</span>
-            <span>In review</span>
-            <span class="active">In progress</span>
-            <span>Backlog</span>
-            <span>Canceled</span>
-          </div>
+          <section class="session-detail" aria-labelledby="detail-title">
+            <div class="column-head">
+              <h2 id="detail-title">Session</h2>
+              <span data-active-kind>no selection</span>
+            </div>
+            <div class="detail-tabs" aria-label="Session detail tabs">
+              <button class="active" type="button">Run</button>
+              <button type="button">Source</button>
+              <button type="button">Log</button>
+              <button type="button">Artifact</button>
+            </div>
+            <div class="run-log" data-run-log>
+              <div><span>System</span><p>Select a requirement session to inspect the worker.</p></div>
+            </div>
+            <div class="composer">
+              <span>Worker instruction</span>
+              <p>Use the posted requirement, launch an isolated Codex session, produce a local proof artifact, and do not contact anyone externally.</p>
+            </div>
+          </section>
 
-          <div class="session-grid">
-            <section class="pane session-list" aria-labelledby="session-list-title">
-              <div class="pane-head">
-                <h2 id="session-list-title">Sessions</h2>
-                <span data-last-updated>not connected</span>
+          <aside class="session-inspector" aria-label="Inspector">
+            <div class="column-head">
+              <h2>Inspector</h2>
+              <span data-inspector-status>idle</span>
+            </div>
+            <dl>
+              <div>
+                <dt>Requirement</dt>
+                <dd data-selected-task>Choose a task.</dd>
               </div>
-              <div class="search-box">Filter requirement sessions</div>
-              <div class="session-items" data-session-list>
-                <article class="empty-state">
-                  <span>No live sessions yet</span>
-                  <p>Connect Samantha's runtime feed and actual Codex workers will appear here.</p>
-                </article>
+              <div>
+                <dt>Source</dt>
+                <dd><a data-selected-source href="https://ipop.ai/" rel="noopener">No source selected</a></dd>
               </div>
-            </section>
-
-            <section class="pane workbench" aria-labelledby="workbench-title">
-              <div class="pane-head">
-                <h2 id="workbench-title">Active run</h2>
-                <span data-active-kind>runtime required</span>
+              <div>
+                <dt>Worker</dt>
+                <dd data-selected-runtime>No worker selected.</dd>
               </div>
-              <div class="tabs" aria-label="Run tabs">
-                <button class="active" type="button">Run</button>
-                <button type="button">Source</button>
-                <button type="button">Client route</button>
-                <button type="button">Artifact</button>
-                <button type="button">Payment</button>
+              <div>
+                <dt>Artifact</dt>
+                <dd data-selected-artifact>No artifact yet.</dd>
               </div>
-              <div class="run-log" data-run-log>
-                <div>
-                  <span>System</span>
-                  <p>The old Mac demo and static marketing content have been removed from the primary page.</p>
-                </div>
-                <div>
-                  <span>System</span>
-                  <p>Session counts are now data-driven. If Samantha is not reporting sessions, this console shows zero instead of pretending.</p>
-                </div>
-                <div>
-                  <span>Next wire</span>
-                  <p>Point <code>window.IPOP_SESSION_ENDPOINT</code> at Samantha's runtime API or publish <code>/sessions.json</code> from the VM.</p>
-                </div>
+              <div>
+                <dt>Updated</dt>
+                <dd data-selected-updated>Not connected.</dd>
               </div>
-              <div class="composer">
-                <span>Instruction template</span>
-                <p>Find platform-safe public paid work, preserve source URL and contact route, spawn Codex worker, produce proof, charge through Stripe, then deliver.</p>
-              </div>
-            </section>
-
-              <aside class="pane inspector" aria-label="Selected session inspector">
-                <div class="pane-head">
-                  <h2>Inspector</h2>
-                  <span data-inspector-status>truthful only</span>
-                </div>
-                <dl>
-                  <div>
-                  <dt>Task</dt>
-                  <dd data-selected-task>Choose a session to inspect the live Codex task.</dd>
-                  </div>
-                  <div>
-                  <dt>Source</dt>
-                  <dd><a data-selected-source href="https://ipop.ai/" rel="noopener">No source selected</a></dd>
-                  </div>
-                  <div>
-                  <dt>Runtime source</dt>
-                  <dd data-selected-runtime>Codex runtime feed only.</dd>
-                  </div>
-                  <div>
-                  <dt>Updated</dt>
-                  <dd data-selected-updated>No session selected yet.</dd>
-                  </div>
-                  <div>
-                  <dt>Payment route</dt>
-                  <dd><a data-selected-stripe href="https://buy.stripe.com/eVq9AUfbN0Q72HpaF21kA07" rel="noopener">$19 Agent Trial Sprint</a></dd>
-                  </div>
-                  <div>
-                  <dt>Blocked from UI</dt>
-                  <dd>Fake counts, private contact scraping, platform bypass, and unpaid custom delivery.</dd>
-                  </div>
-                </dl>
-              </aside>
-          </div>
+            </dl>
+          </aside>
         </div>
       </section>
     </main>
 
-    <script src="script.js?v=codex-sessions-20260515-3"></script>
+    <script src="script.js?v=conductor-replica-20260515-1"></script>
   </body>
 </html>
