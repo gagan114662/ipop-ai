@@ -1,161 +1,1130 @@
 {
-  "generated_at": "2026-05-15T20:14:15.677Z",
-  "source": "Codex state database: /Users/gaganarora/.codex/state_5.sqlite",
+  "generated_at": "2026-05-15T20:19:35.458Z",
+  "source": "Public posted requirements from GitHub issues and Hacker News jobs",
   "sessions": [
     {
-      "id": "/root/session_feed_runtime",
-      "name": "Popper",
-      "title": "Review live session approach",
-      "status": "running",
-      "kind": "Codex worker",
-      "source": "/Users/gaganarora/Documents/Playground",
-      "task": "Codex Thursdays, Fifth Edition: - Codex mobile (preview) - Remote SSH/devboxes - Hooks - Access tokens - HIPAA i wanna be able to use my chatgpt app to talk to you",
-      "updated_at": "2026-05-15T20:14:15.536Z",
-      "parent_thread_id": "019e28b5-3456-7463-82d8-5dcac96b69e0",
-      "thread_id": "019e2d40-b28d-7bd2-8928-c6de08ae1313",
+      "id": "github-90807-250-distance-after-deleting-a-distance-rate-the-error-appears-only-when-opening-the",
+      "name": "github-1",
+      "title": "[$250] Distance - After deleting a distance rate, the error appears only when opening the expense",
+      "status": "ready_for_worker",
+      "kind": "posted_requirement",
+      "source": "GitHub public issue",
+      "source_url": "https://github.com/Expensify/App/issues/90807",
+      "contact_route": "Use the public issue or repository contribution route only.",
+      "requirement": "If you haven’t already, check out our [contributing guidelines](https://github.com/Expensify/ReactNativeChat/blob/main/contributingGuides/CONTRIBUTING.md) for onboarding and email contributors@expensify.com to request to join our Slack channel! ___ **Version Number:** v9.3.74-6 **Reproducible in staging?:** Yes **Reproducible in production?:** Yes **If this ",
+      "estimated_budget": "$250",
+      "proof_milestone": "Turn the posted requirement into acceptance checks, risk notes, and a paid proof milestone.",
+      "stripe_url": "https://buy.stripe.com/eVq9AUfbN0Q72HpaF21kA07",
       "events": [
         {
-          "actor": "Codex runtime",
-          "text": "running child session reported by ~/.codex/state_5.sqlite."
+          "actor": "Scout",
+          "text": "Imported real posted requirement from https://github.com/Expensify/App/issues/90807"
         },
         {
-          "actor": "Task",
-          "text": "Codex Thursdays, Fifth Edition: - Codex mobile (preview) - Remote SSH/devboxes - Hooks - Access tokens - HIPAA i wanna be able to use my chatgpt app to talk to you"
+          "actor": "Planner",
+          "text": "Turn the posted requirement into acceptance checks, risk notes, and a paid proof milestone."
+        },
+        {
+          "actor": "Runner",
+          "text": "Launch a Codex worker from the local Conductor runner to create the proof artifact."
         }
       ]
     },
     {
-      "id": "/root/revenue_lead_scout",
-      "name": "Nash",
-      "title": "Find paid-work opportunities",
-      "status": "closed",
-      "kind": "worker",
-      "source": "/Users/gaganarora/Documents/Playground",
-      "task": "Live Codex worker session.",
-      "updated_at": "2026-05-15T20:09:59.718Z",
-      "parent_thread_id": "019e28b5-3456-7463-82d8-5dcac96b69e0",
-      "thread_id": "019e2d3f-d271-73f1-b308-7854515200ea",
+      "id": "github-14-chore-bug-desarrollar-script-depurador-para-eliminar-juegos-sin-datos-comerciales-prec",
+      "name": "github-2",
+      "title": "🧹Chore/Bug: Desarrollar script depurador para eliminar juegos sin datos comerciales (precios) del buscador",
+      "status": "ready_for_worker",
+      "kind": "posted_requirement",
+      "source": "GitHub public issue",
+      "source_url": "https://github.com/MCT-5/Projecte_Web/issues/14",
+      "contact_route": "Use the public issue or repository contribution route only.",
+      "requirement": "### **Descripción:** Se ha detectado que la barra de búsqueda muestra \"juegos fantasma\". Estos registros aparecen en los resultados de indexación pero, al seleccionarlos, no contienen precios, descripción ni stock debido a migraciones incompletas o fallos en la ingesta de datos. Necesitamos un script de depuración (Janitor/Cleanup script) que limpie estos re",
+      "estimated_budget": "unknown",
+      "proof_milestone": "Turn the posted requirement into acceptance checks, risk notes, and a paid proof milestone.",
+      "stripe_url": "https://buy.stripe.com/eVq9AUfbN0Q72HpaF21kA07",
       "events": [
         {
-          "actor": "Codex runtime",
-          "text": "closed child session reported by ~/.codex/state_5.sqlite."
+          "actor": "Scout",
+          "text": "Imported real posted requirement from https://github.com/MCT-5/Projecte_Web/issues/14"
         },
         {
-          "actor": "Task",
-          "text": "Live Codex worker session."
+          "actor": "Planner",
+          "text": "Turn the posted requirement into acceptance checks, risk notes, and a paid proof milestone."
+        },
+        {
+          "actor": "Runner",
+          "text": "Launch a Codex worker from the local Conductor runner to create the proof artifact."
         }
       ]
     },
     {
-      "id": "/root/paid_offer_closer",
-      "name": "Boyle",
-      "title": "Draft revenue lead copy",
-      "status": "closed",
-      "kind": "Codex worker",
-      "source": "/Users/gaganarora/Documents/Playground",
-      "task": "Codex Thursdays, Fifth Edition: - Codex mobile (preview) - Remote SSH/devboxes - Hooks - Access tokens - HIPAA i wanna be able to use my chatgpt app to talk to you",
-      "updated_at": "2026-05-15T20:09:59.700Z",
-      "parent_thread_id": "019e28b5-3456-7463-82d8-5dcac96b69e0",
-      "thread_id": "019e2d40-c4a5-7782-81a9-5dc2f926b4c5",
+      "id": "github-246-front-end-remake-migration-tracker-vite-migration-branch",
+      "name": "github-3",
+      "title": "Front-end Remake Migration Tracker (\"Vite Migration\" branch)",
+      "status": "ready_for_worker",
+      "kind": "posted_requirement",
+      "source": "GitHub public issue",
+      "source_url": "https://github.com/travisdesell/ngafid2.0/issues/246",
+      "contact_route": "Use the public issue or repository contribution route only.",
+      "requirement": "Tracking the progress of what pages, components, etc., need to be migrated, reworked, or removed. As of right now, the following branch is being used for these changes: https://github.com/travisdesell/ngafid2.0/tree/aidan_cu/vite_migration_september2025 Pages have been given their own sub-issues. Check `ngafid-frontend/README.md` for updated front-end setup ",
+      "estimated_budget": "unknown",
+      "proof_milestone": "Turn the posted requirement into acceptance checks, risk notes, and a paid proof milestone.",
+      "stripe_url": "https://buy.stripe.com/eVq9AUfbN0Q72HpaF21kA07",
       "events": [
         {
-          "actor": "Codex runtime",
-          "text": "closed child session reported by ~/.codex/state_5.sqlite."
+          "actor": "Scout",
+          "text": "Imported real posted requirement from https://github.com/travisdesell/ngafid2.0/issues/246"
         },
         {
-          "actor": "Task",
-          "text": "Codex Thursdays, Fifth Edition: - Codex mobile (preview) - Remote SSH/devboxes - Hooks - Access tokens - HIPAA i wanna be able to use my chatgpt app to talk to you"
+          "actor": "Planner",
+          "text": "Turn the posted requirement into acceptance checks, risk notes, and a paid proof milestone."
+        },
+        {
+          "actor": "Runner",
+          "text": "Launch a Codex worker from the local Conductor runner to create the proof artifact."
         }
       ]
     },
     {
-      "id": "/root/session_feed_architect",
-      "name": "Boole",
-      "title": "Add session telemetry feed",
-      "status": "closed",
-      "kind": "worker",
-      "source": "/Users/gaganarora/Documents/Playground",
-      "task": "Live Codex worker session.",
-      "updated_at": "2026-05-15T20:07:13.388Z",
-      "parent_thread_id": "019e28b5-3456-7463-82d8-5dcac96b69e0",
-      "thread_id": "019e2d3f-d2f4-7cc2-8f78-281265c134f6",
+      "id": "github-90779-250-travel-cursor-position-is-in-the-end-for-monthly-spend-limit-per-member-field",
+      "name": "github-4",
+      "title": "[$250] Travel - Cursor position is in the end for Monthly spend limit per member field",
+      "status": "ready_for_worker",
+      "kind": "posted_requirement",
+      "source": "GitHub public issue",
+      "source_url": "https://github.com/Expensify/App/issues/90779",
+      "contact_route": "Use the public issue or repository contribution route only.",
+      "requirement": "If you haven’t already, check out our [contributing guidelines](https://github.com/Expensify/ReactNativeChat/blob/main/contributingGuides/CONTRIBUTING.md) for onboarding and email contributors@expensify.com to request to join our Slack channel! ___ **Version Number:** v9.3.74-4 **Reproducible in staging?:** Yes **Reproducible in production?:** Yes **If this ",
+      "estimated_budget": "$250",
+      "proof_milestone": "Turn the posted requirement into acceptance checks, risk notes, and a paid proof milestone.",
+      "stripe_url": "https://buy.stripe.com/eVq9AUfbN0Q72HpaF21kA07",
       "events": [
         {
-          "actor": "Codex runtime",
-          "text": "closed child session reported by ~/.codex/state_5.sqlite."
+          "actor": "Scout",
+          "text": "Imported real posted requirement from https://github.com/Expensify/App/issues/90779"
         },
         {
-          "actor": "Task",
-          "text": "Live Codex worker session."
+          "actor": "Planner",
+          "text": "Turn the posted requirement into acceptance checks, risk notes, and a paid proof milestone."
+        },
+        {
+          "actor": "Runner",
+          "text": "Launch a Codex worker from the local Conductor runner to create the proof artifact."
         }
       ]
     },
     {
-      "id": "/root/proof_offer_builder",
-      "name": "Carson",
-      "title": "Design proof-first offer flow",
-      "status": "closed",
-      "kind": "worker",
-      "source": "/Users/gaganarora/Documents/Playground",
-      "task": "Live Codex worker session.",
-      "updated_at": "2026-05-15T20:07:10.138Z",
-      "parent_thread_id": "019e28b5-3456-7463-82d8-5dcac96b69e0",
-      "thread_id": "019e2d3f-d1b5-7e62-aabf-8c1df0e6abc9",
+      "id": "github-34-safe-t-setala-reset-button-fails-with-no-reset-required-even-when-alarm-is-active",
+      "name": "github-5",
+      "title": "Safe-T: setALA reset button fails with \"No reset required\" even when alarm is active",
+      "status": "ready_for_worker",
+      "kind": "posted_requirement",
+      "source": "GitHub public issue",
+      "source_url": "https://github.com/alexhass/syr_connect/issues/34",
+      "contact_route": "Use the public issue or repository contribution route only.",
+      "requirement": "Gerät: SYR SafeTech Connect, Seriennummer A5AR0003 Verhalten: Während ein aktiver Alarm vorlag (Wasserleitung abgesperrt), wurde button.syr_connect_a5ar0003_setala gedrückt. HomeAssistant loggte No reset required for getALA on A5AR0003 – der Reset schlug fehl. Der Alarm konnte nur über die SYR Connect App quittiert werden. Erwartetes Verhalten: Der Button so",
+      "estimated_budget": "unknown",
+      "proof_milestone": "Turn the posted requirement into acceptance checks, risk notes, and a paid proof milestone.",
+      "stripe_url": "https://buy.stripe.com/eVq9AUfbN0Q72HpaF21kA07",
       "events": [
         {
-          "actor": "Codex runtime",
-          "text": "closed child session reported by ~/.codex/state_5.sqlite."
+          "actor": "Scout",
+          "text": "Imported real posted requirement from https://github.com/alexhass/syr_connect/issues/34"
         },
         {
-          "actor": "Task",
-          "text": "Live Codex worker session."
+          "actor": "Planner",
+          "text": "Turn the posted requirement into acceptance checks, risk notes, and a paid proof milestone."
+        },
+        {
+          "actor": "Runner",
+          "text": "Launch a Codex worker from the local Conductor runner to create the proof artifact."
+        }
+      ]
+    },
+    {
+      "id": "github-33-better-support-for-venetian-blinds",
+      "name": "github-6",
+      "title": "Better support for venetian blinds",
+      "status": "ready_for_worker",
+      "kind": "posted_requirement",
+      "source": "GitHub public issue",
+      "source_url": "https://github.com/jrhubott/adaptive-cover-pro/issues/33",
+      "contact_route": "Use the public issue or repository contribution route only.",
+      "requirement": "Hi, in the docs, you write: >Home Assistant cover entities can only control a single dimension (position OR tilt angle, not both simultaneously). For venetian blinds that support both vertical movement and slat tilting But my venetian blinds are a single entity in Home Assistant (using the KNX integration). Perhaps you could consider allowing height and tilt",
+      "estimated_budget": "unknown",
+      "proof_milestone": "Turn the posted requirement into acceptance checks, risk notes, and a paid proof milestone.",
+      "stripe_url": "https://buy.stripe.com/eVq9AUfbN0Q72HpaF21kA07",
+      "events": [
+        {
+          "actor": "Scout",
+          "text": "Imported real posted requirement from https://github.com/jrhubott/adaptive-cover-pro/issues/33"
+        },
+        {
+          "actor": "Planner",
+          "text": "Turn the posted requirement into acceptance checks, risk notes, and a paid proof milestone."
+        },
+        {
+          "actor": "Runner",
+          "text": "Launch a Codex worker from the local Conductor runner to create the proof artifact."
+        }
+      ]
+    },
+    {
+      "id": "github-25689-bug-text-response-in-custom-theme-triggers-validation-error-unrecognized-key",
+      "name": "github-7",
+      "title": "Bug: 'text.response' in custom theme triggers validation error (unrecognized key)",
+      "status": "ready_for_worker",
+      "kind": "posted_requirement",
+      "source": "GitHub public issue",
+      "source_url": "https://github.com/google-gemini/gemini-cli/issues/25689",
+      "contact_route": "Use the public issue or repository contribution route only.",
+      "requirement": "### Description The `text.response` key in a custom theme configuration triggers a validation error: `Invalid configuration... Unrecognized key(s) in object: 'response'`. ### Expected Behavior The `response` key should be recognized as a valid property of the `text` object in a custom theme, as it is documented in `cli_help` and explicitly used in the source",
+      "estimated_budget": "unknown",
+      "proof_milestone": "Turn the posted requirement into acceptance checks, risk notes, and a paid proof milestone.",
+      "stripe_url": "https://buy.stripe.com/eVq9AUfbN0Q72HpaF21kA07",
+      "events": [
+        {
+          "actor": "Scout",
+          "text": "Imported real posted requirement from https://github.com/google-gemini/gemini-cli/issues/25689"
+        },
+        {
+          "actor": "Planner",
+          "text": "Turn the posted requirement into acceptance checks, risk notes, and a paid proof milestone."
+        },
+        {
+          "actor": "Runner",
+          "text": "Launch a Codex worker from the local Conductor runner to create the proof artifact."
+        }
+      ]
+    },
+    {
+      "id": "github-378-after-harvest-field-values-do-not-change-dedicated-server",
+      "name": "github-8",
+      "title": "After harvest, field values ​​do not change - dedicated server.",
+      "status": "ready_for_worker",
+      "kind": "posted_requirement",
+      "source": "GitHub public issue",
+      "source_url": "https://github.com/TheCodingDad-TisonK/FS25_SoilFertilizer/issues/378",
+      "contact_route": "Use the public issue or repository contribution route only.",
+      "requirement": "### Mod Version v2.1.6.7 ### Farming Simulator 25 Version Lastes ### Game Mode Dedicated Server ### What happened? After mowing the crop, the field values ​​remain unchanged. All fertilizer values ​​are identical to those before harvest. There are no value losses. I'm just starting out with this mod. But from the descriptions, I understand that harvesting sh",
+      "estimated_budget": "unknown",
+      "proof_milestone": "Turn the posted requirement into acceptance checks, risk notes, and a paid proof milestone.",
+      "stripe_url": "https://buy.stripe.com/eVq9AUfbN0Q72HpaF21kA07",
+      "events": [
+        {
+          "actor": "Scout",
+          "text": "Imported real posted requirement from https://github.com/TheCodingDad-TisonK/FS25_SoilFertilizer/issues/378"
+        },
+        {
+          "actor": "Planner",
+          "text": "Turn the posted requirement into acceptance checks, risk notes, and a paid proof milestone."
+        },
+        {
+          "actor": "Runner",
+          "text": "Launch a Codex worker from the local Conductor runner to create the proof artifact."
+        }
+      ]
+    },
+    {
+      "id": "github-7216-set-times-more-efficiently-when-navigating-via-keyboard",
+      "name": "github-9",
+      "title": "💡 Set times more efficiently when navigating via keyboard",
+      "status": "ready_for_worker",
+      "kind": "posted_requirement",
+      "source": "GitHub public issue",
+      "source_url": "https://github.com/super-productivity/super-productivity/issues/7216",
+      "contact_route": "Use the public issue or repository contribution route only.",
+      "requirement": "### Problem Statement When scheduling existing tasks via the keyboard, setting times that are not on the full hour is fiddly and takes more time than it needs to. ### Possible Solution When setting times in schedules, offer a way to set minutes more effectively. I suggest two options: 1. allow users to set minute interval on arrow key in their settings 2. de",
+      "estimated_budget": "unknown",
+      "proof_milestone": "Turn the posted requirement into acceptance checks, risk notes, and a paid proof milestone.",
+      "stripe_url": "https://buy.stripe.com/eVq9AUfbN0Q72HpaF21kA07",
+      "events": [
+        {
+          "actor": "Scout",
+          "text": "Imported real posted requirement from https://github.com/super-productivity/super-productivity/issues/7216"
+        },
+        {
+          "actor": "Planner",
+          "text": "Turn the posted requirement into acceptance checks, risk notes, and a paid proof milestone."
+        },
+        {
+          "actor": "Runner",
+          "text": "Launch a Codex worker from the local Conductor runner to create the proof artifact."
+        }
+      ]
+    },
+    {
+      "id": "github-89621-250-user-was-not-migrated-yet-to-new-expensify-but-was-moved-to-the-new-version-and-th",
+      "name": "github-10",
+      "title": "[$250] User was not migrated yet to New Expensify, but was moved to the New Version and there's no option to return to Classic.",
+      "status": "ready_for_worker",
+      "kind": "posted_requirement",
+      "source": "GitHub public issue",
+      "source_url": "https://github.com/Expensify/App/issues/89621",
+      "contact_route": "Use the public issue or repository contribution route only.",
+      "requirement": "If you haven’t already, check out our [contributing guidelines](https://github.com/Expensify/ReactNativeChat/blob/main/contributingGuides/CONTRIBUTING.md) for onboarding and email contributors@expensify.com to request to join our Slack channel! ___ **Version Number:** **Reproducible in staging?:** Needs Reproduction (Reproduction blocked) **Reproducible in p",
+      "estimated_budget": "$250",
+      "proof_milestone": "Turn the posted requirement into acceptance checks, risk notes, and a paid proof milestone.",
+      "stripe_url": "https://buy.stripe.com/eVq9AUfbN0Q72HpaF21kA07",
+      "events": [
+        {
+          "actor": "Scout",
+          "text": "Imported real posted requirement from https://github.com/Expensify/App/issues/89621"
+        },
+        {
+          "actor": "Planner",
+          "text": "Turn the posted requirement into acceptance checks, risk notes, and a paid proof milestone."
+        },
+        {
+          "actor": "Runner",
+          "text": "Launch a Codex worker from the local Conductor runner to create the proof artifact."
+        }
+      ]
+    },
+    {
+      "id": "github-14-examples-add-a-maintained-flask-demo-under-examples-multi-framework-demo-flask-demo",
+      "name": "github-11",
+      "title": "examples: add a maintained Flask demo under examples/multi-framework-demo/flask_demo",
+      "status": "ready_for_worker",
+      "kind": "posted_requirement",
+      "source": "GitHub public issue",
+      "source_url": "https://github.com/0-Shimanshu/ADIUVARE/issues/14",
+      "contact_route": "Use the public issue or repository contribution route only.",
+      "requirement": "Adiuvare would benefit from a maintained Flask example app that shows the library in real use instead of only short code snippets. ## Exact folder Please add this example under: - `examples/multi-framework-demo/flask_demo/` Use that exact folder name so the examples tree stays predictable and does not conflict with the main package layout. ## What the exampl",
+      "estimated_budget": "unknown",
+      "proof_milestone": "Turn the posted requirement into acceptance checks, risk notes, and a paid proof milestone.",
+      "stripe_url": "https://buy.stripe.com/eVq9AUfbN0Q72HpaF21kA07",
+      "events": [
+        {
+          "actor": "Scout",
+          "text": "Imported real posted requirement from https://github.com/0-Shimanshu/ADIUVARE/issues/14"
+        },
+        {
+          "actor": "Planner",
+          "text": "Turn the posted requirement into acceptance checks, risk notes, and a paid proof milestone."
+        },
+        {
+          "actor": "Runner",
+          "text": "Launch a Codex worker from the local Conductor runner to create the proof artifact."
+        }
+      ]
+    },
+    {
+      "id": "github-1741-upload-of-files-doesn-t-work",
+      "name": "github-12",
+      "title": "Upload of files doesn't work",
+      "status": "ready_for_worker",
+      "kind": "posted_requirement",
+      "source": "GitHub public issue",
+      "source_url": "https://github.com/nexu-io/open-design/issues/1741",
+      "contact_route": "Use the public issue or repository contribution route only.",
+      "requirement": "### What happened? Was designing business cards and uploaded a logo to the chat. The chat kept saying there was no upload. Asked what it could see in the design files as it was there on each logo and it said it couldn't see the design files. ### Steps to reproduce Just upload the file to the chat for any design ### Expected behavior TO be able to use the upl",
+      "estimated_budget": "unknown",
+      "proof_milestone": "Turn the posted requirement into acceptance checks, risk notes, and a paid proof milestone.",
+      "stripe_url": "https://buy.stripe.com/eVq9AUfbN0Q72HpaF21kA07",
+      "events": [
+        {
+          "actor": "Scout",
+          "text": "Imported real posted requirement from https://github.com/nexu-io/open-design/issues/1741"
+        },
+        {
+          "actor": "Planner",
+          "text": "Turn the posted requirement into acceptance checks, risk notes, and a paid proof milestone."
+        },
+        {
+          "actor": "Runner",
+          "text": "Launch a Codex worker from the local Conductor runner to create the proof artifact."
+        }
+      ]
+    },
+    {
+      "id": "github-4886-php-8-5-documentation-tracker",
+      "name": "github-13",
+      "title": "PHP 8.5 documentation tracker",
+      "status": "ready_for_worker",
+      "kind": "posted_requirement",
+      "source": "GitHub public issue",
+      "source_url": "https://github.com/php/doc-en/issues/4886",
+      "contact_route": "Use the public issue or repository contribution route only.",
+      "requirement": "Pages which need to be added/modified for complete documentation of PHP 8.5: > [!NOTE] > This issue is still a Work In Progress > [!IMPORTANT] > Priority should be given to documenting Core language and ext/standard behavioral changes ## Migration Guide - [x] #4906 ## Core ### Backward Incompatible Changes - [x] It is no longer possible to use \"array\" and \"c",
+      "estimated_budget": "unknown",
+      "proof_milestone": "Turn the posted requirement into acceptance checks, risk notes, and a paid proof milestone.",
+      "stripe_url": "https://buy.stripe.com/eVq9AUfbN0Q72HpaF21kA07",
+      "events": [
+        {
+          "actor": "Scout",
+          "text": "Imported real posted requirement from https://github.com/php/doc-en/issues/4886"
+        },
+        {
+          "actor": "Planner",
+          "text": "Turn the posted requirement into acceptance checks, risk notes, and a paid proof milestone."
+        },
+        {
+          "actor": "Runner",
+          "text": "Launch a Codex worker from the local Conductor runner to create the proof artifact."
+        }
+      ]
+    },
+    {
+      "id": "github-90794-250-onboarding-modal-is-show-when-the-invited-member-does-not-complete-onboarding-login",
+      "name": "github-14",
+      "title": "[$250] Onboarding modal is show when the invited member does not complete onboarding login",
+      "status": "ready_for_worker",
+      "kind": "posted_requirement",
+      "source": "GitHub public issue",
+      "source_url": "https://github.com/Expensify/App/issues/90794",
+      "contact_route": "Use the public issue or repository contribution route only.",
+      "requirement": "If you haven’t already, check out our [contributing guidelines](https://github.com/Expensify/ReactNativeChat/blob/main/contributingGuides/CONTRIBUTING.md) for onboarding and email contributors@expensify.com to request to join our Slack channel! ___ **Version Number:** v9.3.74-4 **Reproducible in staging?:** Yes **Reproducible in production?:** Yes **If this ",
+      "estimated_budget": "$250",
+      "proof_milestone": "Turn the posted requirement into acceptance checks, risk notes, and a paid proof milestone.",
+      "stripe_url": "https://buy.stripe.com/eVq9AUfbN0Q72HpaF21kA07",
+      "events": [
+        {
+          "actor": "Scout",
+          "text": "Imported real posted requirement from https://github.com/Expensify/App/issues/90794"
+        },
+        {
+          "actor": "Planner",
+          "text": "Turn the posted requirement into acceptance checks, risk notes, and a paid proof milestone."
+        },
+        {
+          "actor": "Runner",
+          "text": "Launch a Codex worker from the local Conductor runner to create the proof artifact."
+        }
+      ]
+    },
+    {
+      "id": "github-245-interop-add-column-order-regression-tests-for-all-conversions",
+      "name": "github-15",
+      "title": "Interop: Add column order regression tests for all conversions",
+      "status": "ready_for_worker",
+      "kind": "posted_requirement",
+      "source": "GitHub public issue",
+      "source_url": "https://github.com/im-anishraj/arnio/issues/245",
+      "contact_route": "Use the public issue or repository contribution route only.",
+      "requirement": "## Context Column order must remain stable through read, clean, and conversion boundaries. ## Suggested files arnio/convert.py, bindings/bind_arnio.cpp, tests/test_convert.py, README.md ## Scope - Confirm the current behavior and intended user-facing contract. - Implement the smallest focused change that satisfies this issue. - Add tests for normal, edge, an",
+      "estimated_budget": "unknown",
+      "proof_milestone": "Turn the posted requirement into acceptance checks, risk notes, and a paid proof milestone.",
+      "stripe_url": "https://buy.stripe.com/eVq9AUfbN0Q72HpaF21kA07",
+      "events": [
+        {
+          "actor": "Scout",
+          "text": "Imported real posted requirement from https://github.com/im-anishraj/arnio/issues/245"
+        },
+        {
+          "actor": "Planner",
+          "text": "Turn the posted requirement into acceptance checks, risk notes, and a paid proof milestone."
+        },
+        {
+          "actor": "Runner",
+          "text": "Launch a Codex worker from the local Conductor runner to create the proof artifact."
+        }
+      ]
+    },
+    {
+      "id": "github-1797-chat-message-content-is-clipped-after-start-publish-from-plugin-detail-in-0-8-0",
+      "name": "github-16",
+      "title": "Chat message content is clipped after Start Publish from plugin detail in 0.8.0",
+      "status": "ready_for_worker",
+      "kind": "posted_requirement",
+      "source": "GitHub public issue",
+      "source_url": "https://github.com/nexu-io/open-design/issues/1797",
+      "contact_route": "Use the public issue or repository contribution route only.",
+      "requirement": "## Summary In Open Design 0.8.0, after going from the Plugins page into a project detail view and clicking `Start publishing`, the chat message content is not fully visible. The text inside the chat panel gets clipped instead of being displayed properly. ## Version Observed on 0.8.0. ## Environment - Platform: macOS - Surface: Plugins page -> project detail ",
+      "estimated_budget": "unknown",
+      "proof_milestone": "Turn the posted requirement into acceptance checks, risk notes, and a paid proof milestone.",
+      "stripe_url": "https://buy.stripe.com/eVq9AUfbN0Q72HpaF21kA07",
+      "events": [
+        {
+          "actor": "Scout",
+          "text": "Imported real posted requirement from https://github.com/nexu-io/open-design/issues/1797"
+        },
+        {
+          "actor": "Planner",
+          "text": "Turn the posted requirement into acceptance checks, risk notes, and a paid proof milestone."
+        },
+        {
+          "actor": "Runner",
+          "text": "Launch a Codex worker from the local Conductor runner to create the proof artifact."
+        }
+      ]
+    },
+    {
+      "id": "github-88013-250-update-select-all-behavior-in-newdot-to-reflect-olddot-ui-dropdown",
+      "name": "github-17",
+      "title": "[$250] update \"Select all\" behavior in NewDot to reflect OldDot UI dropdown",
+      "status": "ready_for_worker",
+      "kind": "posted_requirement",
+      "source": "GitHub public issue",
+      "source_url": "https://github.com/Expensify/App/issues/88013",
+      "contact_route": "Use the public issue or repository contribution route only.",
+      "requirement": "## Problem - in OldDot, we solve the issue of truly selecting all expenses without needing to scroll down and load the remaining expenses by providing the \"Select All\" option (see screenshot) - in NewDot, users need to scroll down (perhaps even multiple times), then deselect the \"Select All\" checkbox and reselect in order to truly select all expenses (only \"",
+      "estimated_budget": "$250",
+      "proof_milestone": "Turn the posted requirement into acceptance checks, risk notes, and a paid proof milestone.",
+      "stripe_url": "https://buy.stripe.com/eVq9AUfbN0Q72HpaF21kA07",
+      "events": [
+        {
+          "actor": "Scout",
+          "text": "Imported real posted requirement from https://github.com/Expensify/App/issues/88013"
+        },
+        {
+          "actor": "Planner",
+          "text": "Turn the posted requirement into acceptance checks, risk notes, and a paid proof milestone."
+        },
+        {
+          "actor": "Runner",
+          "text": "Launch a Codex worker from the local Conductor runner to create the proof artifact."
+        }
+      ]
+    },
+    {
+      "id": "github-814-emu-fork-bugs-out-if-you-try-to-pick-up-a-crate-as-a-new-one-spawns-oddly-specific-i-know",
+      "name": "github-18",
+      "title": "EMU fork bugs out if you try to pick up a crate as a new one spawns(ODDLY SPECIFIC I KNOW)",
+      "status": "ready_for_worker",
+      "kind": "posted_requirement",
+      "source": "GitHub public issue",
+      "source_url": "https://github.com/project-wayfarer/wayfarer-14/issues/814",
+      "contact_route": "Use the public issue or repository contribution route only.",
+      "requirement": "### Issue Summary: I don't really know how else to explain this. I was picking up crates in the trade mall. The emu was working on picking up a crate and a new one spawned from the pad, moving the other crate. The doafter went through, the crate was not picked up and now I cannot pick up a crate at all. Yes, the powerlift is selected. ### Error Logs: No logs",
+      "estimated_budget": "unknown",
+      "proof_milestone": "Turn the posted requirement into acceptance checks, risk notes, and a paid proof milestone.",
+      "stripe_url": "https://buy.stripe.com/eVq9AUfbN0Q72HpaF21kA07",
+      "events": [
+        {
+          "actor": "Scout",
+          "text": "Imported real posted requirement from https://github.com/project-wayfarer/wayfarer-14/issues/814"
+        },
+        {
+          "actor": "Planner",
+          "text": "Turn the posted requirement into acceptance checks, risk notes, and a paid proof milestone."
+        },
+        {
+          "actor": "Runner",
+          "text": "Launch a Codex worker from the local Conductor runner to create the proof artifact."
+        }
+      ]
+    },
+    {
+      "id": "github-2864-bounty-20-rtc-create-a-github-action-that-awards-rtc-for-merged-pull-requests",
+      "name": "github-19",
+      "title": "[BOUNTY: 20 RTC] Create a GitHub Action That Awards RTC for Merged Pull Requests",
+      "status": "ready_for_worker",
+      "kind": "posted_requirement",
+      "source": "GitHub public issue",
+      "source_url": "https://github.com/Scottcjn/rustchain-bounties/issues/2864",
+      "contact_route": "Use the public issue or repository contribution route only.",
+      "requirement": "## GitHub Action: Auto-Award RTC on PR Merge **Reward: 20 RTC (~$2.00 USD)** ### Goal Build a reusable GitHub Action that automatically awards RTC tokens when a PR is merged. Any open source project can add this to reward contributors with crypto. ### How It Works ```yaml # .github/workflows/rtc-reward.yml on: pull_request: types: [closed] jobs: reward: if: ",
+      "estimated_budget": "unknown",
+      "proof_milestone": "Map the workflow, list credentials needed after payment, and produce a runnable proof checklist.",
+      "stripe_url": "https://buy.stripe.com/eVq9AUfbN0Q72HpaF21kA07",
+      "events": [
+        {
+          "actor": "Scout",
+          "text": "Imported real posted requirement from https://github.com/Scottcjn/rustchain-bounties/issues/2864"
+        },
+        {
+          "actor": "Planner",
+          "text": "Map the workflow, list credentials needed after payment, and produce a runnable proof checklist."
+        },
+        {
+          "actor": "Runner",
+          "text": "Launch a Codex worker from the local Conductor runner to create the proof artifact."
+        }
+      ]
+    },
+    {
+      "id": "github-229-arframe-document-mutation-and-copy-semantics",
+      "name": "github-20",
+      "title": "ArFrame: Document mutation and copy semantics",
+      "status": "ready_for_worker",
+      "kind": "posted_requirement",
+      "source": "GitHub public issue",
+      "source_url": "https://github.com/im-anishraj/arnio/issues/229",
+      "contact_route": "Use the public issue or repository contribution route only.",
+      "requirement": "## Context Users need to know whether cleaning operations mutate or return new frames. ## Suggested files arnio/frame.py, arnio/convert.py, tests/test_frame.py, tests/test_convert.py, README.md ## Scope - Confirm the current behavior and intended user-facing contract. - Implement the smallest focused change that satisfies this issue. - Add tests for normal, ",
+      "estimated_budget": "unknown",
+      "proof_milestone": "Turn the posted requirement into acceptance checks, risk notes, and a paid proof milestone.",
+      "stripe_url": "https://buy.stripe.com/eVq9AUfbN0Q72HpaF21kA07",
+      "events": [
+        {
+          "actor": "Scout",
+          "text": "Imported real posted requirement from https://github.com/im-anishraj/arnio/issues/229"
+        },
+        {
+          "actor": "Planner",
+          "text": "Turn the posted requirement into acceptance checks, risk notes, and a paid proof milestone."
+        },
+        {
+          "actor": "Runner",
+          "text": "Launch a Codex worker from the local Conductor runner to create the proof artifact."
+        }
+      ]
+    },
+    {
+      "id": "github-195-schema-add-string-length-constraints",
+      "name": "github-21",
+      "title": "Schema: Add string length constraints",
+      "status": "ready_for_worker",
+      "kind": "posted_requirement",
+      "source": "GitHub public issue",
+      "source_url": "https://github.com/im-anishraj/arnio/issues/195",
+      "contact_route": "Use the public issue or repository contribution route only.",
+      "requirement": "## Context Text fields need min_length and max_length validation for production data contracts. ## Suggested files arnio/schema.py, tests/test_schema.py, README.md ## Scope - Confirm the current behavior and intended user-facing contract. - Implement the smallest focused change that satisfies this issue. - Add tests for normal, edge, and invalid cases where ",
+      "estimated_budget": "unknown",
+      "proof_milestone": "Turn the posted requirement into acceptance checks, risk notes, and a paid proof milestone.",
+      "stripe_url": "https://buy.stripe.com/eVq9AUfbN0Q72HpaF21kA07",
+      "events": [
+        {
+          "actor": "Scout",
+          "text": "Imported real posted requirement from https://github.com/im-anishraj/arnio/issues/195"
+        },
+        {
+          "actor": "Planner",
+          "text": "Turn the posted requirement into acceptance checks, risk notes, and a paid proof milestone."
+        },
+        {
+          "actor": "Runner",
+          "text": "Launch a Codex worker from the local Conductor runner to create the proof artifact."
+        }
+      ]
+    },
+    {
+      "id": "github-73-speed-concern",
+      "name": "github-22",
+      "title": "Speed concern",
+      "status": "ready_for_worker",
+      "kind": "posted_requirement",
+      "source": "GitHub public issue",
+      "source_url": "https://github.com/ngosang/docker-amule/issues/73",
+      "contact_route": "Use the public issue or repository contribution route only.",
+      "requirement": "Do you have speed problems.? I've never seen amule go above 1MB/s. I have read a lot of the issues with amule about speed: https://github.com/amule-project/amule/issues/300 https://github.com/amule-project/amule/issues/290 https://github.com/amule-project/amule/issues/372 https://github.com/amule-project/amule/pull/381 For now I'm using this docker and love ",
+      "estimated_budget": "unknown",
+      "proof_milestone": "Turn the posted requirement into acceptance checks, risk notes, and a paid proof milestone.",
+      "stripe_url": "https://buy.stripe.com/eVq9AUfbN0Q72HpaF21kA07",
+      "events": [
+        {
+          "actor": "Scout",
+          "text": "Imported real posted requirement from https://github.com/ngosang/docker-amule/issues/73"
+        },
+        {
+          "actor": "Planner",
+          "text": "Turn the posted requirement into acceptance checks, risk notes, and a paid proof milestone."
+        },
+        {
+          "actor": "Runner",
+          "text": "Launch a Codex worker from the local Conductor runner to create the proof artifact."
+        }
+      ]
+    },
+    {
+      "id": "github-4189-lfx-mentorship-ai-driven-test-coverage-architect-for-kubestellar-console",
+      "name": "github-23",
+      "title": "LFX Mentorship: AI-Driven Test Coverage Architect for KubeStellar Console",
+      "status": "ready_for_worker",
+      "kind": "posted_requirement",
+      "source": "GitHub public issue",
+      "source_url": "https://github.com/kubestellar/console/issues/4189",
+      "contact_route": "Use the public issue or repository contribution route only.",
+      "requirement": "## Summary Design and implement a comprehensive test suite for the KubeStellar Console using AI coding agents (Claude Code / Opus or equivalent), and build autonomous GitHub Actions workflows that continuously improve test coverage after the mentorship ends. ## Background The KubeStellar Console (console.kubestellar.io) currently has minimal automated test c",
+      "estimated_budget": "unknown",
+      "proof_milestone": "Map the workflow, list credentials needed after payment, and produce a runnable proof checklist.",
+      "stripe_url": "https://buy.stripe.com/eVq9AUfbN0Q72HpaF21kA07",
+      "events": [
+        {
+          "actor": "Scout",
+          "text": "Imported real posted requirement from https://github.com/kubestellar/console/issues/4189"
+        },
+        {
+          "actor": "Planner",
+          "text": "Map the workflow, list credentials needed after payment, and produce a runnable proof checklist."
+        },
+        {
+          "actor": "Runner",
+          "text": "Launch a Codex worker from the local Conductor runner to create the proof artifact."
+        }
+      ]
+    },
+    {
+      "id": "github-105-linux-support-help-wanted",
+      "name": "github-24",
+      "title": "Linux support [help wanted]",
+      "status": "ready_for_worker",
+      "kind": "posted_requirement",
+      "source": "GitHub public issue",
+      "source_url": "https://github.com/iPlug2/iPlug2/issues/105",
+      "contact_route": "Use the public issue or repository contribution route only.",
+      "requirement": "Reaper now runs on linux and WDL/Swell has GDK support It shouldn't be hard to make the stand-alone app run with Linux and to then implement LV2 support. there are two branches for this with the beginnings of the work, but I could do with help from someone who uses Linux more regularly. IGraphicsLinux is the main thing that needs implementing, possibly using",
+      "estimated_budget": "unknown",
+      "proof_milestone": "Turn the posted requirement into acceptance checks, risk notes, and a paid proof milestone.",
+      "stripe_url": "https://buy.stripe.com/eVq9AUfbN0Q72HpaF21kA07",
+      "events": [
+        {
+          "actor": "Scout",
+          "text": "Imported real posted requirement from https://github.com/iPlug2/iPlug2/issues/105"
+        },
+        {
+          "actor": "Planner",
+          "text": "Turn the posted requirement into acceptance checks, risk notes, and a paid proof milestone."
+        },
+        {
+          "actor": "Runner",
+          "text": "Launch a Codex worker from the local Conductor runner to create the proof artifact."
+        }
+      ]
+    },
+    {
+      "id": "github-2508-tracking-validating-removing-ozone-platform-x11-as-the-default-pr-2506",
+      "name": "github-25",
+      "title": "Tracking: validating removing --ozone-platform=x11 as the default (PR #2506)",
+      "status": "ready_for_worker",
+      "kind": "posted_requirement",
+      "source": "GitHub public issue",
+      "source_url": "https://github.com/IsmaelMartinez/teams-for-linux/issues/2508",
+      "contact_route": "Use the public issue or repository contribution route only.",
+      "requirement": "### Background PR #2506 changes the default Chromium backend in our `.desktop` entries from `--ozone-platform=x11` to not providing it. On a Wayland session this means the app runs as a native Wayland client by default instead of being forced onto XWayland. The X11 force was added in 2.7.4 to mask widespread Electron 38 era Wayland regressions. Electron 41 h",
+      "estimated_budget": "unknown",
+      "proof_milestone": "Turn the posted requirement into acceptance checks, risk notes, and a paid proof milestone.",
+      "stripe_url": "https://buy.stripe.com/eVq9AUfbN0Q72HpaF21kA07",
+      "events": [
+        {
+          "actor": "Scout",
+          "text": "Imported real posted requirement from https://github.com/IsmaelMartinez/teams-for-linux/issues/2508"
+        },
+        {
+          "actor": "Planner",
+          "text": "Turn the posted requirement into acceptance checks, risk notes, and a paid proof milestone."
+        },
+        {
+          "actor": "Runner",
+          "text": "Launch a Codex worker from the local Conductor runner to create the proof artifact."
+        }
+      ]
+    },
+    {
+      "id": "github-88175-250-expense-deleted-report-expenses-shown-after-adding-a-new-expense",
+      "name": "github-26",
+      "title": "[$250] Expense-Deleted report expenses shown after adding a new expense",
+      "status": "ready_for_worker",
+      "kind": "posted_requirement",
+      "source": "GitHub public issue",
+      "source_url": "https://github.com/Expensify/App/issues/88175",
+      "contact_route": "Use the public issue or repository contribution route only.",
+      "requirement": "If you haven’t already, check out our [contributing guidelines](https://github.com/Expensify/ReactNativeChat/blob/main/contributingGuides/CONTRIBUTING.md) for onboarding and email contributors@expensify.com to request to join our Slack channel! ___ **Version Number:** v9.3.60-0 **Reproducible in staging?:** Yes **Reproducible in production?:** Yes **If this ",
+      "estimated_budget": "$250",
+      "proof_milestone": "Turn the posted requirement into acceptance checks, risk notes, and a paid proof milestone.",
+      "stripe_url": "https://buy.stripe.com/eVq9AUfbN0Q72HpaF21kA07",
+      "events": [
+        {
+          "actor": "Scout",
+          "text": "Imported real posted requirement from https://github.com/Expensify/App/issues/88175"
+        },
+        {
+          "actor": "Planner",
+          "text": "Turn the posted requirement into acceptance checks, risk notes, and a paid proof milestone."
+        },
+        {
+          "actor": "Runner",
+          "text": "Launch a Codex worker from the local Conductor runner to create the proof artifact."
+        }
+      ]
+    },
+    {
+      "id": "github-2890-bounty-100-rtc-agentfolio-beacon-integration-spec-reference-implementation",
+      "name": "github-27",
+      "title": "[BOUNTY: 100 RTC] AgentFolio ↔ Beacon Integration Spec + Reference Implementation",
+      "status": "ready_for_worker",
+      "kind": "posted_requirement",
+      "source": "GitHub public issue",
+      "source_url": "https://github.com/Scottcjn/rustchain-bounties/issues/2890",
+      "contact_route": "Use the public issue or repository contribution route only.",
+      "requirement": "## AgentFolio ↔ Beacon Dual-Layer Trust Integration (MIGRATION-PATH REVISION) **Reward: 200 RTC (~$20.00 USD) — increased from 100 RTC after Moltbook acquisition migration window opened** **Priority claim:** [@0xbrainkid](https://github.com/0xbrainkid) ([AgentFolio](https://agentfolio.bot)) has first-right-of-claim through **2026-04-16** (one week, compresse",
+      "estimated_budget": "unknown",
+      "proof_milestone": "Turn the posted requirement into acceptance checks, risk notes, and a paid proof milestone.",
+      "stripe_url": "https://buy.stripe.com/eVq9AUfbN0Q72HpaF21kA07",
+      "events": [
+        {
+          "actor": "Scout",
+          "text": "Imported real posted requirement from https://github.com/Scottcjn/rustchain-bounties/issues/2890"
+        },
+        {
+          "actor": "Planner",
+          "text": "Turn the posted requirement into acceptance checks, risk notes, and a paid proof milestone."
+        },
+        {
+          "actor": "Runner",
+          "text": "Launch a Codex worker from the local Conductor runner to create the proof artifact."
+        }
+      ]
+    },
+    {
+      "id": "github-2512-feat-no-download-progress-or-completion-indicator-when-downloading-files",
+      "name": "github-28",
+      "title": "[Feat]: No download progress or completion indicator when downloading files",
+      "status": "ready_for_worker",
+      "kind": "posted_requirement",
+      "source": "GitHub public issue",
+      "source_url": "https://github.com/IsmaelMartinez/teams-for-linux/issues/2512",
+      "contact_route": "Use the public issue or repository contribution route only.",
+      "requirement": "### Can you reproduce this bug on the Microsoft Teams web app (https://teams.microsoft.com)? Not applicable ### Describe the bug When a file is downloaded from Teams (chat attachment, channel **Files** tab, or meeting chat / recording), the file is saved silently to `~/Downloads` with **no UI feedback at all** — no progress indicator while the download is in",
+      "estimated_budget": "unknown",
+      "proof_milestone": "Turn the posted requirement into acceptance checks, risk notes, and a paid proof milestone.",
+      "stripe_url": "https://buy.stripe.com/eVq9AUfbN0Q72HpaF21kA07",
+      "events": [
+        {
+          "actor": "Scout",
+          "text": "Imported real posted requirement from https://github.com/IsmaelMartinez/teams-for-linux/issues/2512"
+        },
+        {
+          "actor": "Planner",
+          "text": "Turn the posted requirement into acceptance checks, risk notes, and a paid proof milestone."
+        },
+        {
+          "actor": "Runner",
+          "text": "Launch a Codex worker from the local Conductor runner to create the proof artifact."
+        }
+      ]
+    },
+    {
+      "id": "github-438-bug",
+      "name": "github-29",
+      "title": "[BUG]",
+      "status": "ready_for_worker",
+      "kind": "posted_requirement",
+      "source": "GitHub public issue",
+      "source_url": "https://github.com/zxcloli666/SoundCloud-Desktop/issues/438",
+      "contact_route": "Use the public issue or repository contribution route only.",
+      "requirement": "не грузит треки показывает один процент загрузки и впринцепи не прогружает мою библиотеку",
+      "estimated_budget": "unknown",
+      "proof_milestone": "Turn the posted requirement into acceptance checks, risk notes, and a paid proof milestone.",
+      "stripe_url": "https://buy.stripe.com/eVq9AUfbN0Q72HpaF21kA07",
+      "events": [
+        {
+          "actor": "Scout",
+          "text": "Imported real posted requirement from https://github.com/zxcloli666/SoundCloud-Desktop/issues/438"
+        },
+        {
+          "actor": "Planner",
+          "text": "Turn the posted requirement into acceptance checks, risk notes, and a paid proof milestone."
+        },
+        {
+          "actor": "Runner",
+          "text": "Launch a Codex worker from the local Conductor runner to create the proof artifact."
+        }
+      ]
+    },
+    {
+      "id": "github-49-bug-weather-contract-failing-on-edge-case-48",
+      "name": "github-30",
+      "title": "Bug: Weather contract failing on edge case #48",
+      "status": "ready_for_worker",
+      "kind": "posted_requirement",
+      "source": "GitHub public issue",
+      "source_url": "https://github.com/CoolFutures/rainsure/issues/49",
+      "contact_route": "Use the public issue or repository contribution route only.",
+      "requirement": "The contract reverts when a specific value is reached. Needs investigation.",
+      "estimated_budget": "unknown",
+      "proof_milestone": "Turn the posted requirement into acceptance checks, risk notes, and a paid proof milestone.",
+      "stripe_url": "https://buy.stripe.com/eVq9AUfbN0Q72HpaF21kA07",
+      "events": [
+        {
+          "actor": "Scout",
+          "text": "Imported real posted requirement from https://github.com/CoolFutures/rainsure/issues/49"
+        },
+        {
+          "actor": "Planner",
+          "text": "Turn the posted requirement into acceptance checks, risk notes, and a paid proof milestone."
+        },
+        {
+          "actor": "Runner",
+          "text": "Launch a Codex worker from the local Conductor runner to create the proof artifact."
         }
       ]
     }
   ],
   "jobs": [
     {
-      "id": "job-019e2d40-b28d-7bd2-8928-c6de08ae1313",
-      "title": "Review live session approach",
-      "status": "running",
-      "owner": "/root/session_feed_runtime",
-      "updated_at": "2026-05-15T20:14:15.536Z"
+      "id": "job-github-90807-250-distance-after-deleting-a-distance-rate-the-error-appears-only-when-opening-the",
+      "title": "[$250] Distance - After deleting a distance rate, the error appears only when opening the expense",
+      "status": "ready_for_worker",
+      "owner": "github-90807-250-distance-after-deleting-a-distance-rate-the-error-appears-only-when-opening-the",
+      "source_url": "https://github.com/Expensify/App/issues/90807"
     },
     {
-      "id": "job-019e2d3f-d271-73f1-b308-7854515200ea",
-      "title": "Find paid-work opportunities",
-      "status": "closed",
-      "owner": "/root/revenue_lead_scout",
-      "updated_at": "2026-05-15T20:09:59.718Z"
+      "id": "job-github-14-chore-bug-desarrollar-script-depurador-para-eliminar-juegos-sin-datos-comerciales-prec",
+      "title": "🧹Chore/Bug: Desarrollar script depurador para eliminar juegos sin datos comerciales (precios) del buscador",
+      "status": "ready_for_worker",
+      "owner": "github-14-chore-bug-desarrollar-script-depurador-para-eliminar-juegos-sin-datos-comerciales-prec",
+      "source_url": "https://github.com/MCT-5/Projecte_Web/issues/14"
     },
     {
-      "id": "job-019e2d40-c4a5-7782-81a9-5dc2f926b4c5",
-      "title": "Draft revenue lead copy",
-      "status": "closed",
-      "owner": "/root/paid_offer_closer",
-      "updated_at": "2026-05-15T20:09:59.700Z"
+      "id": "job-github-246-front-end-remake-migration-tracker-vite-migration-branch",
+      "title": "Front-end Remake Migration Tracker (\"Vite Migration\" branch)",
+      "status": "ready_for_worker",
+      "owner": "github-246-front-end-remake-migration-tracker-vite-migration-branch",
+      "source_url": "https://github.com/travisdesell/ngafid2.0/issues/246"
     },
     {
-      "id": "job-019e2d3f-d2f4-7cc2-8f78-281265c134f6",
-      "title": "Add session telemetry feed",
-      "status": "closed",
-      "owner": "/root/session_feed_architect",
-      "updated_at": "2026-05-15T20:07:13.388Z"
+      "id": "job-github-90779-250-travel-cursor-position-is-in-the-end-for-monthly-spend-limit-per-member-field",
+      "title": "[$250] Travel - Cursor position is in the end for Monthly spend limit per member field",
+      "status": "ready_for_worker",
+      "owner": "github-90779-250-travel-cursor-position-is-in-the-end-for-monthly-spend-limit-per-member-field",
+      "source_url": "https://github.com/Expensify/App/issues/90779"
     },
     {
-      "id": "job-019e2d3f-d1b5-7e62-aabf-8c1df0e6abc9",
-      "title": "Design proof-first offer flow",
-      "status": "closed",
-      "owner": "/root/proof_offer_builder",
-      "updated_at": "2026-05-15T20:07:10.138Z"
+      "id": "job-github-34-safe-t-setala-reset-button-fails-with-no-reset-required-even-when-alarm-is-active",
+      "title": "Safe-T: setALA reset button fails with \"No reset required\" even when alarm is active",
+      "status": "ready_for_worker",
+      "owner": "github-34-safe-t-setala-reset-button-fails-with-no-reset-required-even-when-alarm-is-active",
+      "source_url": "https://github.com/alexhass/syr_connect/issues/34"
+    },
+    {
+      "id": "job-github-33-better-support-for-venetian-blinds",
+      "title": "Better support for venetian blinds",
+      "status": "ready_for_worker",
+      "owner": "github-33-better-support-for-venetian-blinds",
+      "source_url": "https://github.com/jrhubott/adaptive-cover-pro/issues/33"
+    },
+    {
+      "id": "job-github-25689-bug-text-response-in-custom-theme-triggers-validation-error-unrecognized-key",
+      "title": "Bug: 'text.response' in custom theme triggers validation error (unrecognized key)",
+      "status": "ready_for_worker",
+      "owner": "github-25689-bug-text-response-in-custom-theme-triggers-validation-error-unrecognized-key",
+      "source_url": "https://github.com/google-gemini/gemini-cli/issues/25689"
+    },
+    {
+      "id": "job-github-378-after-harvest-field-values-do-not-change-dedicated-server",
+      "title": "After harvest, field values ​​do not change - dedicated server.",
+      "status": "ready_for_worker",
+      "owner": "github-378-after-harvest-field-values-do-not-change-dedicated-server",
+      "source_url": "https://github.com/TheCodingDad-TisonK/FS25_SoilFertilizer/issues/378"
+    },
+    {
+      "id": "job-github-7216-set-times-more-efficiently-when-navigating-via-keyboard",
+      "title": "💡 Set times more efficiently when navigating via keyboard",
+      "status": "ready_for_worker",
+      "owner": "github-7216-set-times-more-efficiently-when-navigating-via-keyboard",
+      "source_url": "https://github.com/super-productivity/super-productivity/issues/7216"
+    },
+    {
+      "id": "job-github-89621-250-user-was-not-migrated-yet-to-new-expensify-but-was-moved-to-the-new-version-and-th",
+      "title": "[$250] User was not migrated yet to New Expensify, but was moved to the New Version and there's no option to return to Classic.",
+      "status": "ready_for_worker",
+      "owner": "github-89621-250-user-was-not-migrated-yet-to-new-expensify-but-was-moved-to-the-new-version-and-th",
+      "source_url": "https://github.com/Expensify/App/issues/89621"
+    },
+    {
+      "id": "job-github-14-examples-add-a-maintained-flask-demo-under-examples-multi-framework-demo-flask-demo",
+      "title": "examples: add a maintained Flask demo under examples/multi-framework-demo/flask_demo",
+      "status": "ready_for_worker",
+      "owner": "github-14-examples-add-a-maintained-flask-demo-under-examples-multi-framework-demo-flask-demo",
+      "source_url": "https://github.com/0-Shimanshu/ADIUVARE/issues/14"
+    },
+    {
+      "id": "job-github-1741-upload-of-files-doesn-t-work",
+      "title": "Upload of files doesn't work",
+      "status": "ready_for_worker",
+      "owner": "github-1741-upload-of-files-doesn-t-work",
+      "source_url": "https://github.com/nexu-io/open-design/issues/1741"
+    },
+    {
+      "id": "job-github-4886-php-8-5-documentation-tracker",
+      "title": "PHP 8.5 documentation tracker",
+      "status": "ready_for_worker",
+      "owner": "github-4886-php-8-5-documentation-tracker",
+      "source_url": "https://github.com/php/doc-en/issues/4886"
+    },
+    {
+      "id": "job-github-90794-250-onboarding-modal-is-show-when-the-invited-member-does-not-complete-onboarding-login",
+      "title": "[$250] Onboarding modal is show when the invited member does not complete onboarding login",
+      "status": "ready_for_worker",
+      "owner": "github-90794-250-onboarding-modal-is-show-when-the-invited-member-does-not-complete-onboarding-login",
+      "source_url": "https://github.com/Expensify/App/issues/90794"
+    },
+    {
+      "id": "job-github-245-interop-add-column-order-regression-tests-for-all-conversions",
+      "title": "Interop: Add column order regression tests for all conversions",
+      "status": "ready_for_worker",
+      "owner": "github-245-interop-add-column-order-regression-tests-for-all-conversions",
+      "source_url": "https://github.com/im-anishraj/arnio/issues/245"
+    },
+    {
+      "id": "job-github-1797-chat-message-content-is-clipped-after-start-publish-from-plugin-detail-in-0-8-0",
+      "title": "Chat message content is clipped after Start Publish from plugin detail in 0.8.0",
+      "status": "ready_for_worker",
+      "owner": "github-1797-chat-message-content-is-clipped-after-start-publish-from-plugin-detail-in-0-8-0",
+      "source_url": "https://github.com/nexu-io/open-design/issues/1797"
+    },
+    {
+      "id": "job-github-88013-250-update-select-all-behavior-in-newdot-to-reflect-olddot-ui-dropdown",
+      "title": "[$250] update \"Select all\" behavior in NewDot to reflect OldDot UI dropdown",
+      "status": "ready_for_worker",
+      "owner": "github-88013-250-update-select-all-behavior-in-newdot-to-reflect-olddot-ui-dropdown",
+      "source_url": "https://github.com/Expensify/App/issues/88013"
+    },
+    {
+      "id": "job-github-814-emu-fork-bugs-out-if-you-try-to-pick-up-a-crate-as-a-new-one-spawns-oddly-specific-i-know",
+      "title": "EMU fork bugs out if you try to pick up a crate as a new one spawns(ODDLY SPECIFIC I KNOW)",
+      "status": "ready_for_worker",
+      "owner": "github-814-emu-fork-bugs-out-if-you-try-to-pick-up-a-crate-as-a-new-one-spawns-oddly-specific-i-know",
+      "source_url": "https://github.com/project-wayfarer/wayfarer-14/issues/814"
+    },
+    {
+      "id": "job-github-2864-bounty-20-rtc-create-a-github-action-that-awards-rtc-for-merged-pull-requests",
+      "title": "[BOUNTY: 20 RTC] Create a GitHub Action That Awards RTC for Merged Pull Requests",
+      "status": "ready_for_worker",
+      "owner": "github-2864-bounty-20-rtc-create-a-github-action-that-awards-rtc-for-merged-pull-requests",
+      "source_url": "https://github.com/Scottcjn/rustchain-bounties/issues/2864"
+    },
+    {
+      "id": "job-github-229-arframe-document-mutation-and-copy-semantics",
+      "title": "ArFrame: Document mutation and copy semantics",
+      "status": "ready_for_worker",
+      "owner": "github-229-arframe-document-mutation-and-copy-semantics",
+      "source_url": "https://github.com/im-anishraj/arnio/issues/229"
+    },
+    {
+      "id": "job-github-195-schema-add-string-length-constraints",
+      "title": "Schema: Add string length constraints",
+      "status": "ready_for_worker",
+      "owner": "github-195-schema-add-string-length-constraints",
+      "source_url": "https://github.com/im-anishraj/arnio/issues/195"
+    },
+    {
+      "id": "job-github-73-speed-concern",
+      "title": "Speed concern",
+      "status": "ready_for_worker",
+      "owner": "github-73-speed-concern",
+      "source_url": "https://github.com/ngosang/docker-amule/issues/73"
+    },
+    {
+      "id": "job-github-4189-lfx-mentorship-ai-driven-test-coverage-architect-for-kubestellar-console",
+      "title": "LFX Mentorship: AI-Driven Test Coverage Architect for KubeStellar Console",
+      "status": "ready_for_worker",
+      "owner": "github-4189-lfx-mentorship-ai-driven-test-coverage-architect-for-kubestellar-console",
+      "source_url": "https://github.com/kubestellar/console/issues/4189"
+    },
+    {
+      "id": "job-github-105-linux-support-help-wanted",
+      "title": "Linux support [help wanted]",
+      "status": "ready_for_worker",
+      "owner": "github-105-linux-support-help-wanted",
+      "source_url": "https://github.com/iPlug2/iPlug2/issues/105"
+    },
+    {
+      "id": "job-github-2508-tracking-validating-removing-ozone-platform-x11-as-the-default-pr-2506",
+      "title": "Tracking: validating removing --ozone-platform=x11 as the default (PR #2506)",
+      "status": "ready_for_worker",
+      "owner": "github-2508-tracking-validating-removing-ozone-platform-x11-as-the-default-pr-2506",
+      "source_url": "https://github.com/IsmaelMartinez/teams-for-linux/issues/2508"
+    },
+    {
+      "id": "job-github-88175-250-expense-deleted-report-expenses-shown-after-adding-a-new-expense",
+      "title": "[$250] Expense-Deleted report expenses shown after adding a new expense",
+      "status": "ready_for_worker",
+      "owner": "github-88175-250-expense-deleted-report-expenses-shown-after-adding-a-new-expense",
+      "source_url": "https://github.com/Expensify/App/issues/88175"
+    },
+    {
+      "id": "job-github-2890-bounty-100-rtc-agentfolio-beacon-integration-spec-reference-implementation",
+      "title": "[BOUNTY: 100 RTC] AgentFolio ↔ Beacon Integration Spec + Reference Implementation",
+      "status": "ready_for_worker",
+      "owner": "github-2890-bounty-100-rtc-agentfolio-beacon-integration-spec-reference-implementation",
+      "source_url": "https://github.com/Scottcjn/rustchain-bounties/issues/2890"
+    },
+    {
+      "id": "job-github-2512-feat-no-download-progress-or-completion-indicator-when-downloading-files",
+      "title": "[Feat]: No download progress or completion indicator when downloading files",
+      "status": "ready_for_worker",
+      "owner": "github-2512-feat-no-download-progress-or-completion-indicator-when-downloading-files",
+      "source_url": "https://github.com/IsmaelMartinez/teams-for-linux/issues/2512"
+    },
+    {
+      "id": "job-github-438-bug",
+      "title": "[BUG]",
+      "status": "ready_for_worker",
+      "owner": "github-438-bug",
+      "source_url": "https://github.com/zxcloli666/SoundCloud-Desktop/issues/438"
+    },
+    {
+      "id": "job-github-49-bug-weather-contract-failing-on-edge-case-48",
+      "title": "Bug: Weather contract failing on edge case #48",
+      "status": "ready_for_worker",
+      "owner": "github-49-bug-weather-contract-failing-on-edge-case-48",
+      "source_url": "https://github.com/CoolFutures/rainsure/issues/49"
     }
   ],
   "proofs": [
     {
-      "id": "proof-real-codex-state",
-      "title": "Session feed generated from Codex runtime state",
-      "status": "verified",
-      "evidence": "Read 5 child sessions from thread_spawn_edges in ~/.codex/state_5.sqlite."
+      "id": "proof-github-90807-250-distance-after-deleting-a-distance-rate-the-error-appears-only-when-opening-the",
+      "title": "[$250] Distance - After deleting a distance rate, the error appears only when opening the expense",
+      "status": "not_started",
+      "evidence": "Turn the posted requirement into acceptance checks, risk notes, and a paid proof milestone.",
+      "source_url": "https://github.com/Expensify/App/issues/90807"
+    },
+    {
+      "id": "proof-github-14-chore-bug-desarrollar-script-depurador-para-eliminar-juegos-sin-datos-comerciales-prec",
+      "title": "🧹Chore/Bug: Desarrollar script depurador para eliminar juegos sin datos comerciales (precios) del buscador",
+      "status": "not_started",
+      "evidence": "Turn the posted requirement into acceptance checks, risk notes, and a paid proof milestone.",
+      "source_url": "https://github.com/MCT-5/Projecte_Web/issues/14"
+    },
+    {
+      "id": "proof-github-246-front-end-remake-migration-tracker-vite-migration-branch",
+      "title": "Front-end Remake Migration Tracker (\"Vite Migration\" branch)",
+      "status": "not_started",
+      "evidence": "Turn the posted requirement into acceptance checks, risk notes, and a paid proof milestone.",
+      "source_url": "https://github.com/travisdesell/ngafid2.0/issues/246"
+    },
+    {
+      "id": "proof-github-90779-250-travel-cursor-position-is-in-the-end-for-monthly-spend-limit-per-member-field",
+      "title": "[$250] Travel - Cursor position is in the end for Monthly spend limit per member field",
+      "status": "not_started",
+      "evidence": "Turn the posted requirement into acceptance checks, risk notes, and a paid proof milestone.",
+      "source_url": "https://github.com/Expensify/App/issues/90779"
+    },
+    {
+      "id": "proof-github-34-safe-t-setala-reset-button-fails-with-no-reset-required-even-when-alarm-is-active",
+      "title": "Safe-T: setALA reset button fails with \"No reset required\" even when alarm is active",
+      "status": "not_started",
+      "evidence": "Turn the posted requirement into acceptance checks, risk notes, and a paid proof milestone.",
+      "source_url": "https://github.com/alexhass/syr_connect/issues/34"
+    },
+    {
+      "id": "proof-github-33-better-support-for-venetian-blinds",
+      "title": "Better support for venetian blinds",
+      "status": "not_started",
+      "evidence": "Turn the posted requirement into acceptance checks, risk notes, and a paid proof milestone.",
+      "source_url": "https://github.com/jrhubott/adaptive-cover-pro/issues/33"
+    },
+    {
+      "id": "proof-github-25689-bug-text-response-in-custom-theme-triggers-validation-error-unrecognized-key",
+      "title": "Bug: 'text.response' in custom theme triggers validation error (unrecognized key)",
+      "status": "not_started",
+      "evidence": "Turn the posted requirement into acceptance checks, risk notes, and a paid proof milestone.",
+      "source_url": "https://github.com/google-gemini/gemini-cli/issues/25689"
+    },
+    {
+      "id": "proof-github-378-after-harvest-field-values-do-not-change-dedicated-server",
+      "title": "After harvest, field values ​​do not change - dedicated server.",
+      "status": "not_started",
+      "evidence": "Turn the posted requirement into acceptance checks, risk notes, and a paid proof milestone.",
+      "source_url": "https://github.com/TheCodingDad-TisonK/FS25_SoilFertilizer/issues/378"
+    },
+    {
+      "id": "proof-github-7216-set-times-more-efficiently-when-navigating-via-keyboard",
+      "title": "💡 Set times more efficiently when navigating via keyboard",
+      "status": "not_started",
+      "evidence": "Turn the posted requirement into acceptance checks, risk notes, and a paid proof milestone.",
+      "source_url": "https://github.com/super-productivity/super-productivity/issues/7216"
+    },
+    {
+      "id": "proof-github-89621-250-user-was-not-migrated-yet-to-new-expensify-but-was-moved-to-the-new-version-and-th",
+      "title": "[$250] User was not migrated yet to New Expensify, but was moved to the New Version and there's no option to return to Classic.",
+      "status": "not_started",
+      "evidence": "Turn the posted requirement into acceptance checks, risk notes, and a paid proof milestone.",
+      "source_url": "https://github.com/Expensify/App/issues/89621"
     }
   ]
 }

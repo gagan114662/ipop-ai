@@ -51,6 +51,11 @@ button {
   font: inherit;
 }
 
+button:disabled {
+  cursor: wait;
+  opacity: 0.62;
+}
+
 code {
   color: var(--green);
   font-family: "SF Mono", "IBM Plex Mono", ui-monospace, Menlo, Monaco, monospace;
@@ -193,6 +198,30 @@ code {
   border-radius: 8px;
   padding: 13px;
   background: rgba(255, 255, 255, 0.04);
+}
+
+.conductor-actions {
+  display: grid;
+  gap: 8px;
+}
+
+.conductor-actions button {
+  min-height: 34px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--muted);
+  font-family: "SF Mono", "IBM Plex Mono", ui-monospace, Menlo, Monaco, monospace;
+  font-size: 12px;
+  font-weight: 900;
+  text-align: left;
+  padding: 0 10px;
+}
+
+.conductor-actions button:hover,
+.conductor-actions button:focus-visible {
+  border-color: rgba(157, 255, 122, 0.58);
+  color: var(--ink);
 }
 
 .runtime-card span,
@@ -374,6 +403,34 @@ dt,
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.task-board-tabs {
+  min-height: 42px;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  border-bottom: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.026);
+}
+
+.task-board-tabs span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid var(--line);
+  color: var(--quiet);
+  font-family: "SF Mono", "IBM Plex Mono", ui-monospace, Menlo, Monaco, monospace;
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.task-board-tabs span:last-child {
+  border-right: 0;
+}
+
+.task-board-tabs span.active {
+  color: var(--green);
+  background: rgba(157, 255, 122, 0.08);
 }
 
 .sync-state {

@@ -21,6 +21,8 @@
   const runtimeState = $("[data-runtime-state]");
   const runtimeTitle = $("[data-runtime-title]");
   const runtimeCopy = $("[data-runtime-copy]");
+  const launchWorkers = $("[data-launch-workers]");
+  const refreshSessions = $("[data-refresh-sessions]");
 
   const setText = (selector, value) => {
     const node = $(selector);
@@ -79,7 +81,7 @@
       const status = String(session.status || "").toLowerCase();
       return status === "running" || status === "open";
     });
-    setText("[data-stat='sessions']", String(liveSessions.length));
+    setText("[data-stat='sessions']", String(state.sessions.length));
     setText("[data-stat='jobs']", String(state.jobs.length));
     setText("[data-stat='proofs']", String(state.proofs.length));
   };
@@ -101,7 +103,7 @@
         return status === "running" || status === "open";
       }).length;
       runtimeTitle.textContent = connected
-        ? `${liveCount} live Codex session${liveCount === 1 ? "" : "s"}; ${state.sessions.length} recent session${state.sessions.length === 1 ? "" : "s"} loaded`
+        ? `${state.sessions.length} posted requirement${state.sessions.length === 1 ? "" : "s"}; ${liveCount} Codex worker${liveCount === 1 ? "" : "s"} running`
         : "No live Codex feed yet";
     }
     if (runtimeCopy) {
@@ -237,6 +239,20 @@
     state.generatedAt = feed.generatedAt;
     render();
   };
+
+  launchWorkers?.addEventListener("click", async () => {
+    launchWorkers.disabled = true;
+    launchWorkers.textContent = "Launching...";
+    try {
+      await fetch("/api/launch-all?limit=3", { cache: "no-store" });
+      await boot();
+    } finally {
+      launchWorkers.disabled = false;
+      launchWorkers.textContent = "New workspace";
+    }
+  });
+
+  refreshSessions?.addEventListener("click", boot);
 
   boot();
   window.setInterval(boot, 15000);

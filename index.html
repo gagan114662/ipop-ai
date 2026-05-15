@@ -69,6 +69,14 @@
         </div>
 
         <div class="rail-section">
+          <p class="rail-label">Tasks</p>
+          <div class="conductor-actions">
+            <button type="button" data-refresh-sessions>Filter and display</button>
+            <button type="button" data-launch-workers>New workspace</button>
+          </div>
+        </div>
+
+        <div class="rail-section">
           <p class="rail-label">Runtime</p>
           <div class="runtime-card" data-runtime-card>
             <span data-runtime-state>checking</span>
@@ -81,11 +89,11 @@
       <section class="console" id="sessions" aria-labelledby="console-title">
         <div class="console-header">
           <div>
-            <p class="eyebrow">Conductor-style session swarm</p>
-            <h1 id="console-title">Actual Codex sessions, one console.</h1>
+            <p class="eyebrow">Conductor-style task board</p>
+            <h1 id="console-title">Real posted requirements, real parallel workers.</h1>
             <p class="console-copy">
-              This is the operating surface for Samantha: live Codex workers run in parallel,
-              QA checks artifacts, and Stripe collects before custom delivery.
+              Each row starts from a real public posted requirement. New workspace launches
+              actual Codex workers that produce proof artifacts before paid delivery.
             </p>
           </div>
           <a class="primary-action" href="https://buy.stripe.com/eVq9AUfbN0Q72HpaF21kA07">Buy $19 trial</a>
@@ -93,7 +101,7 @@
 
         <div class="status-strip" aria-label="Live system status">
           <article>
-            <span>Live sessions</span>
+            <span>Work sessions</span>
             <strong data-stat="sessions">0</strong>
           </article>
           <article>
@@ -119,13 +127,21 @@
             <div class="sync-state" data-sync-state>waiting for feed</div>
           </div>
 
+          <div class="task-board-tabs" aria-label="Conductor task states">
+            <span>Done</span>
+            <span>In review</span>
+            <span class="active">In progress</span>
+            <span>Backlog</span>
+            <span>Canceled</span>
+          </div>
+
           <div class="session-grid">
             <section class="pane session-list" aria-labelledby="session-list-title">
               <div class="pane-head">
                 <h2 id="session-list-title">Sessions</h2>
                 <span data-last-updated>not connected</span>
               </div>
-              <div class="search-box">Filter live Codex sessions</div>
+              <div class="search-box">Filter requirement sessions</div>
               <div class="session-items" data-session-list>
                 <article class="empty-state">
                   <span>No live sessions yet</span>
