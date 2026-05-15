@@ -25,16 +25,3 @@ Useful overrides:
 - `IPOP_SESSION_WINDOW_MS=<milliseconds>` changes the recent-root lookup window.
 - `IPOP_SESSIONS_JSON='{...}'` keeps the older manual JSON override for tests or
   emergency publishing.
-
-## Build real posted-requirement sessions
-
-```sh
-node scripts/build-work-sessions.mjs
-```
-
-This writes `sessions.json` from public web-posted requirements on GitHub,
-RemoteOK, and Hacker News. Each record includes the source URL, requirement,
-allowed contact route, proof milestone, and matching Stripe checkout route. This
-is the static GitHub Pages version of the Conductor replica; a production runner
-should then spawn Codex workers for the selected sessions and republish the feed
-with `running` statuses from the Codex runtime.

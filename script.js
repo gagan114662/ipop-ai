@@ -75,7 +75,11 @@
   };
 
   const renderStats = () => {
-    setText("[data-stat='sessions']", String(state.sessions.length));
+    const liveSessions = state.sessions.filter((session) => {
+      const status = String(session.status || "").toLowerCase();
+      return status === "running" || status === "open";
+    });
+    setText("[data-stat='sessions']", String(liveSessions.length));
     setText("[data-stat='jobs']", String(state.jobs.length));
     setText("[data-stat='proofs']", String(state.proofs.length));
   };
@@ -97,8 +101,8 @@
         return status === "running" || status === "open";
       }).length;
       runtimeTitle.textContent = connected
-        ? `${state.sessions.length} requirement session${state.sessions.length === 1 ? "" : "s"} loaded; ${liveCount} Codex worker${liveCount === 1 ? "" : "s"} running`
-        : "No requirement feed yet";
+        ? `${liveCount} live Codex session${liveCount === 1 ? "" : "s"}; ${state.sessions.length} recent session${state.sessions.length === 1 ? "" : "s"} loaded`
+        : "No live Codex feed yet";
     }
     if (runtimeCopy) {
       runtimeCopy.textContent = connected
@@ -117,7 +121,7 @@
     if (state.sessions.length === 0) {
       const empty = document.createElement("article");
       empty.className = "empty-state";
-      empty.innerHTML = "<span>No requirement sessions yet</span><p>Run the public requirement intake and Samantha's work sessions will appear here.</p>";
+      empty.innerHTML = "<span>No live sessions yet</span><p>Connect Samantha's runtime feed and actual Codex workers will appear here.</p>";
       sessionList.append(empty);
       return;
     }
@@ -131,7 +135,7 @@
       card.innerHTML = `
         <span>${session.status || session.kind || "Codex session"}</span>
         <strong>${session.title || session.name || id}</strong>
-        <p>${session.source || "Public requirement"} · ${session.estimated_budget || "budget unknown"}</p>
+        <p>${session.task || session.source || "Live worker reported by Samantha runtime."}</p>
       `;
       card.addEventListener("click", () => {
         state.selectedId = id;
@@ -166,8 +170,8 @@
           {
             actor: "System",
             text: state.source
-              ? "Requirement feed is connected. Select a session with events to inspect the source and proof plan."
-              : "No requirement feed is connected, so no worker transcript is being displayed.",
+              ? "Runtime feed is connected. Select a session with events to inspect actual worker activity."
+              : "No live runtime feed is connected, so no worker transcript is being displayed.",
           },
           {
             actor: "Contract",
@@ -194,19 +198,19 @@
     const stripeLink = $("[data-selected-stripe]");
 
     setText("[data-inspector-status]", session ? (session.status || "selected") : "truthful only");
-    setText("[data-selected-requirement]", session
-      ? (session.requirement || session.task || session.title || "Requirement text unavailable.")
-      : "Choose a session to inspect the real web-posted requirement.");
-    setText("[data-selected-contact]", session
-      ? (session.contact_route || "Use the public listing's allowed contact route only.")
-      : "Platform-safe public route only.");
-    setText("[data-selected-proof]", session
-      ? (session.proof_milestone || "Define acceptance checks before delivery.")
-      : "No proof task selected yet.");
+    setText("[data-selected-task]", session
+      ? (session.task || session.title || "Task text unavailable.")
+      : "Choose a session to inspect the live Codex task.");
+    setText("[data-selected-runtime]", session
+      ? (session.source || session.id || "Codex runtime feed")
+      : "Codex runtime feed only.");
+    setText("[data-selected-updated]", session
+      ? (session.updated_at || "unknown")
+      : "No session selected yet.");
 
     if (sourceLink) {
       sourceLink.href = session?.source_url || "https://ipop.ai/";
-      sourceLink.textContent = session?.source_url || "No source selected";
+      sourceLink.textContent = session?.source_url || "Runtime session";
     }
 
     if (stripeLink) {
