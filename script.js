@@ -80,6 +80,13 @@
     setText("[data-stat='proofs']", String(state.proofs.length));
   };
 
+  const payLabel = (session) => {
+    const signal = session.pay_signal || {};
+    if (session.estimated_budget && session.estimated_budget !== "unknown") return session.estimated_budget;
+    if (signal.summary && signal.summary !== "unknown") return signal.summary;
+    return signal.confidence ? signal.confidence.replace(/_/g, " ") : "pay unverified";
+  };
+
   const renderRuntime = () => {
     const connected = Boolean(state.source);
     const running = state.sessions.filter(isRunning).length;
@@ -116,7 +123,7 @@
       card.innerHTML = `
         <span>${session.status || session.kind || "ready"}</span>
         <strong>${session.title || session.name || id}</strong>
-        <p>${session.source || "posted requirement"}${session.worker_pid ? ` · pid ${session.worker_pid}` : ""}</p>
+        <p>${payLabel(session)} · ${session.source || "posted requirement"}${session.worker_pid ? ` · pid ${session.worker_pid}` : ""}</p>
       `;
       card.addEventListener("click", () => {
         state.selectedId = id;
@@ -156,6 +163,7 @@
     setText("[data-selected-runtime]", session
       ? (session.worker_pid ? `pid ${session.worker_pid} · ${session.status}` : "ready for workspace launch")
       : "No worker selected.");
+    setText("[data-selected-pay]", session ? payLabel(session) : "No pay signal selected.");
     setText("[data-selected-artifact]", session
       ? (session.proof_file || session.proofFile || session.artifact || "No artifact reported yet.")
       : "No artifact yet.");
