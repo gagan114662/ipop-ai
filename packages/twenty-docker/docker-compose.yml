@@ -4,11 +4,13 @@ services:
   server:
     image: twentycrm/twenty:${TAG:-latest}
     volumes:
-      - server-local-data:/app/packages/twenty-server/.local-storage
+      - server-local-data:/app/docker-data
     ports:
       - "3000:3000"
     environment:
       NODE_PORT: 3000
+      NODE_ENV: production
+      LOG_LEVEL: ${LOG_LEVEL:-info}
       PG_DATABASE_URL: postgres://${PG_DATABASE_USER:-postgres}:${PG_DATABASE_PASSWORD:-postgres}@${PG_DATABASE_HOST:-db}:${PG_DATABASE_PORT:-5432}/default
       SERVER_URL: ${SERVER_URL}
       REDIS_URL: ${REDIS_URL:-redis://redis:6379}
@@ -54,15 +56,18 @@ services:
       interval: 5s
       timeout: 5s
       retries: 20
+      start_period: 180s
     restart: always
 
   worker:
     image: twentycrm/twenty:${TAG:-latest}
     volumes:
-      - server-local-data:/app/packages/twenty-server/.local-storage
+      - server-local-data:/app/docker-data
     command: ["yarn", "worker:prod"]
     environment:
       PG_DATABASE_URL: postgres://${PG_DATABASE_USER:-postgres}:${PG_DATABASE_PASSWORD:-postgres}@${PG_DATABASE_HOST:-db}:${PG_DATABASE_PORT:-5432}/default
+      NODE_ENV: production
+      LOG_LEVEL: ${LOG_LEVEL:-info}
       SERVER_URL: ${SERVER_URL}
       REDIS_URL: ${REDIS_URL:-redis://redis:6379}
       DISABLE_DB_MIGRATIONS: "true" # it already runs on the server
