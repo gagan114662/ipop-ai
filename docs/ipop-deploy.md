@@ -30,13 +30,16 @@ Result:
 - Billing routes were mapped, including `/webhooks/stripe` and `/app/billing/charge`.
 
 The compose file now sets production runtime defaults and uses Twenty's current local storage mount path. It also gives the server a longer healthcheck start period so first-boot migrations do not incorrectly fail the dependent worker.
+- The compose file can now run a custom branded image through `TWENTY_IMAGE=...`, used by both the server and worker services.
+
+A dedicated GitHub Actions workflow, `.github/workflows/ipop-production-smoke.yml`, builds this repo's branded `twenty` Docker target, boots it with Postgres/Redis through the production compose stack, checks `/healthz`, and verifies the served app shell contains `iPOP`.
 
 ## Required Production Environment
 
 Set these for a production CRM host such as `https://crm.ipop.ai` or `https://app.ipop.ai`:
 
 ```env
-TAG=<pinned-twenty-image-tag>
+TWENTY_IMAGE=<pinned-branded-image>
 SERVER_URL=https://crm.ipop.ai
 APP_SECRET=...
 PG_DATABASE_URL=postgres://...
@@ -49,7 +52,7 @@ STORAGE_S3_ENDPOINT=...
 
 For local-only file storage, `STORAGE_TYPE=local` works, but production should use durable object storage so file uploads survive redeploys and container replacement.
 
-The official `twentycrm/twenty:latest` image still serves upstream Twenty metadata such as `<title>Twenty</title>` and `og:title=Twenty`. To make the deployed CRM visibly iPOP-branded, build and publish a custom image from this repo's branded source changes, or configure branding through a supported Twenty runtime setting before launch.
+Use a pinned custom image built from this repo's branded source changes for production. The official `twentycrm/twenty:latest` image is useful for upstream runtime smoke checks, but it still serves upstream Twenty metadata such as `<title>Twenty</title>` and `og:title=Twenty`.
 
 ## Stripe/Billing
 
@@ -59,7 +62,7 @@ Stripe remains tracked in GitHub issue #3 for this repo. Do not enable billing i
 
 ## Open Blockers
 
-- The official upstream image is runtime-ready but not visibly iPOP-branded. A custom branded image or supported runtime branding configuration is required before this should be pointed at users.
+- The official upstream image is runtime-ready but not visibly iPOP-branded. Production should use a pinned image built from this repo and proven by the iPOP Production Smoke workflow.
 - Root `ipop.ai` may already have another product surface; prefer a CRM subdomain unless replacing the current site is intentional.
 - Live deployment still needs a provider that can host the stateful server, worker, Postgres, Redis, and durable file storage. Fly billing/trial is incomplete, and Railway auth is not currently valid.
 - Stripe live billing still needs product/price/webhook configuration and a live webhook smoke test.

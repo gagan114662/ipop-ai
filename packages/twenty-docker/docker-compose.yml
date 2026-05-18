@@ -2,7 +2,7 @@ name: twenty
 
 services:
   server:
-    image: twentycrm/twenty:${TAG:-latest}
+    image: ${TWENTY_IMAGE:-twentycrm/twenty:latest}
     volumes:
       - server-local-data:/app/docker-data
     ports:
@@ -60,7 +60,7 @@ services:
     restart: always
 
   worker:
-    image: twentycrm/twenty:${TAG:-latest}
+    image: ${TWENTY_IMAGE:-twentycrm/twenty:latest}
     volumes:
       - server-local-data:/app/docker-data
     command: ["yarn", "worker:prod"]
