@@ -44,3 +44,16 @@ The script does not mutate DNS, Vercel, Namecheap, Stripe, or the backend. It on
 
 The Vercel preview can be healthy while the owned domain is still blocked. That state is not launch-ready; it is only a preview proof.
 
+## Vercel attachment status
+
+Vercel accepted ipop.ai and www.ipop.ai for project ipop-frontdesk on 2026-05-19. DNS is not configured yet.
+
+Current DNS action from Vercel:
+
+- A ipop.ai 76.76.21.21
+- A www.ipop.ai 76.76.21.21
+
+Current nameservers are dns1.registrar-servers.com and dns2.registrar-servers.com, not Vercel nameservers.
+
+After the DNS change propagates, run `scripts/domain/check-domain-readiness.sh` again and confirm TLS plus branded product content before marking the domain gate closed.
+
