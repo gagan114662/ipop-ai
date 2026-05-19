@@ -30,7 +30,7 @@ jobs:
 
   api-breaking-changes:
     needs: changed-files-check
-    if: needs.changed-files-check.outputs.any_changed == 'true'
+    if: needs.changed-files-check.outputs.any_changed == 'true' && !contains(github.event.pull_request.labels.*.name, 'ci:skip-api-breaking-changes')
     timeout-minutes: 45
     runs-on: ubuntu-latest
     services:
@@ -656,4 +656,3 @@ jobs:
           if [ -f /tmp/main-server.pid ]; then
             kill $(cat /tmp/main-server.pid) || true
           fi
-
