@@ -1,0 +1,24 @@
+app = "ipop-ai-crm-worker"
+primary_region = "yyz"
+
+[build]
+  dockerfile = "packages/twenty-docker/twenty/Dockerfile"
+  target = "twenty"
+  [build.args]
+    APP_VERSION = "0.0.0-ipop.fly"
+
+[env]
+  NODE_ENV = "production"
+  LOG_LEVEL = "info"
+  SERVER_URL = "https://crm.ipop.ai"
+  STORAGE_TYPE = "s3"
+  DISABLE_DB_MIGRATIONS = "true"
+  DISABLE_CRON_JOBS_REGISTRATION = "true"
+
+[processes]
+  app = "yarn worker:prod"
+
+[[vm]]
+  memory = "1gb"
+  cpu_kind = "shared"
+  cpus = 1

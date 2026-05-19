@@ -1,0 +1,36 @@
+app = "ipop-ai-crm"
+primary_region = "yyz"
+
+[build]
+  dockerfile = "packages/twenty-docker/twenty/Dockerfile"
+  target = "twenty"
+  [build.args]
+    APP_VERSION = "0.0.0-ipop.fly"
+
+[env]
+  NODE_ENV = "production"
+  NODE_PORT = "3000"
+  LOG_LEVEL = "info"
+  SERVER_URL = "https://crm.ipop.ai"
+  STORAGE_TYPE = "s3"
+  DISABLE_DB_MIGRATIONS = "false"
+  DISABLE_CRON_JOBS_REGISTRATION = "false"
+
+[http_service]
+  internal_port = 3000
+  force_https = true
+  auto_stop_machines = "stop"
+  auto_start_machines = true
+  min_machines_running = 1
+
+  [[http_service.checks]]
+    interval = "30s"
+    timeout = "10s"
+    grace_period = "60s"
+    method = "GET"
+    path = "/healthz"
+
+[[vm]]
+  memory = "2gb"
+  cpu_kind = "shared"
+  cpus = 1

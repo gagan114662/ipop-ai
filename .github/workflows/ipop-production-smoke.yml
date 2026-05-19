@@ -1,0 +1,91 @@
+name: iPOP Production Smoke
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - packages/twenty-docker/**
+      - packages/twenty-front/**
+      - packages/twenty-server/**
+      - packages/twenty-shared/**
+      - packages/twenty-ui/**
+      - packages/twenty-client-sdk/**
+      - docs/ipop-deploy.md
+      - fly.toml
+      - fly.worker.toml
+      - package.json
+      - yarn.lock
+      - .github/workflows/ipop-production-smoke.yml
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ipop-production-smoke-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  branded-image-smoke:
+    name: Build and boot branded Twenty image
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      TWENTY_IMAGE: ipop-twenty:${{ github.sha }}
+      SERVER_URL: http://localhost:3000
+      STORAGE_TYPE: local
+      APP_SECRET: ipop-smoke-app-secret-not-for-production
+      PG_DATABASE_USER: postgres
+      PG_DATABASE_PASSWORD: postgres
+      PG_DATABASE_HOST: db
+      PG_DATABASE_PORT: 5432
+      PG_DATABASE_NAME: default
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Free runner disk
+        run: |
+          docker system prune -af || true
+          sudo rm -rf /usr/share/dotnet /opt/ghc /usr/local/lib/android || true
+          df -h
+
+      - name: Build branded image
+        run: |
+          docker build \
+            --target twenty \
+            --build-arg APP_VERSION=0.0.0-ipop.${{ github.sha }} \
+            -f packages/twenty-docker/twenty/Dockerfile \
+            -t "$TWENTY_IMAGE" \
+            .
+
+      - name: Boot dependencies
+        run: docker compose -f packages/twenty-docker/docker-compose.yml up -d db redis
+
+      - name: Boot server
+        run: docker compose -f packages/twenty-docker/docker-compose.yml up -d server
+
+      - name: Wait for health
+        run: |
+          for i in {1..360}; do
+            status=$(curl -o /tmp/ipop-health.txt -s -w '%{http_code}' http://localhost:3000/healthz || true)
+            echo "health attempt $i: $status"
+            if [ "$status" = "200" ]; then
+              exit 0
+            fi
+            docker compose -f packages/twenty-docker/docker-compose.yml logs --tail 80 server || true
+            sleep 2
+          done
+          docker compose -f packages/twenty-docker/docker-compose.yml logs server worker || true
+          exit 1
+
+      - name: Boot worker
+        run: docker compose -f packages/twenty-docker/docker-compose.yml up -d worker
+
+      - name: Verify iPOP shell branding
+        run: |
+          curl -fsS http://localhost:3000/ -o /tmp/ipop-shell.html
+          grep -q 'iPOP' /tmp/ipop-shell.html
+
+      - name: Cleanup
+        if: always()
+        run: docker compose -f packages/twenty-docker/docker-compose.yml down -v --remove-orphans || true
