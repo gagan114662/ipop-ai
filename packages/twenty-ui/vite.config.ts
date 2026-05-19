@@ -13,6 +13,12 @@ type Checkers = Parameters<typeof checker>[0];
 
 import packageJson from './package.json';
 
+const packageRoot = fs.existsSync(
+  path.resolve(process.cwd(), 'packages/twenty-ui'),
+)
+  ? path.resolve(process.cwd(), 'packages/twenty-ui')
+  : __dirname;
+
 const entries = Object.keys(packageJson.exports)
   .filter((el) => !el.endsWith('.css'))
   .map((module) => `src/${module}/index.ts`);
@@ -61,8 +67,8 @@ export default defineConfig(({ command }) => {
   return {
     resolve: {
       alias: {
-        '@ui/': path.resolve(__dirname, 'src') + '/',
-        '@assets/': path.resolve(__dirname, 'src/assets') + '/',
+        '@ui/': path.resolve(packageRoot, 'src') + '/',
+        '@assets/': path.resolve(packageRoot, 'src/assets') + '/',
         '@tabler/icons-react': '@tabler/icons-react/dist/esm/icons/index.mjs',
       },
     },
@@ -80,7 +86,7 @@ export default defineConfig(({ command }) => {
     plugins: [
       react(),
       tsconfigPaths({
-        root: __dirname,
+        root: packageRoot,
         projects: ['tsconfig.json'],
       }),
       svgr(),
@@ -88,7 +94,7 @@ export default defineConfig(({ command }) => {
       checker(checkersConfig),
       createWywProfilingPlugin(
         wyw({
-          include: [path.resolve(__dirname, 'src') + '/**/*.{ts,tsx}'],
+          include: [path.resolve(packageRoot, 'src') + '/**/*.{ts,tsx}'],
           babelOptions: {
             presets: ['@babel/preset-typescript', '@babel/preset-react'],
           },
@@ -100,8 +106,8 @@ export default defineConfig(({ command }) => {
           const themeCssFiles = ['theme-light.css', 'theme-dark.css'];
           for (const file of themeCssFiles) {
             fs.copyFileSync(
-              path.resolve(__dirname, `src/theme-constants/${file}`),
-              path.resolve(__dirname, `dist/${file}`),
+              path.resolve(packageRoot, `src/theme-constants/${file}`),
+              path.resolve(packageRoot, `dist/${file}`),
             );
           }
         },
