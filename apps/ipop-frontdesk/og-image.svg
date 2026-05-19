@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f172a"/>
+      <stop offset="1" stop-color="#0f766e"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <g font-family="Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" fill="#ffffff">
+    <rect x="70" y="70" width="120" height="120" rx="24" fill="#0f766e" stroke="#ffffff" stroke-width="3"/>
+    <text x="130" y="160" text-anchor="middle" font-weight="800" font-size="64">iP</text>
+    <text x="220" y="160" font-weight="800" font-size="64">iPOP</text>
+    <text x="70" y="320" font-weight="800" font-size="76" letter-spacing="-2">CRM with Proof Packs</text>
+    <text x="70" y="395" font-weight="500" font-size="40" fill="#cbd5e1">Managed buyer queues, sales operations,</text>
+    <text x="70" y="445" font-weight="500" font-size="40" fill="#cbd5e1">and revenue artifacts you can ship.</text>
+    <text x="70" y="555" font-weight="700" font-size="32" fill="#5eead4">ipop.ai</text>
+  </g>
+</svg>

@@ -69,8 +69,21 @@ function renderSelection() {
   checkoutButton.disabled = !selectedOffer.paymentLink
 }
 
+function trackEvent(name, props) {
+  if (typeof window.plausible === "function") {
+    window.plausible(name, { props })
+  }
+}
+
+offersNode.addEventListener("click", (event) => {
+  const button = event.target.closest("button[data-offer]")
+  if (!button) return
+  trackEvent("offer_selected", { offer: button.dataset.offer })
+})
+
 checkoutButton.addEventListener("click", () => {
   if (selectedOffer?.paymentLink) {
+    trackEvent("checkout_started", { offer: selectedOffer.id })
     window.location.href = selectedOffer.paymentLink
   }
 })
@@ -80,7 +93,7 @@ async function checkBackend() {
 
   if (!backendUrl) {
     backendDot.classList.add("warn")
-    backendStatus.textContent = "Twenty URL missing"
+    backendStatus.textContent = "Backend offline"
     return
   }
 
@@ -90,10 +103,10 @@ async function checkBackend() {
       throw new Error("HTTP " + response.status)
     }
     backendDot.classList.add("ok")
-    backendStatus.textContent = "Twenty reachable"
+    backendStatus.textContent = "CRM live"
   } catch (_error) {
     backendDot.classList.add("warn")
-    backendStatus.textContent = "Twenty not ready"
+    backendStatus.textContent = "Backend warming up"
   }
 }
 

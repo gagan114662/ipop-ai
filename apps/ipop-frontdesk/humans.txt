@@ -1,0 +1,11 @@
+/* TEAM */
+Owner: Gagan Arora
+Site: https://ipop.ai
+Contact: hello@ipop.ai
+
+/* SITE */
+Last update: 2026-05-19
+Language: English
+Standards: HTML5, CSS3
+Components: Vanilla JS, Stripe Payment Links
+Backend: Cloudflare Workers (business-launch-backend)
