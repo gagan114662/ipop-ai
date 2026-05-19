@@ -268,11 +268,15 @@ jobs:
 
       - name: Checkout main branch
         run: |
+          echo "CURRENT_BRANCH_COMMIT=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
           git stash
           git checkout origin/main
           git reset --hard
           git clean -xfd -ff
           rm -rf node_modules packages/*/node_modules packages/*/dist dist .nx/cache
+
+      - name: Restore local yarn-install action
+        run: git checkout "$CURRENT_BRANCH_COMMIT" -- .github/actions/yarn-install
 
       - name: Install dependencies for main branch
         uses: ./.github/actions/yarn-install
@@ -652,5 +656,4 @@ jobs:
           if [ -f /tmp/main-server.pid ]; then
             kill $(cat /tmp/main-server.pid) || true
           fi
-
 
