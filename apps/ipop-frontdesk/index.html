@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="iPOP CRM command surface for buyer queues, proof packs, and managed revenue operations."
+    />
+    <title>iPOP</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/runtime-config.js"></script>
+  </head>
+  <body>
+    <main class="crm-shell">
+      <nav class="sidebar" aria-label="CRM navigation">
+        <div class="brand-row">
+          <div class="logo">iP</div>
+          <strong>iPOP</strong>
+        </div>
+        <button class="nav-item active" type="button">Pipeline</button>
+        <button class="nav-item" type="button">Accounts</button>
+        <button class="nav-item" type="button">Proof Packs</button>
+        <button class="nav-item" type="button">Payments</button>
+      </nav>
+
+      <section class="workspace" aria-labelledby="page-title">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">iPOP CRM</p>
+            <h1 id="page-title">Revenue work tracked from lead to paid proof</h1>
+          </div>
+          <div class="status" aria-live="polite">
+            <span class="status-dot" id="backend-dot"></span>
+            <span id="backend-status">Checking Twenty</span>
+          </div>
+        </header>
+
+        <section class="summary-grid" aria-label="CRM summary">
+          <article>
+            <span>Qualified buyers</span>
+            <strong>34</strong>
+          </article>
+          <article>
+            <span>Proof packs ready</span>
+            <strong>12</strong>
+          </article>
+          <article>
+            <span>Accepted work</span>
+            <strong>$9.6k</strong>
+          </article>
+        </section>
+
+        <section class="crm-board" aria-label="Pipeline board">
+          <div class="board-header">
+            <span>Pipeline</span>
+            <strong>Managed ops deals</strong>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Account</th>
+                <th>Need</th>
+                <th>Stage</th>
+                <th>Next action</th>
+                <th>Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Cliniko ops</td>
+                <td>Appointment workflow cleanup</td>
+                <td><span class="pill live">Proof sent</span></td>
+                <td>Buyer reply</td>
+                <td>$1,500</td>
+              </tr>
+              <tr>
+                <td>Agency inbox</td>
+                <td>Lead dedupe and enrichment</td>
+                <td><span class="pill">Build scoped</span></td>
+                <td>Stripe checkout</td>
+                <td>$2,000</td>
+              </tr>
+              <tr>
+                <td>AI support desk</td>
+                <td>Dashboard and QA lane</td>
+                <td><span class="pill warm">Negotiating</span></td>
+                <td>Proof pack update</td>
+                <td>$3,500</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </section>
+
+      <aside class="inspector" aria-labelledby="inspector-title">
+        <h2 id="inspector-title">Sellable packages</h2>
+        <div id="offers" class="offers"></div>
+        <div id="selection" class="selection-empty">Select an offer.</div>
+        <button id="checkout-button" class="primary-button" type="button" disabled>
+          Continue to Stripe
+        </button>
+        <section class="record-card" aria-label="Selected record">
+          <span>Current record</span>
+          <strong>Agency inbox</strong>
+          <p>Lead cleanup, proof pack, and CRM handoff for a team that needs cleaner buyer queues.</p>
+        </section>
+      </aside>
+    </main>
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>
