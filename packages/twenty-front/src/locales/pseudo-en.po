@@ -11748,9 +11748,9 @@ msgstr ""
 msgid "Page Name"
 msgstr ""
 
-#. js-lingui-id: NRvxzv
+#. js-lingui-id: h8F/lL
 #: src/pages/not-found/NotFound.tsx
-msgid "Page Not Found | Twenty"
+msgid "Page Not Found | iPOP"
 msgstr ""
 
 #. js-lingui-id: sF+Xp9
@@ -17128,9 +17128,9 @@ msgstr ""
 msgid "Weight"
 msgstr ""
 
-#. js-lingui-id: nTuObL
+#. js-lingui-id: kaLYR7
 #: src/pages/auth/SignInUp.tsx
-msgid "Welcome to Twenty"
+msgid "Welcome to iPOP"
 msgstr ""
 
 #. js-lingui-id: t8ZvkC

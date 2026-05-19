@@ -11771,10 +11771,10 @@ msgstr "Page layouts"
 msgid "Page Name"
 msgstr "Page Name"
 
-#. js-lingui-id: NRvxzv
+#. js-lingui-id: h8F/lL
 #: src/pages/not-found/NotFound.tsx
-msgid "Page Not Found | Twenty"
-msgstr "Page Not Found | Twenty"
+msgid "Page Not Found | iPOP"
+msgstr "Page Not Found | iPOP"
 
 #. js-lingui-id: sF+Xp9
 #: src/pages/settings/security/event-logs/components/EventLogTableSelector.tsx
@@ -17185,10 +17185,10 @@ msgstr "weeks"
 msgid "Weight"
 msgstr "Weight"
 
-#. js-lingui-id: nTuObL
+#. js-lingui-id: kaLYR7
 #: src/pages/auth/SignInUp.tsx
-msgid "Welcome to Twenty"
-msgstr "Welcome to Twenty"
+msgid "Welcome to iPOP"
+msgstr "Welcome to iPOP"
 
 #. js-lingui-id: t8ZvkC
 #: src/pages/auth/SignInUp.tsx
