@@ -34,8 +34,9 @@ jobs:
     needs: changed-files-check
     if: needs.changed-files-check.outputs.any_changed == 'true'
     timeout-minutes: 30
-    runs-on: ubuntu-latest-8-cores
+    runs-on: ubuntu-latest
     env:
+      NODE_OPTIONS: "--max-old-space-size=6144"
       REACT_APP_SERVER_BASE_URL: http://localhost:3000
     steps:
       - name: Fetch local actions
@@ -190,9 +191,9 @@ jobs:
     needs: changed-files-check
     if: needs.changed-files-check.outputs.any_changed == 'true'
     timeout-minutes: 30
-    runs-on: ubuntu-latest-8-cores
+    runs-on: ubuntu-latest
     env:
-      NODE_OPTIONS: "--max-old-space-size=10240"
+      NODE_OPTIONS: "--max-old-space-size=6144"
       ANALYZE: "true"
     steps:
       - name: Fetch custom Github Actions and base branch history
