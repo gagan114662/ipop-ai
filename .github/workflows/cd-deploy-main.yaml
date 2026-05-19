@@ -17,5 +17,10 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.TWENTY_INFRA_TOKEN }}
         run: |
+          if [ -z "$GH_TOKEN" ]; then
+            echo "TWENTY_INFRA_TOKEN is not configured; skipping upstream Twenty deploy dispatch."
+            exit 0
+          fi
+
           gh api repos/twentyhq/twenty-infra/dispatches \
             -f event_type=auto-deploy-main
