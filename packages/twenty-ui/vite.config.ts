@@ -106,7 +106,10 @@ export default defineConfig(({ command }) => {
           const themeCssFiles = ['theme-light.css', 'theme-dark.css'];
           const themeSourceDir = [
             path.resolve(packageRoot, 'src/theme-constants'),
-            path.resolve(process.cwd(), 'packages/twenty-ui/src/theme-constants'),
+            path.resolve(
+              process.cwd(),
+              'packages/twenty-ui/src/theme-constants',
+            ),
             path.resolve(process.cwd(), 'src/theme-constants'),
           ].find((candidate) => fs.existsSync(candidate));
 
