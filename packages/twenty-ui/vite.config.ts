@@ -104,10 +104,24 @@ export default defineConfig(({ command }) => {
         name: 'copy-theme-css',
         closeBundle() {
           const themeCssFiles = ['theme-light.css', 'theme-dark.css'];
+          const themeSourceDir = [
+            path.resolve(packageRoot, 'src/theme-constants'),
+            path.resolve(process.cwd(), 'packages/twenty-ui/src/theme-constants'),
+            path.resolve(process.cwd(), 'src/theme-constants'),
+          ].find((candidate) => fs.existsSync(candidate));
+
+          if (themeSourceDir === undefined) {
+            throw new Error('Unable to locate twenty-ui theme constants.');
+          }
+
+          const themePackageRoot = path.resolve(themeSourceDir, '../..');
+          const themeOutputDir = path.resolve(themePackageRoot, 'dist');
+          fs.mkdirSync(themeOutputDir, { recursive: true });
+
           for (const file of themeCssFiles) {
             fs.copyFileSync(
-              path.resolve(packageRoot, `src/theme-constants/${file}`),
-              path.resolve(packageRoot, `dist/${file}`),
+              path.resolve(themeSourceDir, file),
+              path.resolve(themeOutputDir, file),
             );
           }
         },
