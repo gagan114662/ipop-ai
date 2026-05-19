@@ -55,12 +55,15 @@ jobs:
             -t "$TWENTY_IMAGE" \
             .
 
-      - name: Boot compose stack
-        run: docker compose -f packages/twenty-docker/docker-compose.yml up -d db redis server worker
+      - name: Boot dependencies
+        run: docker compose -f packages/twenty-docker/docker-compose.yml up -d db redis
+
+      - name: Boot server
+        run: docker compose -f packages/twenty-docker/docker-compose.yml up -d server
 
       - name: Wait for health
         run: |
-          for i in {1..240}; do
+          for i in {1..360}; do
             status=$(curl -o /tmp/ipop-health.txt -s -w '%{http_code}' http://localhost:3000/healthz || true)
             echo "health attempt $i: $status"
             if [ "$status" = "200" ]; then
@@ -71,6 +74,9 @@ jobs:
           done
           docker compose -f packages/twenty-docker/docker-compose.yml logs server worker || true
           exit 1
+
+      - name: Boot worker
+        run: docker compose -f packages/twenty-docker/docker-compose.yml up -d worker
 
       - name: Verify iPOP shell branding
         run: |
