@@ -36,6 +36,51 @@ A dedicated GitHub Actions workflow, `.github/workflows/ipop-production-smoke.ym
 
 Remote validation passed on 2026-05-18 in GitHub Actions run `26068610688`: the branded Docker target built successfully, Postgres and Redis started, the server passed `/healthz`, the worker started, and the served app shell contained `iPOP`.
 
+## Fly Deployment Manifest
+
+This repo now includes Fly manifests for the branded Twenty runtime:
+
+- `fly.toml` deploys the web/server app as `ipop-ai-crm`.
+- `fly.worker.toml` deploys the worker app as `ipop-ai-crm-worker`.
+- Region: `yyz`
+- Build: `packages/twenty-docker/twenty/Dockerfile` target `twenty`
+- Web process: default Twenty server command on port `3000`
+- Worker process: `yarn worker:prod`, with migrations and cron registration disabled so only the server app owns startup migrations
+- Health check: `GET /healthz`
+- Default public CRM URL: `https://crm.ipop.ai`
+
+Required secrets before deploy:
+
+```sh
+fly secrets set --config fly.toml \
+  APP_SECRET='...' \
+  PG_DATABASE_URL='postgresql://...' \
+  REDIS_URL='redis://...' \
+  STORAGE_S3_REGION='...' \
+  STORAGE_S3_NAME='...' \
+  STORAGE_S3_ENDPOINT='...' \
+  STORAGE_S3_ACCESS_KEY_ID='...' \
+  STORAGE_S3_SECRET_ACCESS_KEY='...' \
+  BILLING_STRIPE_API_KEY='sk_live_...' \
+  BILLING_STRIPE_WEBHOOK_SECRET='whsec_...'
+fly secrets set --config fly.worker.toml \
+  APP_SECRET='...' \
+  PG_DATABASE_URL='postgresql://...' \
+  REDIS_URL='redis://...' \
+  STORAGE_S3_REGION='...' \
+  STORAGE_S3_NAME='...' \
+  STORAGE_S3_ENDPOINT='...' \
+  STORAGE_S3_ACCESS_KEY_ID='...' \
+  STORAGE_S3_SECRET_ACCESS_KEY='...'
+fly deploy --config fly.toml
+fly deploy --config fly.worker.toml
+fly certs add crm.ipop.ai --config fly.toml
+```
+
+If `crm.ipop.ai` is not the desired CRM host, update `SERVER_URL` in `fly.toml` and rebuild the production image for that final URL before deploying.
+
+The manifests validate locally with `flyctl config validate`, but deployment is not complete until the app, worker, managed Postgres, managed Redis, object storage, DNS certificate, and live Stripe billing/webhook proof exist.
+
 ## Required Production Environment
 
 Set these for a production CRM host such as `https://crm.ipop.ai` or `https://app.ipop.ai`:
@@ -66,5 +111,5 @@ Stripe remains tracked in GitHub issue #3 for this repo. Do not enable billing i
 
 - The official upstream image is runtime-ready but not visibly iPOP-branded. Production should use a pinned image built from this repo and proven by the iPOP Production Smoke workflow.
 - Root `ipop.ai` may already have another product surface; prefer a CRM subdomain unless replacing the current site is intentional.
-- Live deployment still needs a provider that can host the stateful server, worker, Postgres, Redis, and durable file storage. Fly billing/trial is incomplete, and Railway auth is not currently valid.
+- Live deployment still needs a provider that can host the stateful server, worker, Postgres, Redis, and durable file storage. Fly CLI is logged in and the manifests validate locally, but actual app creation/deploy has not been proven; Railway auth is not currently valid.
 - Stripe live billing still needs product/price/webhook configuration and a live webhook smoke test.

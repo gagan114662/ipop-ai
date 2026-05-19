@@ -10,6 +10,9 @@ on:
       - packages/twenty-shared/**
       - packages/twenty-ui/**
       - packages/twenty-client-sdk/**
+      - docs/ipop-deploy.md
+      - fly.toml
+      - fly.worker.toml
       - package.json
       - yarn.lock
       - .github/workflows/ipop-production-smoke.yml
