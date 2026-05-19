@@ -371,3 +371,35 @@ th {
     min-width: 720px;
   }
 }
+
+
+.legal-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  background: var(--surface);
+}
+
+.legal-footer a,
+.back-link {
+  color: var(--brand);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.legal-page {
+  width: min(720px, calc(100% - 36px));
+  margin: 0 auto;
+  padding: 48px 0;
+  line-height: 1.7;
+}
+
+.legal-page h1 {
+  margin: 18px 0;
+  font-size: 2rem;
+}

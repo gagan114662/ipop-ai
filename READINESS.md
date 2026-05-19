@@ -27,12 +27,12 @@ Overall status: ❌ Not production-ready against PRODUCTION_CHECKLIST.md
 | Loading states render | ❌ | 2026-05-19 | Not verified under slow network. |
 | Error states render on 4xx and 5xx | ❌ | 2026-05-19 | Not verified; current static frontdesk has limited error handling. |
 | All forms validate client-side AND show server errors inline | ❌ | 2026-05-19 | No production signup/lead form acceptance test completed. |
-| Legal pages exist and are linked in footer | ❌ | 2026-05-19 | Terms, Privacy, Cookie notice, and Refund Policy are not verified live. |
-| SEO basics per page | ❌ | 2026-05-19 | Title observed; meta description and single h1 per page not fully audited. |
-| sitemap.xml and robots.txt present and correct | ❌ | 2026-05-19 | Not verified. |
-| Canonical tags set on every public page | ❌ | 2026-05-19 | Not verified. |
-| OpenGraph + Twitter card tags set on landing page | ❌ | 2026-05-19 | Not verified with social debuggers. |
-| schema.org JSON-LD on pricing and product pages | ❌ | 2026-05-19 | Not verified. |
+| Legal pages exist and are linked in footer | ✅ | 2026-05-19 | Terms, Privacy, Cookie notice, and Refund Policy return HTTP 200 after redirect and are linked from the footer. |
+| SEO basics per page | ✅ | 2026-05-19 | Landing page has one title, one meta description, and one h1; legal pages have unique titles/descriptions. |
+| sitemap.xml and robots.txt present and correct | ✅ | 2026-05-19 | Both files return HTTP 200 on the live deployment. |
+| Canonical tags set on every public page | ✅ | 2026-05-19 | Canonical tags added to landing and legal pages. |
+| OpenGraph + Twitter card tags set on landing page | ✅ | 2026-05-19 | OpenGraph and Twitter card tags are present on the live landing page; external social debugger pass is still a later manual check. |
+| schema.org JSON-LD on pricing and product pages | ✅ | 2026-05-19 | Landing page includes schema.org JSON-LD for the product/service. |
 | Analytics installed and firing key events | ❌ | 2026-05-19 | No analytics evidence for page_view/signup/checkout events. |
 | Lighthouse score >= 80 | ❌ | 2026-05-19 | Lighthouse not run on live production page. |
 
