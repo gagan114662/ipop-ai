@@ -18,6 +18,11 @@ jobs:
           GH_TOKEN: ${{ secrets.TWENTY_INFRA_TOKEN }}
           REF_NAME: ${{ github.ref_name }}
         run: |
+          if [ -z "$GH_TOKEN" ]; then
+            echo "TWENTY_INFRA_TOKEN is not configured; skipping upstream Twenty deploy dispatch."
+            exit 0
+          fi
+
           gh api repos/twentyhq/twenty-infra/dispatches \
             -f event_type=auto-deploy-tag \
             -f "client_payload[github][ref_name]=$REF_NAME"
