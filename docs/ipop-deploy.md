@@ -34,6 +34,8 @@ The compose file now sets production runtime defaults and uses Twenty's current 
 
 A dedicated GitHub Actions workflow, `.github/workflows/ipop-production-smoke.yml`, builds this repo's branded `twenty` Docker target, boots it with Postgres/Redis through the production compose stack, checks `/healthz`, and verifies the served app shell contains `iPOP`.
 
+Remote validation passed on 2026-05-18 in GitHub Actions run `26068610688`: the branded Docker target built successfully, Postgres and Redis started, the server passed `/healthz`, the worker started, and the served app shell contained `iPOP`.
+
 ## Required Production Environment
 
 Set these for a production CRM host such as `https://crm.ipop.ai` or `https://app.ipop.ai`:
