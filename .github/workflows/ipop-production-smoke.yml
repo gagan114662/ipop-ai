@@ -50,7 +50,7 @@ jobs:
         run: |
           docker build \
             --target twenty \
-            --build-arg APP_VERSION=ipop-${{ github.sha }} \
+            --build-arg APP_VERSION=0.0.0-ipop.${{ github.sha }} \
             -f packages/twenty-docker/twenty/Dockerfile \
             -t "$TWENTY_IMAGE" \
             .
