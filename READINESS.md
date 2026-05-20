@@ -25,10 +25,10 @@ Overall status: ❌ Not production-ready against PRODUCTION_CHECKLIST.md — fro
 
 | Checklist item | Status | Last verified | Notes |
 |---|---:|---|---|
-| All public pages return HTTP 200, no console errors, no broken images | ⚠️ | 2026-05-19 | All static pages return 200; full browser console + image audit deferred (no Lighthouse env in this session). |
-| No Lorem Ipsum, no upstream repo placeholder copy, no TODO strings visible | ✅ | 2026-05-19 | Grep across `apps/ipop-frontdesk` returned no Lorem/TODO/FIXME and no user-visible "Twenty" brand leakage. |
+| All public pages return HTTP 200, no console errors, no broken images | ✅ | 2026-05-20 | Live Chrome sweep passed on 2026-05-20: 50 public pages across the seven frontdesks returned HTTP 200 with zero console errors, page errors, failed requests, broken images, Lorem Ipsum, or TODO text. Evidence: business-launch-backend docs/live-frontdesk-browser-qa-2026-05-20.md. |
+| No Lorem Ipsum, no upstream repo placeholder copy, no TODO strings visible | ✅ | 2026-05-20 | Live Chrome sweep passed on 2026-05-20 with zero visible Lorem Ipsum, TODO, or upstream placeholder matches on the audited public frontdesk pages. Evidence: business-launch-backend docs/live-frontdesk-browser-qa-2026-05-20.md. |
 | Branding swapped throughout: product name, logo, favicon, OG image, color tokens | ✅ | 2026-05-19 | iPOP brand throughout, branded favicon.svg + apple-touch-icon.svg + og-image.svg added, brand color (#0f766e) consistent. |
-| Responsive at 375px, 768px, 1440px | ⚠️ | 2026-05-19 | CSS has responsive breakpoints at 820 and 1120; cross-device screenshot verification still pending. |
+| Responsive at 375px, 768px, 1440px | ✅ | 2026-05-20 | Live Chrome sweep passed on 2026-05-20 for the homepage at 375px, 768px, and 1440px with HTTP 200, no console/page errors, no failed requests, no broken images, and required SEO/social/schema tags present. Evidence: business-launch-backend docs/live-frontdesk-browser-qa-2026-05-20.md. |
 | Loading states render | ⚠️ | 2026-05-19 | Backend status indicator has live polling state. Skeletons not needed (no async-loaded data on first paint). |
 | Error states render on 4xx and 5xx | ✅ | 2026-05-19 | Custom 404.html added with noindex; Vercel serves it on 404. 5xx falls back to Vercel default. |
 | All forms validate client-side AND show server errors inline | N/A | 2026-05-19 | No forms on the frontdesk; checkout is via Stripe Payment Links. |
