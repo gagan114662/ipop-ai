@@ -56,7 +56,7 @@ Overall status: ❌ Not production-ready against PRODUCTION_CHECKLIST.md — fro
 | Rate limiting on auth/public API | ✅ | 2026-05-20 | Cloudflare launch backend has D1-backed limits for signup, login, password reset requests, and lead intake. Live proof: repeated /dazl/auth/login calls returned HTTP 429 rate_limited after the configured window limit. |
 | API errors return structured JSON | ⚠️ | 2026-05-19 | Cloudflare launch backend returns JSON; not exhaustively tested. |
 | Background jobs and cron tasks verified | N/A* | 2026-05-19 | Not used in frontdesk; applies to upstream Twenty CRM when deployed. |
-| Database backups configured and restore verified | ❌ | 2026-05-19 | Not configured/proven on launch-backend D1. |
+| Database backups configured and restore verified | ✅ | 2026-05-20 | Cloudflare D1 backup/restore verifier added in backend repo and run against business-launch-prod. Remote export restored into SQLite, PRAGMA integrity_check returned ok, and required production tables were present. |
 | Application logs queryable; PII not logged | ⚠️ | 2026-05-19 | Cloudflare Workers logs exist via wrangler tail; PII audit deferred. |
 
 \* N/A items reflect the frontdesk product surface, which is a static landing + Stripe Payment Link funnel. These items become applicable when the full Twenty CRM (see `docs/ipop-deploy.md` and `fly.toml`) is actually deployed.
