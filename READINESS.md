@@ -73,7 +73,7 @@ Overall status: ❌ Not production-ready against PRODUCTION_CHECKLIST.md — fro
 | Secrets in env vars/vault only | ⚠️ | 2026-05-19 | No secrets present in the frontdesk repo on inspection; full repo-history secret scan still pending. |
 | Error monitoring wired and test error captured | ✅ | 2026-05-20 | Frontdesk error capture is deployed and a controlled frontdesk.error event is recorded in the Cloudflare D1-backed event table. |
 | Uptime monitoring every 5 minutes with email alerts | ⚠️ | 2026-05-20 | Cloudflare cron runs every 5 minutes and records checks in D1; email/page alerts are not configured yet. |
-| Resource baselines recorded | N/A* | 2026-05-19 | Vercel + Cloudflare are managed/serverless — RAM/CPU baselines do not apply at the frontdesk layer. |
+| Resource baselines recorded | ⚠️ | 2026-05-20 | Live frontdesk/backend resource baselines recorded centrally in business-launch-backend docs/resource-baselines-2026-05-20.md (HTTP status, bytes, total time, content type, cache-control). Full upstream monolith resource baselines are not hosted/proven. |
 
 ## Domains & DNS
 
@@ -90,7 +90,7 @@ Overall status: ❌ Not production-ready against PRODUCTION_CHECKLIST.md — fro
 | Checklist item | Status | Last verified | Notes |
 |---|---:|---|---|
 | Test and live keys configured correctly | ⚠️ | 2026-05-19 | Live Payment Links exist; full test-vs-live key separation audit pending. |
-| Products and Prices created; IDs from env vars not hard-coded | ⚠️ | 2026-05-19 | Payment Link URLs are injected via `runtime-config.js` at deploy time, not committed to the static repo — acceptable for a Payment Link funnel. |
+| Products and Prices created; IDs from env vars not hard-coded | ⚠️ | 2026-05-20 | One Stripe account is the chosen operating model; revenue attribution is separated by brand-specific product names, product/price metadata, Payment Link mapping, and backend entitlement records. Payment Links/runtime config remain the current public checkout surface; full upstream app env parity remains pending. |
 | Live checkout completes with real card and refund | ❌ | 2026-05-19 | Blocked by "no real card charges" guardrail in this session. Human must run this step. |
 | Webhook endpoint live and reachable from Stripe | ⚠️ | 2026-05-20 | Live Stripe Dashboard destination business-launch-backend is active for checkout.session.completed, customer.subscription.updated, customer.subscription.deleted, and invoice.payment_failed; a real signed delivery from a live checkout is still not proven. |
 | Webhook signature verified | ✅ | 2026-05-20 | Cloudflare Worker has the live Stripe webhook signing secret configured; unsigned webhook probes now return HTTP 400 invalid_stripe_signature. |
@@ -126,3 +126,4 @@ Overall status: ❌ Not production-ready against PRODUCTION_CHECKLIST.md — fro
 | Live URL | ✅ | https://ipop.ai |
 | Test account email + password | N/A | Frontdesk has no in-product accounts; the Stripe Customer Portal serves as the buyer's account. |
 | next-actions.md punchlist for human | ✅ | See `next-actions.md` for blocked items requiring human action. |
+
