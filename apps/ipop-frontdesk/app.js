@@ -110,6 +110,22 @@ async function checkBackend() {
   }
 }
 
+function wirePreviewControls() {
+  document.querySelectorAll(".nav-item").forEach((button) => {
+    button.addEventListener("click", () => {
+      document.querySelectorAll(".nav-item").forEach((item) => item.classList.remove("active"))
+      button.classList.add("active")
+      const label = button.textContent.trim()
+      const recordTitle = document.querySelector(".record-card strong")
+      const recordBody = document.querySelector(".record-card p")
+      if (recordTitle) recordTitle.textContent = label
+      if (recordBody) recordBody.textContent = label + " view selected. Choose a package to turn this managed CRM workflow into a paid setup."
+      trackEvent("preview_tab_selected", { tab: label })
+    })
+  })
+}
+
 renderOffers()
 renderSelection()
 checkBackend()
+wirePreviewControls()
