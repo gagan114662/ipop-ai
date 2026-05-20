@@ -170,8 +170,19 @@
   })
 
   root.querySelector("#auth-logout").addEventListener("click", function () {
+    var token = getSession()
     clearSession()
-    setStatus("Logged out.", false)
+    if (!token) {
+      setStatus("Logged out.", false)
+      return
+    }
+    fetch(found.backendUrl + "/auth/logout", {
+      method: "POST",
+      mode: "cors",
+      headers: { authorization: "Bearer " + token },
+    }).finally(function () {
+      setStatus("Logged out.", false)
+    })
   })
 
   if (getSession()) {
