@@ -39,7 +39,7 @@ Overall status: ❌ Not production-ready against PRODUCTION_CHECKLIST.md — fro
 | OpenGraph + Twitter card tags set on landing page | ✅ | 2026-05-19 | OG image added (`/og-image.svg`, 1200x630); Twitter card upgraded to `summary_large_image`; external social debugger pass still pending until human runs it. |
 | schema.org JSON-LD on pricing and product pages | ✅ | 2026-05-19 | Landing page includes Service schema.org JSON-LD. |
 | Analytics installed and firing key events | ✅ | 2026-05-20 | First-party frontdesk event capture is deployed on the live site. Backend /events/status records frontdesk.page_view for this brand after the GET beacon probe. |
-| Lighthouse score >= 80 | ❌ | 2026-05-19 | Lighthouse not run on live production page; deferred (no headless Chrome in this session). |
+| Lighthouse score >= 80 | ✅ | 2026-05-20 | Live Lighthouse 12.8.2 run on 2026-05-20 passed the landing page with all categories >=80. Consolidated scores are recorded in business-launch-backend docs/live-lighthouse-scores-2026-05-20.md. |
 
 ## Backend
 
