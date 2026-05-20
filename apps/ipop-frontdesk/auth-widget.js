@@ -38,6 +38,7 @@
     '<div class="auth-actions">',
     '<button id="auth-signup" type="button">Create account</button>',
     '<button id="auth-login" type="button">Log in</button>',
+    '<button id="auth-reset" type="button">Reset password</button>',
     "</div>",
     '<p id="auth-status" class="auth-status" role="status"></p>',
   ].join("")
@@ -93,6 +94,26 @@
       })
       .catch(function (error) {
         setStatus(error.error || "Signup failed.", true)
+      })
+  })
+
+  root.querySelector("#auth-reset").addEventListener("click", function () {
+    var email = emailInput.value.trim()
+    if (!email) {
+      setStatus("Enter your email first.", true)
+      return
+    }
+    setStatus("Requesting password reset...", false)
+    post("/auth/reset/request", { email: email })
+      .then(function (data) {
+        if (data.email_delivery && data.email_delivery.sent === false) {
+          setStatus("Reset token created. Email delivery is not configured yet.", true)
+        } else {
+          setStatus("Check your email for the reset link.", false)
+        }
+      })
+      .catch(function (error) {
+        setStatus(error.error || "Reset request failed.", true)
       })
   })
 
