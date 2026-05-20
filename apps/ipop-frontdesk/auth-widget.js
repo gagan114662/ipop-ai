@@ -39,6 +39,8 @@
     '<button id="auth-signup" type="button">Create account</button>',
     '<button id="auth-login" type="button">Log in</button>',
     '<button id="auth-reset" type="button">Reset password</button>',
+    '<button id="auth-refresh" type="button">Check access</button>',
+    '<button id="auth-logout" type="button">Log out</button>',
     "</div>",
     '<p id="auth-status" class="auth-status" role="status"></p>',
   ].join("")
@@ -66,6 +68,51 @@
       password: passwordInput.value,
       name: nameInput.value.trim(),
     }
+  }
+
+  function getSession() {
+    return window.localStorage.getItem(sessionKey) || ""
+  }
+
+  function clearSession() {
+    window.localStorage.removeItem(sessionKey)
+  }
+
+  function renderAccess(data) {
+    var offers = (data.entitlements || []).filter(function (item) {
+      return item.access_level === "paid" && item.status !== "canceled"
+    })
+    if (!offers.length) {
+      setStatus("Logged in. No paid access is linked yet.", false)
+      return
+    }
+    setStatus(
+      "Logged in as " + data.user.email + ". Paid access: " + offers.map(function (item) { return item.offer }).join(", "),
+      false
+    )
+  }
+
+  function fetchMe() {
+    var token = getSession()
+    if (!token) {
+      setStatus("No saved session.", true)
+      return Promise.resolve(null)
+    }
+    return fetch(found.backendUrl + "/auth/me", {
+      method: "GET",
+      mode: "cors",
+      headers: { authorization: "Bearer " + token },
+    }).then(function (response) {
+      return response.json().then(function (data) {
+        if (!response.ok) throw data
+        renderAccess(data)
+        return data
+      })
+    }).catch(function (error) {
+      clearSession()
+      setStatus(error.error || "Session check failed.", true)
+      return null
+    })
   }
 
   function post(path, body) {
@@ -117,12 +164,27 @@
       })
   })
 
+  root.querySelector("#auth-refresh").addEventListener("click", function () {
+    setStatus("Checking access...", false)
+    fetchMe()
+  })
+
+  root.querySelector("#auth-logout").addEventListener("click", function () {
+    clearSession()
+    setStatus("Logged out.", false)
+  })
+
+  if (getSession()) {
+    fetchMe()
+  }
+
   root.querySelector("#auth-login").addEventListener("click", function () {
     setStatus("Logging in...", false)
     post("/auth/login", payload())
       .then(function (data) {
         window.localStorage.setItem(sessionKey, data.session_token)
-        setStatus("Logged in.", false)
+        setStatus("Logged in. Checking access...", false)
+        fetchMe()
       })
       .catch(function (error) {
         setStatus(error.error || "Login failed.", true)
