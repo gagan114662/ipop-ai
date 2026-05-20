@@ -46,7 +46,7 @@ Overall status: ❌ Not production-ready against PRODUCTION_CHECKLIST.md — fro
 | Checklist item | Status | Last verified | Notes |
 |---|---:|---|---|
 | All env vars documented in .env.example | ❌ | 2026-05-19 | Frontdesk runtime config is documented in `apps/ipop-frontdesk/README.md`; full upstream app `.env.example` audit deferred. |
-| No secrets committed to the repo | ⚠️ | 2026-05-19 | Spot grep clean; full `git log -p` secret scan not yet run. |
+| No secrets committed to the repo | ⚠️ | 2026-05-20 | Focused audit found current upstream fixture/bundled-tool matches in Twenty/Yarn/test files and three import-history matches. No launch/backend secret values found, but upstream fixture review remains. |
 | No env vars missing in production | ⚠️ | 2026-05-19 | Cloudflare launch backend healthy with required binding; full upstream app env parity not verified. |
 | Database migrations run cleanly from zero | ❌ | 2026-05-19 | D1 migration ran for launch backend; upstream Twenty CRM not yet hosted. |
 | Auth flows tested end-to-end | ⚠️ | 2026-05-20 | Shared auth endpoints are deployed and the frontdesk account widget calls signup/login. Live probes show signup creates an unverified account, login blocks until verification, and /auth/me requires a session. Email verification cannot complete until transactional email is configured. |
