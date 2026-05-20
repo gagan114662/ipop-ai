@@ -112,7 +112,7 @@ Overall status: ❌ Not production-ready against PRODUCTION_CHECKLIST.md — fro
 | 2. Sign up with a real email | ⚠️ | 2026-05-20 | Signup endpoint and live account widget exist; real email verification is blocked by missing transactional email provider. |
 | 3. Receive verification email and verify | ❌ | 2026-05-20 | Verification-token flow exists, but no email provider/sender domain is configured, so no inbox delivery is proven. |
 | 4. Log in and land on dashboard | ⚠️ | 2026-05-20 | Login endpoint exists and rejects unverified accounts as expected; full hosted upstream dashboard login is not integrated. |
-| 5. Upgrade to paid plan via Stripe Checkout | ❌ | 2026-05-19 | Payment Links live; real card purchase blocked by guardrail. |
+| 5. Upgrade to paid plan via Stripe Checkout | ⚠️ | 2026-05-20 | Live checkout-entry smoke passed on 2026-05-20: all 21 visible package offers across the seven frontdesks enable Continue to Stripe and reach Stripe Checkout. Evidence: business-launch-backend docs/live-stripe-checkout-entry-2026-05-20.md. Real-card payment completion/refund remains untested. |
 | 6. Use the core feature | N/A | 2026-05-19 | Proof Pack is a service deliverable, not an in-app feature. |
 | 7. Receive payment receipt email | ❌ | 2026-05-19 | Not verified — requires real charge. |
 | 8. Open Customer Portal and cancel | ⚠️ | 2026-05-20 | Live Stripe Customer Portal is active and linked from the site, but cancellation has not been tested with a real paid customer/subscription. |
