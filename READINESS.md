@@ -102,7 +102,7 @@ Overall status: ❌ Not production-ready against PRODUCTION_CHECKLIST.md — fro
 | Tax handling decided/applied | ❌ | 2026-05-19 | Decision pending. Default Payment Link behavior is tax-exclusive. |
 | Receipts include legal entity/address | ❌ | 2026-05-19 | Requires Stripe Dashboard branding setup (legal name, address, logo). Human action. |
 | Trial logic ends correctly | N/A | 2026-05-19 | No trials currently offered. |
-| Return URLs (success + cancel) wired on each Payment Link | ⚠️ | 2026-05-19 | `/success.html` and `/cancel.html` exist on the site; Stripe Dashboard Payment Link return URLs still need to be set. |
+| Return URLs (success + cancel) wired on each Payment Link | ❌ | 2026-05-20 | Branded success/cancel pages are deployed and return HTTP 200; Stripe Payment Links still use hosted_confirmation because the restricted live key cannot update after_completion redirects. |
 
 ## Final Acceptance Test
 
