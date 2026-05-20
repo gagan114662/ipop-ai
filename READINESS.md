@@ -49,8 +49,8 @@ Overall status: ❌ Not production-ready against PRODUCTION_CHECKLIST.md — fro
 | No secrets committed to the repo | ⚠️ | 2026-05-19 | Spot grep clean; full `git log -p` secret scan not yet run. |
 | No env vars missing in production | ⚠️ | 2026-05-19 | Cloudflare launch backend healthy with required binding; full upstream app env parity not verified. |
 | Database migrations run cleanly from zero | ❌ | 2026-05-19 | D1 migration ran for launch backend; upstream Twenty CRM not yet hosted. |
-| Auth flows tested end-to-end | N/A* | 2026-05-19 | Frontdesk model uses Stripe Payment Links; there is no in-product auth. Upstream Twenty CRM auth tests deferred until CRM is deployed. |
-| Transactional email arrives in inbox | ❌ | 2026-05-19 | Stripe sends receipts automatically once a real charge clears; iPOP-domain SMTP not configured. |
+| Auth flows tested end-to-end | ⚠️ | 2026-05-20 | Shared auth endpoints are deployed and the frontdesk account widget calls signup/login. Live probes show signup creates an unverified account, login blocks until verification, and /auth/me requires a session. Email verification cannot complete until transactional email is configured. |
+| Transactional email arrives in inbox | ❌ | 2026-05-20 | Auth endpoints create verification/reset tokens, but live signup returns email_provider_missing because RESEND_API_KEY and AUTH_EMAIL_FROM are not configured. |
 | SPF, DKIM, DMARC configured | ❌ | 2026-05-19 | Requires human action in DNS provider; documented in next-actions.md. |
 | File uploads work and persist | N/A* | 2026-05-19 | No uploads in the frontdesk. Applies to upstream Twenty CRM when deployed. |
 | Rate limiting on auth/public API | ⚠️ | 2026-05-19 | Vercel + Cloudflare provide platform-level abuse protection; app-level rate limits on Cloudflare Worker not audited. |
@@ -97,7 +97,7 @@ Overall status: ❌ Not production-ready against PRODUCTION_CHECKLIST.md — fro
 | Webhook handler idempotent | ⚠️ | 2026-05-20 | Worker stores Stripe event IDs with a D1 UNIQUE constraint and ignores duplicate event IDs; signed replay against the live endpoint is still not proven. |
 | Required webhook events handled | ⚠️ | 2026-05-20 | Dashboard destination listens for the required events and the Worker recognizes them; end-to-end side effects after a real purchase/cancel are still unproven. |
 | Stripe Customer Portal enabled | ✅ | 2026-05-20 | Live Customer Portal configuration bpc_1TZAqQJOUExxbPnuScmDfFk2 is active with invoice history, customer updates, payment method updates, and cancel-at-period-end enabled. Portal link is deployed in the site footer. |
-| Plan gating enforced server-side | ⚠️ | 2026-05-20 | Shared Cloudflare entitlement tables and webhook mapping are deployed; the full upstream apps do not yet consume these entitlements to gate in-app access. |
+| Plan gating enforced server-side | ⚠️ | 2026-05-20 | Shared Cloudflare entitlement tables and Stripe webhook mapping are deployed. Synthetic D1 smoke proved /auth/me returns a paid entitlement for a linked Stripe customer; upstream apps still do not consume this layer for in-app gating. |
 | Stripe edge cases tested | ❌ | 2026-05-19 | Not tested (declines, 3DS, failed renewal, proration). Human action. |
 | Tax handling decided/applied | ❌ | 2026-05-19 | Decision pending. Default Payment Link behavior is tax-exclusive. |
 | Receipts include legal entity/address | ❌ | 2026-05-19 | Requires Stripe Dashboard branding setup (legal name, address, logo). Human action. |
@@ -109,14 +109,14 @@ Overall status: ❌ Not production-ready against PRODUCTION_CHECKLIST.md — fro
 | Step | Status | Last verified | Notes |
 |---|---:|---|---|
 | 1. Land on homepage | ✅ | 2026-05-19 | Homepage HTTP 200 on live URL. |
-| 2. Sign up with a real email | N/A | 2026-05-19 | Not applicable to the Stripe Payment Link funnel. |
-| 3. Receive verification email and verify | N/A | 2026-05-19 | Stripe sends transactional emails (receipts); iPOP-domain email is for support. |
-| 4. Log in and land on dashboard | N/A | 2026-05-19 | No in-product dashboard until Twenty CRM is deployed. |
+| 2. Sign up with a real email | ⚠️ | 2026-05-20 | Signup endpoint and live account widget exist; real email verification is blocked by missing transactional email provider. |
+| 3. Receive verification email and verify | ❌ | 2026-05-20 | Verification-token flow exists, but no email provider/sender domain is configured, so no inbox delivery is proven. |
+| 4. Log in and land on dashboard | ⚠️ | 2026-05-20 | Login endpoint exists and rejects unverified accounts as expected; full hosted upstream dashboard login is not integrated. |
 | 5. Upgrade to paid plan via Stripe Checkout | ❌ | 2026-05-19 | Payment Links live; real card purchase blocked by guardrail. |
 | 6. Use the core feature | N/A | 2026-05-19 | Proof Pack is a service deliverable, not an in-app feature. |
 | 7. Receive payment receipt email | ❌ | 2026-05-19 | Not verified — requires real charge. |
 | 8. Open Customer Portal and cancel | ⚠️ | 2026-05-20 | Live Stripe Customer Portal is active and linked from the site, but cancellation has not been tested with a real paid customer/subscription. |
-| 9. Confirm paid access downgraded | ⚠️ | 2026-05-20 | Shared entitlement downgrade handling is deployed for subscription deleted/updated/payment_failed events; downgrade is not proven with a real paid subscription and upstream app access. |
+| 9. Confirm paid access downgraded | ⚠️ | 2026-05-20 | Shared entitlement downgrade handling is deployed; synthetic /auth/me entitlement read is proven, but real Stripe cancellation downgrade and upstream app access removal are not proven. |
 
 ## Deliverables
 
