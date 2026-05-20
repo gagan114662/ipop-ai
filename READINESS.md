@@ -53,7 +53,7 @@ Overall status: ❌ Not production-ready against PRODUCTION_CHECKLIST.md — fro
 | Transactional email arrives in inbox | ❌ | 2026-05-20 | Auth endpoints create verification/reset tokens, but live signup returns email_provider_missing because RESEND_API_KEY and AUTH_EMAIL_FROM are not configured. |
 | SPF, DKIM, DMARC configured | ❌ | 2026-05-19 | Requires human action in DNS provider; documented in next-actions.md. |
 | File uploads work and persist | N/A* | 2026-05-19 | No uploads in the frontdesk. Applies to upstream Twenty CRM when deployed. |
-| Rate limiting on auth/public API | ⚠️ | 2026-05-19 | Vercel + Cloudflare provide platform-level abuse protection; app-level rate limits on Cloudflare Worker not audited. |
+| Rate limiting on auth/public API | ✅ | 2026-05-20 | Cloudflare launch backend has D1-backed limits for signup, login, password reset requests, and lead intake. Live proof: repeated /dazl/auth/login calls returned HTTP 429 rate_limited after the configured window limit. |
 | API errors return structured JSON | ⚠️ | 2026-05-19 | Cloudflare launch backend returns JSON; not exhaustively tested. |
 | Background jobs and cron tasks verified | N/A* | 2026-05-19 | Not used in frontdesk; applies to upstream Twenty CRM when deployed. |
 | Database backups configured and restore verified | ❌ | 2026-05-19 | Not configured/proven on launch-backend D1. |
