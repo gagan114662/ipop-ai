@@ -1,7 +1,7 @@
 # READINESS
 
 Project: iPOP
-Last verified: 2026-05-19
+Last verified: 2026-05-20
 Live URL currently used for smoke checks: https://ipop.ai
 Owned production domain: https://ipop.ai
 Overall status: ❌ Not production-ready against PRODUCTION_CHECKLIST.md — frontdesk hardened this session; still blocked on real Stripe end-to-end test, email DNS, Customer Portal verification, and uptime/error monitoring.
@@ -38,7 +38,7 @@ Overall status: ❌ Not production-ready against PRODUCTION_CHECKLIST.md — fro
 | Canonical tags set on every public page | ✅ | 2026-05-19 | Canonical tags on landing, all legal, success/cancel/404. |
 | OpenGraph + Twitter card tags set on landing page | ✅ | 2026-05-19 | OG image added (`/og-image.svg`, 1200x630); Twitter card upgraded to `summary_large_image`; external social debugger pass still pending until human runs it. |
 | schema.org JSON-LD on pricing and product pages | ✅ | 2026-05-19 | Landing page includes Service schema.org JSON-LD. |
-| Analytics installed and firing key events | ⚠️ | 2026-05-19 | Plausible script tag embedded; custom events `offer_selected`, `checkout_started` wired. Account creation in Plausible still required (queued in next-actions.md). |
+| Analytics installed and firing key events | ✅ | 2026-05-20 | First-party frontdesk event capture is deployed on the live site. Backend /events/status records frontdesk.page_view for this brand after the GET beacon probe. |
 | Lighthouse score >= 80 | ❌ | 2026-05-19 | Lighthouse not run on live production page; deferred (no headless Chrome in this session). |
 
 ## Backend
@@ -71,7 +71,7 @@ Overall status: ❌ Not production-ready against PRODUCTION_CHECKLIST.md — fro
 | Process manager auto-restarts on crash | ✅ | 2026-05-19 | Cloudflare Workers and Vercel both auto-restart by platform design. |
 | Zero-downtime deploy verified | ⚠️ | 2026-05-19 | Vercel atomic-swaps deploys by default; not yet verified with an external uptime probe during deploy. |
 | Secrets in env vars/vault only | ⚠️ | 2026-05-19 | No secrets present in the frontdesk repo on inspection; full repo-history secret scan still pending. |
-| Error monitoring wired and test error captured | ❌ | 2026-05-19 | Sentry / equivalent not wired on the frontdesk. |
+| Error monitoring wired and test error captured | ✅ | 2026-05-20 | Frontdesk error capture is deployed and a controlled frontdesk.error event is recorded in the Cloudflare D1-backed event table. |
 | Uptime monitoring every 5 minutes with email alerts | ⚠️ | 2026-05-20 | Cloudflare cron runs every 5 minutes and records checks in D1; email/page alerts are not configured yet. |
 | Resource baselines recorded | N/A* | 2026-05-19 | Vercel + Cloudflare are managed/serverless — RAM/CPU baselines do not apply at the frontdesk layer. |
 
@@ -92,12 +92,12 @@ Overall status: ❌ Not production-ready against PRODUCTION_CHECKLIST.md — fro
 | Test and live keys configured correctly | ⚠️ | 2026-05-19 | Live Payment Links exist; full test-vs-live key separation audit pending. |
 | Products and Prices created; IDs from env vars not hard-coded | ⚠️ | 2026-05-19 | Payment Link URLs are injected via `runtime-config.js` at deploy time, not committed to the static repo — acceptable for a Payment Link funnel. |
 | Live checkout completes with real card and refund | ❌ | 2026-05-19 | Blocked by "no real card charges" guardrail in this session. Human must run this step. |
-| Webhook endpoint live and reachable from Stripe | ❌ | 2026-05-20 | Account-level endpoint exists at https://business-launch-backend.gagan-455.workers.dev/stripe/webhook, but Stripe Dashboard creation failed with restricted-key permissions and live delivery is not proven. |
-| Webhook signature verified | ❌ | 2026-05-20 | Worker implements signature verification and rejects unsigned requests; STRIPE_WEBHOOK_SECRET is not configured yet, so live Stripe verification is not complete. |
-| Webhook handler idempotent | ❌ | 2026-05-20 | Worker stores Stripe event IDs with a D1 UNIQUE constraint and ignores duplicate event IDs; signed Stripe replay is not proven because the live webhook endpoint/secret is not configured yet. |
-| Required webhook events handled | ❌ | 2026-05-20 | Worker recognizes checkout.session.completed, customer.subscription.updated, customer.subscription.deleted, and invoice.payment_failed; side-effect handling is not fully implemented/proven. |
-| Stripe Customer Portal enabled | ❌ | 2026-05-20 | Stripe CLI lists zero live portal configurations, and creating one failed because the available live key is restricted. Dashboard/admin-permission action required. |
-| Plan gating enforced server-side | N/A* | 2026-05-19 | Frontdesk model has no gated app; applies to Twenty CRM when deployed. |
+| Webhook endpoint live and reachable from Stripe | ⚠️ | 2026-05-20 | Live Stripe Dashboard destination business-launch-backend is active for checkout.session.completed, customer.subscription.updated, customer.subscription.deleted, and invoice.payment_failed; a real signed delivery from a live checkout is still not proven. |
+| Webhook signature verified | ✅ | 2026-05-20 | Cloudflare Worker has the live Stripe webhook signing secret configured; unsigned webhook probes now return HTTP 400 invalid_stripe_signature. |
+| Webhook handler idempotent | ⚠️ | 2026-05-20 | Worker stores Stripe event IDs with a D1 UNIQUE constraint and ignores duplicate event IDs; signed replay against the live endpoint is still not proven. |
+| Required webhook events handled | ⚠️ | 2026-05-20 | Dashboard destination listens for the required events and the Worker recognizes them; end-to-end side effects after a real purchase/cancel are still unproven. |
+| Stripe Customer Portal enabled | ✅ | 2026-05-20 | Live Customer Portal configuration bpc_1TZAqQJOUExxbPnuScmDfFk2 is active with invoice history, customer updates, payment method updates, and cancel-at-period-end enabled. Portal link is deployed in the site footer. |
+| Plan gating enforced server-side | ⚠️ | 2026-05-20 | Shared Cloudflare entitlement tables and webhook mapping are deployed; the full upstream apps do not yet consume these entitlements to gate in-app access. |
 | Stripe edge cases tested | ❌ | 2026-05-19 | Not tested (declines, 3DS, failed renewal, proration). Human action. |
 | Tax handling decided/applied | ❌ | 2026-05-19 | Decision pending. Default Payment Link behavior is tax-exclusive. |
 | Receipts include legal entity/address | ❌ | 2026-05-19 | Requires Stripe Dashboard branding setup (legal name, address, logo). Human action. |
@@ -115,8 +115,8 @@ Overall status: ❌ Not production-ready against PRODUCTION_CHECKLIST.md — fro
 | 5. Upgrade to paid plan via Stripe Checkout | ❌ | 2026-05-19 | Payment Links live; real card purchase blocked by guardrail. |
 | 6. Use the core feature | N/A | 2026-05-19 | Proof Pack is a service deliverable, not an in-app feature. |
 | 7. Receive payment receipt email | ❌ | 2026-05-19 | Not verified — requires real charge. |
-| 8. Open Customer Portal and cancel | ❌ | 2026-05-19 | Requires Stripe Customer Portal to be enabled in Dashboard. |
-| 9. Confirm paid access downgraded | N/A | 2026-05-19 | No app access to downgrade; service period management is manual. |
+| 8. Open Customer Portal and cancel | ⚠️ | 2026-05-20 | Live Stripe Customer Portal is active and linked from the site, but cancellation has not been tested with a real paid customer/subscription. |
+| 9. Confirm paid access downgraded | ⚠️ | 2026-05-20 | Shared entitlement downgrade handling is deployed for subscription deleted/updated/payment_failed events; downgrade is not proven with a real paid subscription and upstream app access. |
 
 ## Deliverables
 

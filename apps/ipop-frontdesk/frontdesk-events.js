@@ -1,9 +1,17 @@
 ;(function () {
   function configValue(predicate) {
-    for (var key in window) {
-      if (!Object.prototype.hasOwnProperty.call(window, key)) continue
-      if (!/_CONFIG$/.test(key)) continue
-      var cfg = window[key]
+    var configKeys = [
+      "ADEPTMEDIA_CONFIG",
+      "DAZL_CONFIG",
+      "HOGWARTS_CONFIG",
+      "ICUM_CONFIG",
+      "IPOP_CONFIG",
+      "MATHEMATRICKS_CONFIG",
+      "TEACHR_CONFIG",
+    ]
+
+    for (var index = 0; index < configKeys.length; index += 1) {
+      var cfg = window[configKeys[index]]
       if (!cfg || typeof cfg !== "object") continue
       for (var cfgKey in cfg) {
         if (predicate(cfgKey, cfg[cfgKey])) return cfg[cfgKey]
@@ -19,6 +27,22 @@
   if (!backendUrl) return
 
   var endpoint = backendUrl.replace(/\/$/, "") + "/event"
+
+  function sendPixel(type, data) {
+    try {
+      var params = new URLSearchParams(Object.assign({
+        type: type,
+        path: window.location.pathname,
+        href: window.location.href,
+        source: "frontdesk-pixel",
+      }, data || {}))
+      var image = new Image()
+      image.referrerPolicy = "no-referrer-when-downgrade"
+      image.src = endpoint + "?" + params.toString()
+    } catch (_error) {
+      // Pixel fallback must never affect the page.
+    }
+  }
 
   function send(type, data) {
     var payload = JSON.stringify(Object.assign({
@@ -53,6 +77,7 @@
   window.frontdeskTrack = send
 
   send("frontdesk.page_view", { title: document.title })
+  sendPixel("frontdesk.page_view", { title: document.title })
 
   window.addEventListener("error", function (event) {
     send("frontdesk.error", {
@@ -84,4 +109,3 @@
     }
   })
 })()
-
