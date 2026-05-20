@@ -96,7 +96,7 @@ Overall status: ❌ Not production-ready against PRODUCTION_CHECKLIST.md — fro
 | Webhook signature verified | ❌ | 2026-05-20 | Worker implements signature verification and rejects unsigned requests; STRIPE_WEBHOOK_SECRET is not configured yet, so live Stripe verification is not complete. |
 | Webhook handler idempotent | ❌ | 2026-05-20 | Worker stores Stripe event IDs with a D1 UNIQUE constraint and ignores duplicate event IDs; signed Stripe replay is not proven because the live webhook endpoint/secret is not configured yet. |
 | Required webhook events handled | ❌ | 2026-05-20 | Worker recognizes checkout.session.completed, customer.subscription.updated, customer.subscription.deleted, and invoice.payment_failed; side-effect handling is not fully implemented/proven. |
-| Stripe Customer Portal enabled | ❌ | 2026-05-19 | Requires human action in Stripe Dashboard. Documented in next-actions.md. |
+| Stripe Customer Portal enabled | ❌ | 2026-05-20 | Stripe CLI lists zero live portal configurations, and creating one failed because the available live key is restricted. Dashboard/admin-permission action required. |
 | Plan gating enforced server-side | N/A* | 2026-05-19 | Frontdesk model has no gated app; applies to Twenty CRM when deployed. |
 | Stripe edge cases tested | ❌ | 2026-05-19 | Not tested (declines, 3DS, failed renewal, proration). Human action. |
 | Tax handling decided/applied | ❌ | 2026-05-19 | Decision pending. Default Payment Link behavior is tax-exclusive. |
